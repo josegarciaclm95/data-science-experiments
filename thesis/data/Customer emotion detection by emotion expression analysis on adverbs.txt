@@ -1,0 +1,1204 @@
+Inf Technol Manag (2015) 16:303–311
+DOI 10.1007/s10799-014-0204-2
+
+Customer emotion detection by emotion expression analysis on
+adverbs
+Yan Sun · Changqin Quan · Xin Kang ·
+Zuopeng Zhang · Fuji Ren
+
+Published online: 14 November 2014
+© Springer Science+Business Media New York 2014
+
+Abstract The growing interests of affective computing
+(AC) and its implementation in e-business demand
+researchers to explore the applications of AC techniques in
+detecting customer emotions. Recent studies have shown
+that language is powerful in conveying emotions, and a
+good understanding of major language features bears great
+implications for customer relationship management.
+However, the effect of adverbs in text emotion prediction
+has only been briefly mentioned in a few related works, but
+never thoroughly studied. This paper addresses the gap by
+investigating how to detect customer emotions through
+analyzing the adverbs in emotion expressions. In particular,
+we develop a Japanese adverb emotion corpus, analyze
+emotion usage of adverbs, and further derive an adverbemotion lexicon and its rule base. Utilizing these resources,
+we design and perform experiments to classify emotions in
+
+Y. Sun · X. Kang · F. Ren
+Faculty of Engineering, University of Tokushima,
+2-1 Minamijosanjima, Tokushima 770-8506, Japan
+e-mail: sssyyy917@hotmail.com
+X. Kang
+e-mail: kangxin4@hotmail.com
+F. Ren
+e-mail: ren@is.tokushima-u.ac.jp
+C. Quan (&)
+AnHui Province Key Laboratory of Affective Computing and
+Advanced Intelligent Machine, School of Computer and
+Information, Hefei University of Technology, Hefei 230009,
+China
+e-mail: quanchqin@gmail.com; quanchqin@hfut.edu.cn
+Z. Zhang
+School of Business and Economics, State University of New
+York at Plattsburgh, 206 AuSable, Plattsburgh, NY 12901, USA
+e-mail: zzhan001@plattsburgh.edu
+
+sentences so as to evaluate the effectiveness of different
+adverb features including adverbs, adverb emotions, and
+adverb emotion rules. Our experiments and analysis show
+the great impact of adverbs on emotion expressions, which
+can be applied to assist e-businesses in improving customer
+related processes.
+Keywords Affective computing · E-business ·
+Customer emotions · Adverb analysis
+
+1 Introduction
+Recent years have seen an increased pursuit of affective
+computing (AC) which aims at developing applications
+that can adapt to changes according to users’ states and
+thereby enrich their interactions, leading to a more natural
+and effective usability [1]. AC techniques face many
+challenges such as emotional signal processing, computational modeling, and information aggregation. Nonetheless,
+AC could offer benefits in an almost limitless range of
+applications because emotions play a very important role in
+every aspect of our life. A growing body of research suggests that AC has many valuable applications in e-business
+[2].
+E-business has rapidly evolved in the last decade and
+become one of the most exciting and challenging research
+areas [3–5]. Information systems have a significant effect
+on the quality of IT strategy implementation, and could
+affect e-business performance. Effective information processing techniques can help firms to grasp the emerging
+opportunities and improve competitive advantages. Hence,
+there is a growing demand for insights into new challenges
+and solutions related to the development and management
+of e-business systems.
+
+123
+
+304
+
+Information processing related to a user’s emotion can
+be found in many areas of e-business applications. There
+are already useful applications in the commercial world of
+e-business [6, 7]. For example, the development of call
+center speech analytics software automatically detects if
+customers sound upset so that those calls can be flagged to
+learn how to handle them better. If a customer is vocally
+upset, he (she) will receive a higher priority in the call
+queue and connect to an agent faster, which can help
+alleviate customers’ frustration while managing call volumes in a more efficient way. Consumer electronics
+manufacturers often release new versions of their products
+with an increasingly complicated user interface to support
+new features and improve user friendliness; AC can thus
+contribute through improving customer related processes.
+Against the backdrop of the growing interests of AC and
+its applications in e-business, this paper explores AC
+techniques of detecting customer emotions. Emotions
+influence customer cognitive processes and online shopping behaviors. In many cases, consumers look for
+experiences rather than products, or emotions rather than
+use values. A good example is that brands become supplying centers of emotional energy [8]. Customer service is
+essentially an emotional process—it’s how the customer
+feels about the interaction that matters in the long run.
+Therefore, customer emotion detection plays a vital role in
+e-business, including customer experience management
+[9], customer satisfaction measurement [10], customer
+service improvement [11], and etc.
+This paper proposes to detect customer emotions by
+analyzing adverbs in emotion expressions. Natural language contains semantic information about an emotional
+state, which allows us to consider different emotional
+elements when we split a discourse into parts of a speech
+(e.g., noun, verb, adjective, and adverb). Adverbs are often
+used to modify verbs, adjectives, and other adverbs,
+enhancing meaning and adding depth and emotion to a
+sentence. In Japanese, adverbs play important roles. The
+usage statistics of adverbs in Japanese from two writings
+on the use of modern Japanese: “Dictionary of Japanese
+language” [12] and “Reality of discourse language” [13]
+show that, in the dictionary, the number of adverbs counts
+for 1.25 % among all kinds of words, which is only less
+than those of nouns and verbs. In the Japanese spoken
+language, the frequency of adverbs is even higher, representing 12.2 % of all kinds of words. Therefore, in this
+study, we focus on the impact of adverbs on Japanese
+emotion expressions. We first construct a Japanese emotion
+corpus and then derive a Japanese adverb emotion lexicon
+based on it. In addition, we summarize adverb-emotion
+features under different linguistic conditions and build a
+Japanese adverb-emotion rule base to predict text emotions. Using these resources, we perform experiments of
+
+123
+
+Inf Technol Manag (2015) 16:303–311
+
+sentence emotion classification to evaluate the effectiveness of different adverb features. Our results show the
+significant impact of adverbs on Japanese emotion
+expressions.
+The remainder of this paper is organized as follows.
+Section 2 conducts a literature review on prior studies of
+customer emotion detecting techniques and language based
+emotion recognition. Section 3 introduces the construction
+of a Japanese adverb-emotion corpus. Section 4 details the
+experiments of using adverbs for sentence emotion classification. Section 5 concludes this work with closing
+remarks and future directions.
+
+2 Literature review
+We review prior literature along two related research
+streams: customer emotion detection and language based
+emotion analysis. Summarizing the major findings of prior
+studies in these two streams, we then differentiate the focus
+of our research and highlight our contributions.
+2.1 Customer emotion detection
+Traditional methods on customer emotion detection are
+largely based on surveys and focus groups [14–17]. The
+weakness of these methods is they are boring, time-consuming, and data biased. In contrast, AC techniques
+provide a new horizon for quantitative analysis of consumer emotional states using machine learning methods.
+AC enables customers’ posture, speech, and facial
+expressions to be used, along with their words, for a more
+accurate evaluation of their emotion state.
+Speech is one of the most important channels for communicating and expressing emotions. Using speech signals,
+Morrison et al. [18] proposed ensemble methods for spoken
+emotion recognition in call centers. Fischer et al. [19]
+designed an embodied character agent named COSIMA to
+inspect a customer’s preferences and deal with him or her
+via natural speech. Gray described a non-intrusive speech
+quality assessment algorithm, capable of making predictions of the speech quality received by a customer [20].
+Although speech emotion recognition in e-business has a
+promising prospect, there are still some difficulties which
+prevent it from being used widely. For example, it is difficult to identify speech with too many noises. Ambiguous
+voice is also hard to be classified.
+Text is another important channel for emotion detection.
+Often being packaged with text analytics to detect emotions in customer communication, speech analysis takes
+care of phone conversations and other audio, whereas text
+analysis handles all of the written forms of communications, including text messages, email, chat sessions, blog
+
+Inf Technol Manag (2015) 16:303–311
+
+posts, web forums, review sites, and social media. For
+instance, consumer satisfaction levels can be measured
+from blogs with a linguistic-based emotion analysis and
+recognition method [7]. Functioning as the part of a Twitter
+client on an Android-based Samsung Galaxy S II, a prototype system can be designed to enable people in a social
+network to view symbols along with tweets that indicate a
+person’s emotional state [21]. Sentiment analysis [22–28]
+is also a text-based emotion detection technique with many
+practical applications in e-business, aiming to extract and
+mine opinions, views, and attitudes from online reviews.
+Text-based emotion detection provides a convenient way to
+fully understand what a customer wants so as to effectively
+manage the customer’s experience.
+In addition, there are other ways to detect customer
+emotions; for example, researchers at Samsung developed
+a smart phone that can detect people’s emotions. Rather
+than relying on specialized sensors or cameras, the phone
+infers a user’s emotional state based on how the user is
+using the phone [21]. Galitsky and Tumarkina [29] proposed a method using emotional states and mental actions
+to justify customers’ complaints.
+
+2.2 Language based emotion analysis
+The most important tasks of AC include automatically
+recognizing and responding to a user’s affective states
+when the user is interacting with a computer. The possibility of using languages to build affectively aware
+technologies has gained increasing attentions as languages
+are important elements of emotion expressions. Every
+natural language has certain means for designating emotional phenomena. The applications of automatic emotion
+recognition from languages are growing very fast.
+Most previous research studies the role of languages for
+emotion expression mainly from a two-dimensional perspective: positive and negative affect, which is usually
+referred as sentimental analysis (SA). Most approaches on
+SA can be classified into two major classes: documentlevel [22–24] which focuses on producing an overall
+opinion from one document; and feature-level [25–28]
+which aims to discover feature entities from sentences and
+then identify opinions that are associated with each entity
+(e.g., a consumer’s opinion on a camera’s photo quality and
+size).
+Recent studies have demonstrated the power of languages in conveying multiple emotions, and conducted indepth analysis of the language features. For example, Mu
+et al. [30] analyzed conjunctions for Chinese emotion
+expressions. Sun et al. [31] used syntactic parse and rules
+to explore Chinese degree words for emotion analysis.
+Quan et al. [32] used word emotion for sentence emotion
+
+305
+
+recognition. Tanaka proposed a sentence structure based
+method for emotion prediction [33].
+Prior research on Japanese has briefly touched upon the
+role of adverbs in text-based emotion classification. For
+instance, it is shown that adverbs in Japanese can express
+the subtle changes in human minds [34], and their classifications as direct modifications play important roles in
+emotion expression [35, 36], as well as in constructing
+sentences in machine translations [37]. However, the effect
+of Japanese adverbs in classifying different emotions
+expressed through sentences has never been systematically
+studied. Our research addresses this gap by investigating
+the linkage between adverbs and emotions in Japanese. In
+particular, we develop a Japanese adverb emotion corpus
+and design experiments to test how well adverbs can be
+used in predicting sentence emotions with adverb features
+in Japanese.
+
+3 Construction of a Japanese adverb emotion corpus
+We show the construction process of a Japanese adverb
+emotion corpus and its composition in this section. Specifically, we first illustrate the sources for our construction,
+then demonstrate the major statistics of the resulting corpus, and finally describe the lexicon and the major
+categories derived from the corpus.
+Corpus construction is an important issue in the field of
+Natural Language Processing. A well-constructed corpus
+can reinforce language based development and applications
+in multiple ways. Prior research has documented emotion
+corpus construction for various languages. For instance,
+Wiebe constructed a fine-grained opinion and emotion
+corpus (MPQA) in English [38]. Quan proposed and built a
+multi-level blog emotion corpus for emotional expression
+analysis in Chinese [39], etc. However, emotion corpus in
+Japanese is very limited. Our study addresses the gap by
+proposing to construct a Japanese adverb emotion corpus
+for Japanese emotion analysis and recognition based on
+prior related research [40, 41].
+The data source of the Japanese adverb emotion corpus
+is derived from several commonly used Japanese adverb
+dictionaries [42–44]. From these dictionaries, we collect
+totally 542 most commonly used adverbs. Some representative example sentences for each adverb are also collected
+to illustrate the usage of this adverb.
+Table 1 shows the basic statistics of the Japanese
+adverb-emotion corpus. Among the identified 542 distinct
+adverbs, the total 4,394 occurrences of these adverbs are
+included. There are 206 adverb words containing emotions,
+and 1,205 occurrences of the emotional adverbs are
+observed, representing 27.7 % of all the words in the
+
+123
+
+306
+
+Inf Technol Manag (2015) 16:303–311
+
+Table 1 Statistics of Japanese adverb-emotion corpus
+Adverb
+Number of adverbs
+
+542
+
+All
+
+Number of emotional adverb
+
+206
+
+38 %
+
+Occurrence of adverbs
+
+4,394
+
+All
+
+Occurrence of emotional adverbs
+
+1,205
+
+27.7 %
+
+3,864
+
+All
+
+Sentence
+Number of sentences
+Number of sentences with emotions
+
+3,264
+
+84.5 %
+
+Number of sentences with emotional adverbs
+
+1,108
+
+33.9 %
+
+Number of sentences without emotions
+
+600
+
+15.5 %
+
+corpus. The corpus contains 3,864 Japanese sentences,
+among which 3,264 sentences are annotated with emotions,
+corresponding to 33.9 % of all sentences.
+Each adverb and sentence in this corpus has been
+manually annotated with eight emotion categories and the
+corresponding emotion intensities. The eight basic emotion
+categories include: expectation, joy, love, surprise, anxiety,
+sorrow, anger, and hate. The range of emotion intensity
+values is from 0.1 to 1.0.
+Based on this Japanese adverb emotion corpus, we
+further construct an adverb emotion lexicon which contains
+687 adverbs in total. This lexicon records three kinds of
+information for each adverb: (1) adverb category which
+represents the functions of adverbs in emotion expression;
+(2) emotion category that an adverb belongs to; (3) emotion
+usage of adverb.
+According to the functions of adverbs in emotion
+expression, we divide adverbs into eight basic categories.
+Table 2 shows the definitions of these categories and their
+frequencies in this corpus. Adverbs of type 0 have no effect
+on the text emotions or emotion intensities. Adverbs of
+type 1 and type 2 can change the emotion intensity of a
+text. Text emotions get strengthened by type 1 adverbs, and
+weakened by type 2. Adverbs of type 3 can express emotions directly. Adverbs from type 4 to type 7 cannot express
+emotions directly, but can indirectly affect the emotions of
+a text. In an emotional statement, adverbs of type 4 can
+express emotions, but in an unemotional statement; they do
+not express emotions. Adverbs of type 5 can increase
+emotion categories of a statement. Adverbs of type 6 can
+express positive emotions with some particular verbs.
+Adverbs of type 7 can change emotion categories of a
+statement.
+In the adverb emotion lexicon, 418 adverbs (counting
+60.8 %) are single type, but some adverbs may belong to
+multiple categories. Table 3 shows the statistics of adverbs
+with different number of categories in the adverb emotion
+lexicon.
+
+123
+
+As shown in Table 3, quite a few adverbs (about 39.1 %
+in this lexicon) belong to multiple categories, which means
+their usages of expressing emotions are more flexible.
+Type 3 is an important type because the adverbs of this
+type can express emotions directly. Table 5 shows the
+emotion category statistics of type 3 adverbs (some adverbs
+may contain multiple emotions).
+Table 4 demonstrates that the numbers of the adverbs
+containing the emotions of anxiety, hate, and love are much
+more than those containing the emotions of surprise, sorrow, and anger.
+
+4 Experiments of using adverbs for sentence emotion
+classification
+This section presents the details of how we design and
+implement experiments to evaluate the effectiveness of
+adverbs for sentence emotion classifications based on the
+Japanese adverb emotion corpus illustrated in the previous
+section. Beginning with the description of the setting of our
+experiments, we then discuss the results and performances
+of different classification algorithms in the experiments.
+4.1 Experimental setup
+We develop experiments to examine the effectiveness of
+different adverb features extracted from our Japanese adverb
+corpus for sentence emotion classification. The words in
+sentences are employed as the basic feature, while the adverb
+categories, the adverb-emotion lexicon, and the adverbemotion rules are employed to extract the adverb-emotion
+features for sentence emotion classification. We examine
+different classification algorithms for sentence emotion classification, including Logistic Regression, Logistic Regression
+with L1 penalty, Logistic Regression with L2 penalty, Ridge
+classification, and SVM classification. The effect of setting
+different learning parameters in these algorithms for the sentence emotion classification is also discussed.
+The experiments performed include close test and open
+test. In close test, we train different classifiers on 2,612
+sentences in the Japanese adverb-emotion corpus, and
+evaluate the emotion classification results on the rest 652
+sentences. In open test, we examine the applicability by
+training classifiers on the whole corpus of 3,264 sentences,
+and test emotion classification on a new test set of 584
+Japanese sentences with adverbs. We report the precision,
+recall, and F-score of emotion classification on each
+emotion category, as well as the overall classification
+accuracy with different classification algorithms.
+Because we focus on the function of adverbs for emotion expression in Japanese language, sentences without
+
+Inf Technol Manag (2015) 16:303–311
+
+307
+
+Table 2 Adverb categories and frequencies
+Type
+
+Category
+
+Frequency
+
+Example 1
+
+Example 2
+
+0
+
+Has no effect on the emotions and emotion intensity of the statement,
+such as onomatopoeia.
+
+184
+
+ぎいぎい(Guy Guy)
+
+みしみし
+(Mishimishi)
+
+1
+
+Strengthen the emotion intensity of the statement.
+
+214
+
+とても(very)
+
+非常に(extremely)
+
+2
+
+Reduce the emotion intensity of the statement.
+
+30
+
+少し(a little)
+
+やや(somewhat)
+
+3
+
+Can express emotions directly
+
+206
+
+にこにこ(Smiling)
+
+うんざり(tedious)
+
+4
+
+In an emotional statement, adverbs express emotions, but in an
+unemotional statement, do not express emotions.
+
+9
+
+別れ別れに
+(individually)
+
+なよなよ(weakly)
+
+5
+
+Increase emotion categories of a statement.
+
+4
+
+どうにか(somehow)
+
+いつの間に(not
+knowing when)
+
+6
+
+Increase positive emotion of a statement.
+
+1
+
+せっせと(be diligent and
+conscientious)
+
+7
+
+Change emotion categories of a statement.
+
+1
+
+さも(seem)
+
+Table 3 The statistics of adverbs in the adverb emotion lexicon
+Category
+
+1 type
+
+2 types
+
+3 types
+
+≥3 types
+
+Count
+
+418
+
+97
+
+45
+
+2
+
+Percent
+
+60.8 %
+
+14.1 %
+
+6.5 %
+
+18.6 %
+
+Table 4 The emotion category statistics of type 3 adverbs
+Expectation
+
+Joy
+
+Love
+
+Surprise
+
+Anxiety
+
+Sorrow
+
+Anger
+
+Hate
+
+6
+
+22
+
+46
+
+18
+
+73
+
+17
+
+8
+
+63
+
+adverbs are not included in our study. The Japanese words
+in sentences are segmented by [45], while the Japanese stop
+words such as “に” and “と” are removed.
+
+4.2 Using adverbs for sentence emotion classification
+To evaluate the effectiveness of adverbs for sentence
+emotion classification, we conduct two experiments:
+(1)
+
+(2)
+
+Experiment E1.1: all adverbs are removed previously
+from sentences in the training and test sets, leaving
+the other words as features for emotion classification.
+Experiment E1.2: we keep all the words as features to
+train emotion classifiers.
+
+Sentence emotion classification is a multi-class classification problem, which is performed on eight emotion
+categories, including expectation, joy, love, surprise, anxiety, sorrow, anger, and hate. We employ the one-vs-others
+strategy in this multi-class classification problem, by
+training a binary classifier for each emotion category and
+predicting the final emotion from the binary classification
+results with the highest probability or distance. The binary
+classification algorithms we consider in this experiment
+
+include Logistic Regression, Logistic Regression with L1
+penalty, Logistic Regression with L2 penalty, Ridge classifier, and SVM classifier with the linear kernel.
+Figure 1, 2 and 3 compares the precisions, recalls and Fscores of sentence emotion classification with different
+classification algorithms in the two experiments.
+Experiment results demonstrate that with adverb features, the sentence emotion classification in E1.2 achieves
+higher precision, recall, and F-score than word features
+without the adverbs in E1.1. By introducing adverbs in
+the word features, the average precision of sentence
+emotion classification increases 9.32 % in comparison to
+the word features without adverbs; the average recall and
+F-score increase 10.57 and 10.76 %, respectively. The
+average classification accuracy in E1.2 is 59.08 %, which
+increases by 9.89 % from the average accuracy in E1.1 of
+49.19 %.
+Comparing different classification algorithms for sentence emotion classification in E1.2, we find that the
+Logistic Regression with L2 penalty achieves the highest
+average precision of 63.78 %, whereas the SVM classifier
+with the linear kernel gets the highest average recall of
+50.79 %. The highest average F-score is achieved by the
+SVM classifier with the score of 53.41 %. The comparison
+of different classification algorithms indicates that the
+SVM classifier could get the best overall performance for
+predicting sentence emotions through the word features.
+Because the size of our corpus is small in comparison to
+the number of features for sentence emotion classification,
+we have to introduce a regularization process to conquer
+the over-fitting problem in classification. Hyper-parameters
+are embedded in the optimization functions of these classification algorithms to control the strength of
+regularizations. We run 5-fold cross validations on the
+training set of 2,612 sentences in the Japanese adverbemotion corpus to select the hyper-parameters with respect
+to the highest average F-scores. Figure 4 illustrates the
+
+123
+
+308
+
+Inf Technol Manag (2015) 16:303–311
+
+Fig. 1 Precisions of sentence emotion classification in E1.1 and E1.2
+using different classification algorithms
+Fig. 4 The procedure of selecting the hyper-parameter C in the SVM
+classifier according to the F-scores
+
+Fig. 2 Recalls of sentence emotion classification in E1.1 and E1.2
+using different classification algorithms
+
+To further examine the applicability of the adverb based
+emotion recognition, we perform emotion classification
+experiments on a new test set which contains 584 Japanese
+sentences with adverbs from [42, 44]. All the data in our
+Japanese corpus is used as the training set. Emotions are
+annotated to these sentences with the same criteria as those
+in the Japanese adverb-emotion corpus. The same word
+segmentation and stop word filtering are performed on
+these sentences to get similar word features as those in the
+closed test set.
+Hyper-parameters of the classification algorithms
+employed in close test are selected from a five-fold cross
+validation on the training set, with respect to the highest
+average F-scores.
+We separate the open set experiment by three
+experiments:
+(1)
+(2)
+(3)
+
+Fig. 3 F-scores of sentence emotion classification in E1.1 and E1.2
+using different classification algorithms
+
+procedure of selecting the hyper-parameter C in the SVM
+classifier according to the F-scores. The F-scores for different emotions are represented in different colors and the
+mean F-score is represented by a dotted line.
+
+123
+
+Experiment E2.1: examine the adverb words as
+features for sentence emotion classification;
+Experiment E2.2: examine the adverb emotion features for sentence emotion classification;
+Experiment E2.3: examine the adverb emotion rules
+for sentence emotion classification.
+
+Table 5, 6, and 7 demonstrate the precisions, recalls, and
+F-scores of sentence emotion classification in the open test.
+Figure 5 shows the mean precision, recall, F-score, and
+accuracy of Japanese sentence emotion classification in the
+open test set.
+In the open test set, 401 sentence emotions get correctly
+classified among the 584 sentences. The classification
+accuracy achieves 68.66 %, which is 11.47 and 1.88 %
+higher than the accuracies of E2.1 and E2.2. With the rule
+based adverb emotion feature, our emotion classifier gets
+
+Inf Technol Manag (2015) 16:303–311
+
+309
+
+Table 5 Precision of Japanese sentence emotion classification in the
+open test set
+
+80.00%
+70.00%
+60.00%
+
+Emotion
+
+E2.1(%)
+
+E2.2(%)
+
+E2.3(%)
+
+Expectation
+
+40.91
+
+50.00
+
+47.37
+
+40.00%
+
+MeanPrecision
+
+Joy
+
+60.66
+
+69.64
+
+67.21
+
+30.00%
+
+MeanRecall
+
+Love
+
+60.17
+
+60.43
+
+62.60
+
+20.00%
+
+Surprise
+
+70.00
+
+72.22
+
+73.68
+
+MeanFscore
+
+10.00%
+
+Anxiety
+
+51.76
+
+65.92
+
+65.52
+
+0.00%
+
+Sorrow
+
+81.25
+
+71.43
+
+80.95
+
+Anger
+Hate
+
+0.00
+82.00
+
+66.67
+82.35
+
+88.89
+94.52
+
+Accuracy
+
+50.00%
+
+Table 6 Recall of Japanese sentence emotion classification in the
+open test set
+Emotion
+
+E2.1(%)
+
+E2.2(%)
+
+E2.3(%)
+
+Expectation
+
+60.00
+
+60.00
+
+60.00
+
+Joy
+
+45.12
+
+47.56
+
+50.00
+
+Love
+
+66.98
+
+79.25
+
+77.36
+
+Surprise
+
+35.00
+
+65.00
+
+70.00
+
+Anxiety
+
+83.05
+
+83.05
+
+85.88
+
+Sorrow
+
+34.21
+
+39.47
+
+44.74
+
+Anger
+Hate
+
+0.00
+34.75
+
+30.77
+59.32
+
+61.54
+58.47
+
+Table 7 F-scores of Japanese sentence emotion classification in the
+open test set
+Emotion
+
+E2.1(%)
+
+E2.2(%)
+
+E2.3(%)
+
+Expectation
+
+48.65
+
+54.55
+
+52.94
+
+Joy
+
+51.75
+
+56.52
+
+57.34
+
+Love
+
+63.39
+
+68.57
+
+69.20
+
+Surprise
+
+46.67
+
+68.42
+
+71.79
+
+Anxiety
+
+63.77
+
+73.50
+
+74.33
+
+Sorrow
+
+48.15
+
+50.85
+
+57.63
+
+Anger
+Hate
+
+0.00
+48.81
+
+42.11
+68.97
+
+72.73
+72.25
+
+five basic emotions including love, surprise, sorrow, anger,
+and hate that achieves the highest precision scores among
+three experiments on the open test set, while the precision
+scores on the other three emotions are ranked secondly
+with small differences. The recall scores in E2.3 for six
+emotions including expectation, joy, surprise, anxiety,
+sorrow, and hate, achieving the highest among all open test
+experiments, while for love and anger the corresponding
+recalls are very close to those in E2.2. Finally, the F-scores
+in E2.3 with rule based adverb-emotion feature are the
+highest for all basic emotions except expectation which is a
+
+E2.1
+
+E2.2
+
+E2.3
+
+Fig. 5 The mean precision, recall, F-score and accuracy of Japanese
+sentence emotion classification with different adverb features in the
+open test set
+
+little lower than that in E2.2 with lexicon based feature. All
+these results indicate that the rule based adverb-emotion
+feature is applicable for new sentences out of the Japanese
+corpus, which also helps the SVM classifier achieve much
+better emotion classification results than other adverb
+features.
+As our experiment results have demonstrated, the
+quality of adverb emotion features is a major factor for
+achieving promising emotion classification results in
+experiment E2.3. The adverb-emotion feature falls into one
+of the nine categories, including the eight basic emotion
+categories and a NoEmotion category since some adverbs
+are not emotions in specific contexts.
+Categories of expectation, anxiety, sorrow, and hate get
+precision scores higher than 90 %, and joy, love, surprise,
+and anger achieve around 70–90 % precisions. However,
+the adverb emotion rules are found not accurate enough for
+the NoEmotion category with the precision of 48.57 %,
+which is mainly caused by segmentation mistakes and
+other textual features, such as verb tense not being considered in the current system. The recall scores of surprise,
+anger, and hate are higher than 90 %, and expectation, joy,
+love, anxiety, and sorrow achieve recalls around 60–90 %.
+The NoEmotion category gets a 51.05 % recall, which is
+lower than other categories. The F-scores on adverb-emotion feature extraction are also promising, with over 80 %
+of F-scores for the eight basic emotion categories, and
+49.78 % of F-scores for the NoEmotion category, indicating the applicability of our adverb emotion rules on new
+test sentences.
+
+5 Conclusion
+The effectiveness of e-business systems depends greatly on
+the level of intelligence and automation [46–57]. The
+growing interest in affective computing brings a lot of
+valuable research topics that can meet different application
+
+123
+
+310
+
+demands in e-business. Recognizing when a customer is
+interested or bored, stressed, confused, or delighted is the
+first vital step for treating customers with respect. There is
+a huge growing market for technology that can help ebusiness respect customer feelings.
+This study explores customer emotion detection algorithms by analyzing the role of adverbs in emotion
+expressions. We first construct a Japanese adverb-emotion
+corpus, which is annotated on sentence level and the emotions in sentences include eight emotion categories
+(expectation, joy, love, surprise, anxiety, sorrow, anger, and
+hate). According to the functions of adverbs for text-based
+emotion expressions in our Japanese adverb-emotion corpus,
+we divide the Japanese adverbs in our corpus into eight types:
+adverbs that can express emotions, adverbs that can change
+the intensity of emotions, etc. Then we build a Japanese
+adverb-emotion lexicon based on the statistics of adverb
+emotions in this corpus, summarize adverb emotion features
+under different linguistic conditions, and develop adverbemotion rules to predict text emotions. Our experiments of
+using adverbs to classify sentence emotions demonstrate the
+applicability of the Japanese adverb emotion corpus and the
+effectiveness of the adverb emotion rule base. We also show
+that adverb emotion features are significant factors of
+achieving promising emotion classification.
+In our future study, we plan to extend this work to other
+languages including English and Chinese and compare the
+impact of adverbs for emotion expressions in different
+languages. In addition, we will combine adverbs with
+speech features to further improve the customer emotion
+detection system.
+Acknowledgments This research has been partially supported by
+the Ministry of Education, Science, Sports and Culture of Japan under
+Grant-in-Aid for Scientific Research (A) No. 22240021, and the
+National High-Tech Research & Development Program of China 863
+Program under Grant No.2012AA011103, and National Natural Science Foundation of China under Grant No. 61203312.
+
+References
+1. Calvo RA, D’Mello S (2010) Affect detection: an interdisciplinary review of models, methods, and their applications. IEEE
+Trans Affect Comput 1(1):18–37
+2. Xu S, Xu L, Basl J (2011) Introduction: advances in e-business
+engineering. Inf Technol Manag 13:201–204
+3. Guo J, Gong Z (2011) Measuring virtual wealth in virtual worlds.
+Inf Technol Manag 12(2):121–135
+4. Guo J, Xu L, Gong Z, Che C, Chaudhry S (2012) Semantic
+inference on heterogeneous e-marketplace activities. IEEE Trans
+Syst Man Cybern Part A Syst Hum 42(2):316–330
+5. Li L (2011) Introduction: advances in e-business engineering. Inf
+Technol Manag 12(2):49–50
+6. Mahmoud N, Mohamed B, Gouarderes G (2008) Affective virtual
+learning environments. In: Xu L (ed) Frontiers in enterprise
+integration. Taylor & Francis/Balkema, The Netherlands
+
+123
+
+Inf Technol Manag (2015) 16:303–311
+7. Ren F, Quan C (2012) Linguistic-based emotion analysis and
+recognition for measuring consumer satisfaction-an application of
+affective computing. Inf Technol Manag 13:321–332
+8. Consoli D (2009) Emotions that influence purchase decisions and
+their electronic processing. In: Proceedings of Challenges of
+contemporary knowledge-based economy (ICMEA), pp 996–
+1008
+9. Puccinellia N, Goodsteinb R, Grewalc D, Priced R, Raghubire P,
+Stewartf D (2009) Customer experience management in retailing:
+understanding the buying process. J Retail 85(1):15–30
+10. Khan I (2012) Impact of customers satisfaction and customers
+retention on customer loyalty. Int J Sci Technol Res 1(2):106–
+110
+11. Hachani S, Verjus H (2012) A service-oriented approach for
+flexible process support within enterprises: application on PLM
+systems. Enterp Inf Syst 7(1):79–99
+12. Miyajima T, Nomura M, Egawa K (1982) Illustrat Japanese with
+figures. Kadokawa Shoten
+13. Onishi M (1943) Discussion language science. Tokyo Museum
+Osamu statement
+14. Christopher W (2011) Affective data acquisition technologies in
+survey research. Inf Technol Manage 12(4):387–408
+15. Smith A (2002) The effect of customers’ emotional responses to
+service failures on their recovery effort evaluations and satisfaction judgments. J Acad Mark Sci 30(1):5–23
+16. Groth M, Hennig-Thurau T, Walsh G (2009) Customer reactions
+to emotional labor: the roles of employee acting strategies and
+customer detection accuracy. Acad Manag J 52(5):958–974
+17. Grandey A, Dickter D, Sin HP (2004) The customer is not always
+right: customer verbal aggression toward service employees. J
+Org Behav 25:1–22
+18. Morrison D, Wang R, Silva L (2006) Ensemble methods for
+spoken emotion recognition in call-centres. Speech Commun 49
+(2):98–112
+19. Fischer S, Döring S, Wimmer M, Krummheuer A (2004) Experiences with an emotional sales agent. lecture notes in computer
+science, 3068:309–312
+20. Gray P (2000) Non-intrusive speech-quality assessment using
+vocal-tract models. IEE Proc Vision Image Signal Process 147
+(6):493–501
+21. http://www.technologyreview.com/news/426560/a-smart-phonethat-knows-youre-angry/
+22. Hatzivassiloglou V, Wiebe J (2000) Effects of adjective orientation and gradability on sentence subjectivity. In: Proc 18th Conf
+Comput Linguist 1:299–305
+23. Turney P (2002) Thumbs up or thumbs down?: semantic orientation applied to unsupervised classification of reviews. In:
+Proceedings of the 40th annual meeting on association for computational linguistics ACL’02, pp 417–424
+24. Pang B, Lee L, Vaithyanathan S (2002) Thumbs up? Sentiment
+classification using machine learning techniques. In: Proceedings
+of the ACL-02 conference on empirical methods in natural language processing 10:79–86
+25. Hu M, Liu, B (2004) Mining and summarizing customer reviews.
+In: Proceedings of tenth ACM SIGKDD international conference
+on knowledge discovery and data mining, pp 168–177
+26. Popescu A, Etzioni O (2005) Extracting product features and
+opinions from reviews. In: Proceedings of the conference on
+human language technology and empirical methods in natural
+language processing, pp 339–346
+27. Scaffidi C. Bierhoff K, Chang E, Felker M, Ng H, Jin C (2007)
+Red Opal: product-feature scoring from reviews. In: Proceedings
+of the 8th ACM conference on electronic commerce, pp 182–191
+28. Jin W, Ho H, Srihari R (2009) OpinionMiner: a novel machine
+learning system for web opinion mining and extraction. In:
+
+Inf Technol Manag (2015) 16:303–311
+
+29.
+
+30.
+
+31.
+
+32.
+
+33.
+
+34.
+35.
+
+36.
+
+37.
+
+38.
+
+39.
+
+40.
+
+Proceedings of the 15th ACM SIGKDD international conference
+on knowledge discovery and data mining, pp 1195–1204
+Galitsky B, Tumarkina I (2004) Justification of Customer Complaints Using Emotional States and Mental Actions. In:
+Proceedings of the Seventeenth International Florida Artificial
+Intelligence Research Society Conference
+Mu R, Quan C, Ren F (2009) Analysis on Conjunctions for
+Chinese Emotion Expression. In: Proceedings of Electronics,
+information and systems conference electronics, Information and
+Systems Society, I.E.E of Japan
+Sun Y, Quan C, Ren F. (2009) Analysis on Degree Words for
+Chinese Emotion Expressions Based on Syntactic Parse and
+Rules. In: Proceedings of IEEE NLP-KE’09
+Quan C, Ren F (2010) Sentence emotion analysis and recognition
+based on emotion words using Ren-CECps. Int J Adv Intell 2
+(1):107–119
+Tanaka T, Tokuhisa M, Murakami J, Ikehara S (2004) Grant of
+occurrence information to the pattern emotional valence. In:
+Proceedings of the 10th annual conference announced the Association for Natural Language Processing, pp 345–348
+Morita Y (1985) Analysis and research of misusage in Japanese:
+suggestion for Japanese study. Meiji Shoin
+Mika S, Masato T, Jin’ichi M, Satoru I (2003) Judgment of
+affective expressions by adverb and adjective. Forum on Information Technology, pp 117–118
+Matsumoto K, Kenichi M, Ren F, Kuroiwa S (2007) Emotion
+estimation algorithm based on emotion occurrence sentence
+pattern. J Nat Lang Process 14(3):239–271
+Mika S, Masato T, Jin’ichi M, Satoru I (2005) Japanese–English
+contrastive analysis of Japanese adverbs focused on the expression of feeling, In: Proceedings of the 11th annual conference
+announced the Association for Natural Language Processing, pp
+33–36
+Wiebe J, Wilson T, Cardie C (2005) Annotating expressions of
+opinions and emotions in language. Lang Resour Eval 39:164–
+210
+Quan C, Ren F (2010) A blog emotion corpus for emotional
+expression analysis in Chinese. Comput Speech Lang 24(4):726–
+749
+Yamamoto M, Tsuchiya S, Kuroiwa S, Ren F (2007) Emotion
+classification for emotion corpus construction, Report of IPSJ, pp
+31–35
+
+311
+41. Matsumoto K, Bracewell D. B, Ren F, Kuroiwa S (2005)
+Development of an emotion corpus creation support system,
+Report of IPSJ, pp 91–96
+42. Tobita Y, Asada H (1994) Dictionary of Contemporary adverb
+usage. Tokyo hall
+43. Shimamoto K (1989) Dictionary for learners of Japanese adverb
+examples. Bonjinsha publication
+44. Tobita Y, Asada H (2002) Dictionary of contemporary usage
+onomatopoeia onomatopoeia. Tokyo hall
+45. ChaSen. Japanese morphological analysis system. http://chasen.
+aist-nara.ac.jp/hiki/ChaSen/
+46. Viriyasitavat W, Xu L, Martins A (2012) SWSpec: the requirements specification language in service workflow environments.
+IEEE Trans Ind Inf 8(3):631–638
+47. Xu L, Wang C, Bi Z, Yu J (2012) AutoAssem: an automated
+assembly planning system for complex products. IEEE Trans Ind
+Inf 8(3):669–678
+48. Li L, Ge R, Zhou S, Valerdi R (2012) Guest editorial integrated
+healthcare information systems. IEEE Trans Inf Technol Biomed
+16(4):515–517
+49. Xu L, Viriyasitavat W, Ruchikachorn P, Martins A (2012) Using
+propositional logic for requirements verification of service
+workflow. IEEE Trans Ind Inf 8(3):639–646
+50. Qian Y, Jin B, Fang W (2011) Heuristic algorithms for effective
+broker deployment. Inf Technol Manag 12(2):55–66
+51. Beheshti H, Beheshti C (2010) Improving productivity and firm
+performance with enterprise resource planning. Enterp Inf Syst 4
+(4):445–472
+52. Li L (2011) Introduction: advances in e-business engineering. Inf
+Technol Manag 12(2):49–50
+53. Zhou Z, Valerdi R, Zhou S (2012) Guest editorial special section
+on enterprise systems. IEEE Trans Ind Inf 8(3):630
+54. Wang P, Chao K, Lo C, Farmer R (2011) An evidence-based
+scheme for web service selection. Inf Technol Manag 12(2):161–
+172
+55. Flaxer D et al (2007) Variable pricing business solutions in a
+decomposed business environment. Enterp Inf Syst 1(2):177–195
+56. Liang L (2008) Earnings forecasts in enterprise information
+systems environment. Enterp Inf Syst 2(1):1–19
+57. Liu B, Cao S, He W (2011) Distributed data mining for e-business. Inf Technol Manag 12(2):67–79
+
+123
+
+

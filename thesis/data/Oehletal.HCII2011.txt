@@ -1,0 +1,358 @@
+Oehl, M., Siebert, F. W., Tews, T.-K., Höger, R., & Pfister, H.-R. (2011). Improving Human-Machine Interaction – A Non-Invasive
+Approach to Detect Emotions in Car Drivers. In J. A. Jacko (Ed.), Human-Computer Interaction, Part III, HCII 2011, LNCS 6763 (pp.
+577-585). Heidelberg, Germany: Springer.
+
+Improving Human-Machine Interaction – A NonInvasive Approach to Detect Emotions in Car Drivers
+Michael Oehl, Felix W. Siebert, Tessa-Karina Tews, Rainer Höger, & HansRüdiger Pfister
+Leuphana University of Lüneburg, Institute of Experimental Industrial Psychology,
+Wilschenbrucher Weg 84a, 21335 Lüneburg, Germany
+{oehl, fsiebert, tews, hoeger, pfister}@uni.leuphana.de
+
+Abstract. As cars become increasingly computerized, automatic emotion
+detection and affective computing provides a promising basis for futureoriented human-computer interaction (HCI) in cars. However, we are still
+facing severe problems when trying to detect the users’ emotional state reliably.
+This experimental study investigated grip-strength as a new non-invasive
+method to detect emotions directly in an automobile context. A positive
+emotion (happiness) and a negative emotion (anger) were examined regarding
+their influence on grip-strength applied to the steering wheel. Results confirmed
+and extended preliminary findings: Drivers’ grip-strength slightly increased
+while driving a car when happiness was experienced and especially decreased
+when anger was experienced. Implications for further research as well as for
+praxis are outlined.
+Keywords: Emotion detection in cars, human-computer interaction, humancentered design, affective computing.
+
+1 Introduction
+Human factors are the main reasons of traffic accidents probably not only in the
+European Union [1]. To counter this, politics focused on improving safety measures
+that are implemented in the traffic surroundings, e.g., guard railing, while car
+manufacturers improved passenger protection. Albeit these improvements, research
+still suggests that emotions are a main cause for maladjusted driving that leads to
+accidents [e.g., 2, 3, 4]. Therefore, emotions are an important object of applied human
+factors research aiming at an optimized human-machine interaction. However, while
+there has been much progress in the research of the relation between especially
+negative emotions, e.g., anger, maladjusted driving, and accident risk; little attention
+has been paid to the detection of drivers’ emotions in cars. Therefore, the focus of this
+experimental study lies on the detection of emotions in automobile drivers.
+As cars become increasingly computerized, automatic emotion detection and
+affective computing provides a promising basis for future-oriented human-computer
+interaction (HCI) in cars. While other driver states, such as sleepiness and fatigue can
+be reliably detected in cars, researchers and manufacturers are still facing severe
+problems when trying to detect the users’ emotional state reliably. Our current study
+
+faces this crucial question especially in an automobile HCI context. So the focus of
+this experimental study lies on the automatic detection of emotions in car drivers
+following a promising multimodal approach. Since the methods used to detect
+emotions needed to be applicable in a car, we have only chosen non-invasive
+measurements that do not interfere with the drivers’ ability to control the car, and are
+in part already implemented in today’s state of the art cars. Earlier studies tried to
+detect emotions in general with a number of non-invasive measurements, e.g., speech
+[e.g., 5] and facial expressions [e.g., 6].
+1.1 Detecting Driver’s Emotions
+Taking into account the results of Mesken et al. [3], we focused on methods that
+can be measured constantly and show enough variance, to allow discrimination
+between different emotions. In Mesken’s study participants’ facial expression only
+corresponded with happiness, while anger and anxiety corresponded with a neutral
+face. Furthermore, Eyben et al. [7] suggest that speech does not occur constantly and
+that there are emotional states, in which a driver will not talk at all. Hence these
+limitations of the variables facial expression and speech, a new measure – gripstrength – was applied and evaluated in this current experimental study.
+The driver’s grip-strength applied to the steering wheel can constantly be
+measured, and a pilot study [8] showed variance in grip-strength that allowed
+discriminating between different emotional states. As additional non-invasive
+measurements, sitting posture and variation in the accelerator pedal were recorded.
+The sitting posture of drivers is a promising measure to detect different emotions.
+Overbeeke, Vink and Cheung [9] suggest that distinguishing emotions through
+analyzing macro movements of seated humans could be possible. Variation in the
+position of the accelerator pedal has been linked to high mental workload [10], and
+could therefore correspond with high emotional arousal. Due to the novelty of the
+measurement of emotion detection by grip-strength in an automobile context, we will
+focus on this variable in this paper.
+Since there is no data to support the claim that only a certain valence (positive or
+negative) of emotions leads to maladjusted driving, we have chosen happiness as a
+prototypical positive emotion, and anger as a prototypical negative emotion to be
+induced in our experiment. Moreover, these two emotions are experienced very
+frequently by drivers in traffic [3, 11, 12]. We classified emotions following the
+approach of Scherer’s multi-dimensional emotion-space [13]. Scherer suggests that
+emotions can be classified by two dimensions, i.e., valence and arousal. Anger and
+happiness rate high on arousal, while anger ranks negative, and happiness ranks
+positive on the valence dimension. This allows us to evaluate the grip-strength as a
+measure to distinguish between different emotional valences.
+Earlier studies on grip-strength and emotions showed an increase in grip-strength
+when comparing a neutral drive with an emotional drive [8, 14]. Furthermore results
+indicated that gender influences the grip-strength reaction [15]. Compared to male
+participants female participants’ grip-strength increased stronger for happiness, while
+male participants’ showed a higher increase in grip-strength compared to female
+participants when anger was induced. In the anger condition female participants’ grip-
+
+strength even decreased compared to the neutral condition. These new findings asked
+for further research.
+So our current study focused on evaluating as well as on extending these
+preliminary findings with more participants, since the pilot study [8, 15] only had a
+sample size of N = 21. Furthermore, the method for inducing emotions was changed,
+to achieve better accuracy in the self-reported emotion questionnaire.
+The two central research questions addressed in our current experimental study are:
+1) Is it possible to detect emotions by driver’s grip-strength applied to the steering
+wheel as a new additional non-invasive measure to detect emotions in an automobile?
+2) Is it possible to differentiate emotions that rank different on the dimension of
+valence but have an equal arousal level?
+
+2 Method
+This current experiment was based on a one-factorial design with repeated
+measurements. The independent variable was the induced emotion in the driver. The
+induction was between-subjects three-tiered in neutral vs. anger vs. happiness. The
+dependent variable was drivers’ grip-strength applied to the steering wheel.
+In the first part of this paragraph, we will explain the procedure of our study. After
+this, the method to induce emotions is presented in further detail. At the end of this
+paragraph, the measurement of grip-strength is outlined.
+
+Fig. 1. Experimental procedure and setting in the driving simulator.
+
+Participants (N = 59; 40 female) at the age of M = 23.39 years (SD = 4.51) were
+asked to drive predefined routes in a driving-simulator STISIM DRIVETM 2.0 (Fig.
+1). The routes consisted of country roads, city roads as well as highways and there
+was sparse oncoming traffic. The design of the routes was modeled after real life
+traffic-routes, to ensure high validity. Every participant drove a practice route to get
+used to the driving simulator. After this practice route, the two experimental routes
+followed in repeated measurements for the dependent variable. The first experimental
+road was without induced emotions, i.e., the neutral route. The second experimental
+route was with induced emotions, i.e., the emotional route (Fig. 1).
+After participants finished the neutral route they were shown a film clip to induce a
+
+specific target emotion. The method of induction is explained later in this paragraph.
+Following this, participants drove the second experimental route, i.e., the emotional
+route. The first neutral and the second emotional experimental route were identical,
+but this time the surroundings of the road and the appearance of the cars on the road
+were changed in order to leave participants unaware that they were driving on the
+same route as before.
+In this experiment we induced emotions as the independent variable. Participants
+were randomly assigned to three different experimental groups, labeled according to
+the induced emotions anger, happiness, and neutral. The neutral group without
+induced emotion served as a baseline for the dependent variable grip-strength as well
+as for the control of sequence effects due to repeated measurements. Anger and
+happiness were chosen due to their high occurrence in traffic [3, 11, 12]. Emotions
+were induced through films in this experiment, an efficient method to elicit defined
+target emotions [16]. We used up-to-date evaluated clips out of film sets which were
+specific for and ranked highest on the intended target emotion. The stimulus material,
+i.e., the film clips, was as follows: ‘Hannah and her Sisters’ (neutral) and ‘When
+Harry met Sally’ (happiness / amusement) [17] as well as ‘Schindler’s List’ (anger)
+[18]. We evaluated the induction of emotions in pre-tests. Additionally, we applied
+the Self-Assessment Manikin (SAM) as a non-verbal pictorial assessment technique
+to measure participants’ affective reactions [19, 20].
+
+Fig. 2. Schematic structure of the grip-strength sensitive steering wheel (KOSTAL Group).
+
+As dependent variable served the driver’s grip-strength applied to the steering
+wheel as a new measure to detect driver’s emotions in an automobile environment. To
+
+measure grip-strength in this experiment, we used a unique steering wheel provided
+by the KOSTAL Group. The steering wheel had a built in fiber that measured
+deformation caused by force applied on the steering wheel by participants’ hands.
+Forces were measured all around the steering wheel, giving a unit-less indication for
+the applied grip-strength. Figure 2 shows the schematic structure of the steering
+wheel. On the upper left a cross section of the steering wheel is shown while no
+pressure is applied. On the bottom left the same structure is shown with applied
+pressure. The upper right shows a single fiber that is used to measure the gripstrength. On the bottom right, the alignment of multiple fibers is shown within the
+steering wheel.
+
+3 Results
+With regard to the Self-Assessment Manikin (SAM) as a non-verbal pictorial
+assessment technique to measure participants’ affective reactions especially the
+valence of affective reactions is of interest to distinguish between positive and
+negative emotional states. For the first drive, i.e., the neutral route, participants across
+all experimental conditions reported no significant differences for the valence of
+emotional states (F(2,55) = 2.06; p > .05). But for the second emotional route after the
+target emotion was induced through films we observed a significant difference of the
+reported valence (F(2,54) = 3.37; p < .05). Compared to the neutral route the ratings for
+the emotional route in the neutral condition were on a ten-points-scale M = 6.55
+(+0.00; SD = 1.38), in the happiness condition M = 6.09 (+0.25; SD = 1.13), and in
+the anger condition M = 5.41 (-0.59; SD = 6.00). This indicates by trend an effective
+emotion induction and a carry-over effect of the target emotion in the films for the
+emotional routes.
+Due to technical dropouts we included n = 55 participants in the further analyses of
+the grip-strength data. Based on the unit-less measurement of the grip-strength in our
+experimental study and additionally due to the large differences in applied gripstrength between participants, especially the relative change of grip-strength within
+subjects (neutral vs. emotional route) is of interest (Fig. 3).
+Participants in the neutral condition (n = 20) showed some change in grip-strength,
+comparing the neutral route to the emotional route. During the neutral route, the
+average grip-strength was M = 1,133.96 (SD = 760.60) while during the emotional
+route it was M = 1,195.44 (SD = 855.84). This is an increase of M = 61.48 or 4.25%.
+To find possible effects of sequence due to repeated measurements, it is additionally
+important to analyze the grip-strength of the neutral group (neutral vs. emotional
+route) in this regard. If there would have been signs of fatigue for example, they
+would have shown in the data as a decrease in grip-strength. Results suggest that there
+is no effect of sequence, since there is a small but non-significant increase in gripstrength in the neutral group (t(19) = -1.25; p > .05).
+The happiness condition (n = 18) showed a small but non-significant increase in
+grip-strength (t(17) = -0.49; p > .05) as well. In the neutral route the average gripstrength was M = 889.71 (SD = 674.61) and in the emotional route it was M = 905.76
+(SD = 666.01). This is an increase of approximately M = 16.04 or 2.16% in grip-
+
+Grip-Strength Difference
+
+strength.
+In the anger condition (n = 17) a decrease in average grip-strength within the
+participants (t(16) = 1.73; p = .051) just failed to be significant. During the neutral
+route their average grip-strength was M = 1,024.12 (SD = 582.49) and during the
+emotional route they applied a grip-strength of M = 961.32 (SD = 593.36). This
+equals a decrease in grip-strength of M = -62.80 or approximately -5.82%. These
+results are shown in figure 3.
+A comparison of the changes in grip-strength (neutral vs. emotional route) across
+the experimental conditions failed to be significant (F(2,52) = 2.33; p = .11).
+Nevertheless, a direct comparison of the grip-strength changes between the neutral
+and the anger condition yielded a significant difference (t(35) = 1.97; p < .05).
+Further analysis of the data suggested that there were no significant differences in
+the applied grip-strength between men and women in this experiment for the
+experimental conditions (F(1,49) = 0.59; p > .05) nor any significant interaction of
+gender and experimental condition (F(2,49) = 0.23; p > .05).
+
+100.00
+]
+
+]
+
+0.00
+
+]
+
+-100 .00
+
+Neutral
+
+Happiness
+
+A nger
+
+Emotional Condition
+Fig. 3. Mean differences and confidence intervals in grip-strength (neutral vs. emotional route)
+for the three experimental emotional conditions (neutral, happiness, and anger).
+
+4 Conclusions
+So far little attention has been paid to the applied automatic detection of drivers’
+emotions in cars. Researchers and manufacturers are still facing severe problems
+when trying to detect the users’ emotional state reliably. Therefore, this experimental
+study focused on the automatic detection of emotions in automobile drivers especially
+with non-invasive measurements applicable in a car and which do not interfere with
+the drivers’ ability to control the car.
+Due to the novelty of the measurement of emotion detection by grip-strength in an
+automobile context, we focused on this variable in the current paper. Previous studies
+on grip-strength and emotions showed an increase in grip-strength when comparing a
+neutral drive with an emotional drive [8, 14]. Furthermore, results indicated that
+gender influences the grip-strength reaction [15]. The results of our current
+experimental study contrasted and extended these preliminary findings.
+Our first research question asked if it was possible to detect emotions by drivers’
+grip-strength applied to the steering wheel as a new additional non-invasive measure
+to detect drivers’ emotions in an automobile. Our results suggest that grip-strength
+can contribute to the detection of emotion. This has to be discussed with respect to
+our second research question, i.e., if it was possible to differentiate emotions that rank
+different on the dimension of valence but that have equal arousal levels (happiness vs.
+anger). Grip-strength measures were slightly but not significantly increased for the
+happiness group. We observed a comparable increase as well for the neutral
+condition. However, we found a significant decrease in grip-strength for the anger
+condition. Since we have neither found any gender differences in grip-strength across
+the three experimental emotional conditions in the current experimental study nor any
+differences in the general grip-strength applied to the steering wheel in contrast to
+previous research [15, 21], our current results with a larger sample are consistent by
+trend with the female participants’ results in our pilot study [15].
+These findings suggest that grip-strength can help to differentiate between a nonemotional state of the driver and a critical emotional state like anger. Since critical
+emotional states lead to maladjusted driving, this differentiation could help in
+preventing accidents. Nevertheless, we are still facing open research questions, i.e.,
+why is grip-strength deceasing for anger and not for happiness albeit these two
+emotional states are both associated with high physiological arousal? In this respect a
+video-based motion tracking of the driver and thus an activity analysis could be
+insightful [22]. Drivers experiencing anger may have a higher variability of their hand
+movements and might not stick constantly to the steering wheel. Additionally, an
+evaluation of drivers’ grip-strength behavior with low-arousal emotions of different
+valence as well as in real life scenarios is needed.
+For future research it is also important to refine the measurement of grip-strength.
+The steering-wheel provided to us, was a unique prototype. Therefore fine-tuning in
+the algorithm of the calculation of grip-strength may be possible.
+Taking into account the results of this study, additional non-invasive measurements
+to detect drivers’ emotions should be considered in order to frame an applied humancentered HCI approach of emotion detection in cars. For example facial expressions
+have shown to be quite useful for the detection of drivers’ happiness but rather
+difficult for the detection of anger [3]. Besides, other promising new measures like
+
+sitting posture and variation in the accelerator pedal should be considered as well.
+Our current results showed that grip-strength can contribute to a more valid
+detection of emotions of car drivers within a multimodal approach. In its application
+in cars this research could lead to a more human-centered design of HCI in terms of
+affective computing, e.g., adaptive advanced driver assistance systems (ADAS)
+depending on the emotional state of the driver and thereby increasing safety to traffic
+as well as increasing the driver’s comfort by regulating his emotional state. Also the
+implementation of our method of detection would be simple and feasible, since the
+bigger part of the necessary technology is already available in state of the art
+automobiles. The ADAS may be realized within a multi-methodic system, taking into
+account additional non-invasive measures, e.g., facial expressions or speech, thereby
+increasing the validity of the emotion detection.
+
+Acknowledgments. This research was funded by grant FS-Nr. 2006.63 from the
+‘Arbeitsgruppe Innovative Projekte’ (AGIP) of the Ministry of Science and Culture,
+Lower Saxony, Germany. We would like to thank the Volkswagen Group (Group
+Research Electronics and Vehicle Research / HMI and Human Factors) as well as the
+KOSTAL Group for technical support. Many thanks go to Patricia Brunkow, Johanna
+von Stebut, Raphael Seitz, Christoph Ruth and Marco Wiethof for their help in
+conducting the experiment as well as to Heiko Witthöft for his help in analyzing the
+experiment and his support in applied computer science.
+
+References
+1. European Commission: White paper-European transport policy for 2010: time to decide.
+Office for Official Publications of the Europe Communities, Luxemburg (2010)
+2. Deffenbacher, J.L., Oetting, E.R., Lynch, R.S.: Development of a driving anger scale.
+Psychological Reports 74, 83--91 (1994)
+3. Mesken, J., Hagenzieker, M.P., Rothengatter, T., De Waard, D.: Frequency, determinants,
+and consequences of different drivers' emotions: An on-the-road study using self-reports,
+(observed) behaviour, and physiology. Transportation Research Part F 10, 458--475 (2007)
+4. Nesbit, S.M., Conger, J.C., Conger, A.J.: A quantitative review of the relationship between
+anger and aggressive driving. Aggression and Violent Behavior 12(2), 156--176 (2007)
+5. Scherer, K.R., Johnstone, T., Klasmeyer, G.: Vocal expression of emotion. In: Davidson,
+R.J., Goldsmith, H., Scherer, K.R. (eds.), Handbook of affective sciences, pp. 433-456.
+Oxford University Press, Oxford (2003)
+6. Cohn, J.F., Ekman, P.: Measuring facial action. In: Harrigan, J.A., Rosenthal, R., Scherer,
+K.R. (eds.), The new handbook of methods in nonverbal behavior research, pp. 9-64. Oxford
+University Press, New York (2005)
+7. Eyben, F., Wöllmer, M., Poitschke, T., Schuller, B., Blaschke, C., Färber, B., NguyenThien, N.: Emotion on the Road - Necessity, Acceptance, and Feasibility of Affective
+Computing in the Car. Advances in Human Computer Interaction (AHCI), Special Issue on
+Emotion-Aware Natural Interaction, vol. 2010, 17 pages, http://www.hindawi.com/journals/
+ahci/2010/263593.html (2010)
+8. Siebert, F.W., Oehl, M., Pfister, H.-R.: The Measurement of Grip-Strength in Automobiles:
+A New Approach to Detect Driver’s Emotions. In: Karwowski, W., Salvendy, G. (eds.),
+
+Advances in Human Factors, Ergonomics, and Safety in Manufacturing and Service
+Industries, pp. 775-783. CRC Press - Taylor & Francis, Boca Raton (2010)
+9. Overbeeke, K.J., Vink, P., Cheung, F.K.: The emotion-aware office chair. In: Helander,
+Khalid, Tam (eds.), Proceedings of the Int. Conference on Affective Human Factors Design,
+pp.262-267. Asean Academic Press, London (2001)
+10.Rakauskas, M.E., Gugerty, L.J., Ward, N.J.: Effects of naturalistic cell phone conversations
+on driving performance. Journal of Safety Research 35, 453--464 (2004)
+11.Levelt, P.B.M.: Praktijkstudie naar emoties in het verkeer [Emotions in Traffic]. SWOV
+Report R-2003-08. SWOV, Leidschendam, Netherlands (2003)
+12.Oehl, M., Roidl, E., Frehse, B., Suhr, J., Siebert, F.W., Pfister, H.-R., Höger, R.: Das
+Emotionsspektrum von Autofahrern im Straßenverkehr [The emotional spectrum of car
+drivers in traffic]. In: Petermann, F., Koglin, U. (eds.), 47. Kongress der Deutschen
+Gesellschaft für Psychologie, Abstracts, pp. 371-372. Pabst Science Publishers, Lengerich
+(2010)
+13.Scherer, K.R.: What are emotions? And how can they be measured?. Social Science
+Information 44(4), 695--729 (2005)
+14.LaMont, K.: Effect of Induced Emotional State on Physical Strength. In: Kurzer, N. (ed.),
+Perspectives in Psychology, pp. 3-9. University of Pennsylvania, Philadelphia (2000)
+15.Siebert, F.W., Oehl, M., Pfister, H.-R.: Gender Differences in Grip-Strength Depending on
+Arousal and Valence of Emotions. In: Haack, J., Wiese, H., Abraham, A., Chiarcos, C.
+(eds.), Proceedings of KogWis 2010 – 10th Biannual Meeting of the German Society for
+Cognitive Science, p. 227. Universitätsverlag Potsdam, Potsdam (2010)
+16.Rottenberg, J., Ray, R.D., Gross, J.J.: Emotion Elicitation Using Films. In: Coan, J.A.,
+Allen, J.J.B. (eds.), Handbook of Emotion Elicitation and Assessment, pp. 9-28. Oxford
+University Press, Oxford (2007)
+17.Hewig, J., Hagemann, D., Seifert, J., Gollwitzer, M., Naumann, E., Bartussek, D.: A revised
+film set for the induction of basic emotions. Cognition & Emotion 19(7), 1095--1109 (2005)
+18.Schaefer, A., Nils, F., Sanchez, X., Philippot, P.: Assessing the effectiveness of a large
+database of emotion-eliciting films: A new tool for emotion researchers. Cognition &
+Emotion 24(7), 1153--1172 (2010)
+19.Lang, P.J.: Behavioral treatment and bio-behavioral assessment: computer applications. In:
+Sidowski, J.B., Johnson, J.H., Williams, T.A. (eds.), Technology in mental health care
+delivery systems, pp. 119-137. Ablex, Norwood (1980)
+20.Bradley, M.M., Lang, P.J.: Measuring Emotion: The Self-Assessment Manikin and the
+Semantic Differential. J. Behav. Ther. & Exp. Psychiat. 25(1), 49--59 (1994)
+21.Eksioglu, M., Kizilaslan, K.: Steering-wheel grip force characteristics of drivers as a
+function of gender, speed, and road condition. International Journal of Industrial
+Ergonomics 38, 354--361 (2008)
+22.Cheng, S.Y., Trivedi, S.P., M.M.: Multi-spectral and multi-perspective video arrays for
+driver body tracking and activity analysis. Computer Vision and Image Understanding 106,
+245--257 (2007)
+
+

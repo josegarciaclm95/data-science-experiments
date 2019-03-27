@@ -1,0 +1,670 @@
+See	discussions,	stats,	and	author	profiles	for	this	publication	at:	https://www.researchgate.net/publication/259932021
+
+From	Joyous	to	Clinically	Depressed:	Mood
+Detection	Using	Multimodal	Analysis	of	a
+Person's	Appearance	and	Speech
+Conference	Paper	·	September	2013
+DOI:	10.1109/ACII.2013.113
+
+CITATIONS
+
+READS
+
+3
+
+55
+
+1	author:
+Sharifa	Alghowinem
+Australian	National	University
+17	PUBLICATIONS			218	CITATIONS			
+SEE	PROFILE
+
+Some	of	the	authors	of	this	publication	are	also	working	on	these	related	projects:
+
+Emotion	recognition	in	the	wild	View	project
+
+Multimodal	affective	computing	for	automated	depression	analysis	View	project
+
+All	content	following	this	page	was	uploaded	by	Sharifa	Alghowinem	on	31	July	2016.
+
+The	user	has	requested	enhancement	of	the	downloaded	file.
+
+From Joyous to Clinically Depressed: Mood Detection using Multimodal Analysis of
+a Person’s Appearance and Speech
+Sharifa Alghowinem
+Australian National University, Canberra, Australia,
+Ministry of Higher Education: Kingdom of Saudi Arabia
+sharifa.alghowinem@anu.edu.au
+
+Abstract—Clinical depression is a critical public health
+problem, with high costs associated to a person’s functioning,
+mortality, and social relationships, as well as the economy
+overall. Currently, there is no dedicated objective method to
+diagnose depression. Rather, its diagnosis depends on patient
+self-report and the clinician’s observation, risking a range of
+subjective biases. Our aim is to develop an objective affective
+sensing system that supports clinicians in their diagnosis and
+monitoring of clinical depression. In this PhD work, my
+approach is based on multimodal analysis, i.e. combinations of
+vocal affect, head pose and eye movement from a video-audio
+real-world clinically validated data. In addition, this work
+will investigate the cross-cultural generalization of depression
+characteristics from different languages and countries.
+
+Index Terms: depression, mood classification, multimodal
+affective computing
+I. I NTRODUCTION
+Fluctuations in affective state are a normal human characteristic. However, when these changes increase in severity
+and duration, it might be an indication of a mental health
+disorder such as depression. Depression impacts not only on
+the sufferer’s mood, thoughts, behaviour, and functionality,
+but also their families, friends and the economy overall.
+Moreover, at its most severe level, it might lead to suicide,
+as it causes more than two-thirds of suicides each year
+[1]. A recent World Health Organization (WHO, 2012)
+survey estimated that 350 million people worldwide are
+affected by depression [2]. Fortunately, this can be prevented
+if depressed subjects seek help from professionals, and if
+health professionals could be provided with suitable objective technology for detecting and diagnosing depression
+[3]. Although treatment of depression disorders has proven
+to be effective in most cases [4], misdiagnosing depressed
+patients is a common barrier [5]. Moreover, depression has
+no dedicated laboratory tests or procedures for diagnosis.
+Rather, it is diagnosed as part of a complete mental health
+evaluation. It depends on self-report symptoms and professional observation and evaluation [6], risking a range of
+subjective biases [7].
+The goal of my PhD studies is to investigate the general
+characteristics of depression and its severity from a person’s
+appearance and speech, which I hope will lead to an objective affective sensing system that assists clinicians in their
+
+diagnosis and monitoring of clinical depression. This system
+might be used for supporting the computer based CognitiveBehavioral Therapy with the ability to detect improvements
+to a patient’s affect. In the long-term, such a system may
+also become a very useful tool for remote depression monitoring to be used for doctor-patient communication in the
+context of an e-health infrastructure. In order to get accurate
+diagnosis, the approach will use multimodal analysis, that is;
+combinations of vocal affect, head pose and eyes movement.
+In addition, my work will investigate the cross-cultural
+generalization of depression characteristics.
+II. BACKGROUND
+Clinical depression is a serious illness, that affects not
+only the mental, but also the physical health. Depression
+is associated with various physical problems, such as psychomotor retardation, fatigue or loss of energy, thoughts
+of death or suicidal ideation, decreased concentration etc.
+However, to give the computer the ability to detect depression using the voice and appearance, we have to choose
+the characteristics of depression that are interpretative to the
+computer sensor devices.
+Psychology investigation of depressed speech has found
+several distinguishable prosody features, such as a lower
+range of pitch indicating a monotone speech [8], a decrease
+in loudness [9], a slower speaking rate and articulation
+[10], and an increase in pause time and response delay [8].
+Vocal source energy is also a distinguishable feature for
+depression, resulting in lower energy in the glottal pulses for
+depressed patients [11]. Recently, the automatic detection of
+depression using computer artificial intelligence techniques
+has been investigated. Regardless of the different methods,
+databases, and classifiers used, the automatic classification
+results were significant for several features, such as the first
+3 formant features [12], F0 in a speaker-dependent context
+(before and after treatment) [13]. investigate vocal features
+that could prove to be discriminative in detection depressive
+speech.
+Research into potential bio-markers of central nervous
+system disorders such as affective disorders have explored
+subtle changes in eye movements as possible physiologically
+based indicators of disease progression, severity or treatment
+
+efficacy [14]. Lipton et al. [15] found abnormal horizontal
+pursuit eye movements in depressed patients compared to
+healthy controls. This was also confirmed in [16], concluding
+abnormality in patients’ ocular motor systems as a form of
+psycho-motor retardation. Eye blink rate was investigated
+showing elevated blink rate, which returns to normal levels
+as the depressed patient’s condition improves [17].
+Psychological research on depressives head movements
+have received far less attention compared with the studies on gestures and facial expressions. Simple behaviors
+such as head movement could reflect cues about mood,
+emotions, personality, or cognitive processing [18]. An
+ethological study on depressed patients behavior noticed
+that behavioural elements are pronounced more in the head
+and hand regions compared with other body regions [19].
+A study on the social behavior of depressives found that
+depressed patients have significantly less head-nodding, and
+more likely to position their head downward than a healthy
+one [20].
+Other sensors have been used to detect depression such as
+EEG [21], MRI [22]. However, in this work, I concentrate
+on video-audio analysis using only unobtrusive sensing
+devices that are easaily available to all users (e.g. camera,
+microphone), for their accessibility and usability. Given that
+most PCs are equipped with a camera and a microphone,
+that will enhance the utility of the system in real life.
+Since appearance and speech channels are complementary
+rather than redundant, we hypothesize that fusing multimodal channels might improve depression detection. There
+are different fusion strategies: early and late fusion [23],
+which we will examine in this work. Early fusion could
+be done on data-level or feature-level. Drawbacks of this
+method are feature vectors from different modalities are not
+correlated, have different time scale and metric levels, and
+increases feature-vector dimensionality, which might lead for
+a bias decision for the larger feature vector. On the other
+hand, late fusion could be done in decision-level, scorelevel, or model-level. Some fusion methods give catastrophic
+result; that is, the results are worse than the results from
+each individual feature channels. Previous studies on the
+automatic detection of depression have only investigated
+single channel either from video or audio. In this work, I
+will investigate different fusion methods that best fit our task
+for accurate detection of depression.
+Generalization is another method to evaluate the system.
+Applying the system into another dataset could measure
+the feasibility of generalizing to get reasonable results. In
+general, generalizing the system to a new dataset gives lower
+accuracy result than the original data (e.g. [24]). One of
+the major challenges in generalization to a new dataset are
+the differences in methods, recording environment, hardware
+used, speaking language, the ethic group (different culture),
+etc. In this work, I will investigate if the symptoms of depression detected by our system could generalise to different
+
+recording environments, cultures and languages.
+Aiming for an objective affective sensing system that
+diagnoses and monitors clinical depression, I investigate
+the general characteristics of depression and its level from
+a person’s appearance and speech. Since appearance and
+voice channels are complementary rather than redundant,
+fusing multimodal channels will be performed, that is;
+combinations of vocal affect, eyes movement and head pose.
+In this research, several fusion methods will be experimented
+to get the most accurate fusion technique that is suitable for
+this task. Moreover, in this research, our findings will be
+generalized and validated using cross-cultural and languages
+datasets.
+III. M ETHOD
+A. Real-World Clinically Validated Data
+For the experimental validation, I use data collected in
+an ongoing study at the Black Dog Institute, a clinical
+research facility in Sydney, Australia, offering specialist
+expertise in depression and bipolar disorder. Subjects include
+healthy controls as well as patients who have been diagnosed
+with pure depression, i.e. those who have no other mental
+disorders or medical conditions. Control subjects are carefully selected to have no history of mental illness and age
+and gender match the depressed subjects. The experimental
+paradigm contains several parts, including a read sentences
+task and an interview with the subjects. The reading task
+contained 20 sentences with negative and positive meaning.
+The interview is conducted by asking specific questions,
+where the subjects are asked to describe events that had
+aroused significant emotions.
+To date, data from over 40 depressed subjects with over 40
+age-matched controls (age range 21-75yr, both females and
+males) has been collected. Before participating, each subject
+was invited to complete a ‘pre-assessment booklet’ (general
+information, e.g. health history), then interviewed by trained
+researchers following the Diagnostic and Statistical Manual
+of Mental Disorders (DSM-IV) diagnostic rules. Participants
+who met the criteria for depression were selected. In this
+work, a subset of 30 depressed subjects and 30 controls were
+analysed, with equal gender balance. Only native Australian
+English speaking participants were selected, to reduce the
+variability that might occur from different accents. For
+depressed subjects, the level of depression was a selection
+criterion, with a mean of 19 points of the diagnoses using
+DSM-IV (range 14-26 points, where 11-15 points refer to
+a “Moderate” level, 16-20 points to a “Severe” level, and
+≥ 21 points to a “Very Severe” level). We acknowledge that
+the amount of data used here is relatively small, but this is
+a common problem. As we continue to collect more data,
+future studies will be able to report on a larger dataset.
+The total duration of the recorded video-audio interview
+is 513min (313min for depressed and 200min for controls).
+The reading and interview parts were manually labelled
+
+to extract pure subject speech. The interview part was
+also labelled to separate questions and speakers. Within
+the questions, the speakers were manually labelled with a
+focus on the response time for depressed and non-depressed
+subjects. In addition, the duration of the overlap between
+speakers was labelled to measure the involvement style.
+B. Speech Analysis
+Speech features can be acquired from both uttered words
+(linguistic) and acoustic cues (para-linguistic). However,
+linguistic features including word choices, sentence structure
+etc. are beyond the scope of this study. I would also
+like to generalise the findings to other languages. Acoustic
+features can be categorised into two branches: low-level
+descriptors (LLD), which are extracted frame-by-frame, and
+statistical functionals, which are statistical measurements
+(e.g. average) over the low-level features.
+Several software tools are available for extracting LLD,
+and statistical functionals sound features. In this work, I
+used the publicly available open-source software “openSMILE” [25] to extract several low level voice features and
+functional features from the pure subject speech. The nonlinear features based on TEO were extracted using Matlab
+VoiceBox [26]. The low-level descriptors were extracted for
+each utterance with frame size set to 25ms at a shift of 10ms
+and using a Hamming window. For functionals we applied
+several statistics to the LLD for each utterance, including
+mean, minimum, maximum, range, variance and standard
+deviation. We choose the most common features in the literature from both physiological and affective computing field
+that proved to have distinguishable characteristics for depressed speech. Moreover, duration features were extracted
+from the manually labelled intervals for further statistical
+analysis. Regarding speaking rate, a Praat [27] script by
+[28] was used to calculate the speech and articulation rates
+as well as the pause rate. When measuring the speech rate,
+pauses are included in the duration time of the utterance,
+while the articulation rate excludes pauses [29].
+C. Eye Activity Analysis
+On average, 45 images were manually selected per subject
+for training purposes, having different eye status (e.g. open,
+half open, closed eye) and head position variation. Inspired
+by [30], those images were annotated using 74 points for
+both eyes including eyebrows and iris centers, using overlapped eyelids points for different eye status (open/closed).
+Those annotated points and images are used to build subjectspecific eye Active Appearance Model (AAM), using linear
+parameters to update the model in an iterative framework
+as a discriminative fitting method [31]. The trained model
+fits on and tracks the subject’s eyes for the entire interview,
+producing the position of the 74 points in each frame.
+Of each eye, three features were extracted: horizontal
+and vertical iris movement, and eyelids movement. The iris
+
+horizontal movement is measured by the length of the line
+connecting the inner corner of the eye and the iris center.
+The iris vertical movement is measured by the angle between
+the line connecting the inner corners of the eye and the
+line between one of the corners and the iris center. On
+the other hand, distance between the eyelids are measured
+by the length of the line connecting the center of both
+eyelids. These three features of each eye are extracted for
+each frame (25 frames per second), then their velocity and
+acceleration are extracted to give in total 18 features per
+frame. Outliers frames, which are caused by false fitting
+of the AAM model, or absence of the eyes in a frame,
+are detected using Grubbs’ test for outliers [32], those
+detected outlier frames are skipped. Moreover, a total of 126
+statistical features (“functionals”) where extracted, such as
+maximum, minimum, mean, variance, and standard deviation
+of the low-level features, as well as duration and rate of
+looking direction and blinks.
+D. Head Pose and Movement Analysis
+On average, 30 images were automatically selected (almost every 250 frames) per subject for training purposes
+having different head position variation. The face in those
+images was annotated using 68 points. Those annotated
+points and images are used to build subject-specific face
+AAM, using linear parameters to update the model in an
+iterative framework as a discriminative fitting method [31].
+The trained model fits on and tracks the subject’s face for the
+entire interview, producing the position of the 68 landmarks
+in each frame. To obtain the 3D pose of the subject’s head,
+we project a 3D face model to our 2D AAM. The head pose
+is estimated using POSIT algorithm [33].
+Once the head pose is estimated, three angles could be
+extracted from the rotation matrix: yaw, roll, and pitch.
+Those three angles are extracted for each frame (25 frames
+per second), then their velocity and acceleration are extracted
+to give in total 9 features per frame. Outliers frames, which
+are caused by false fitting of the AAM model, or failing to
+converge the 3D model into, are detected using Grubbs’ test
+for outliers [32], those detected outlier frames are skipped.
+Moreover, a total of 100 statistical features “functionals”
+where extracted, such as maximum, minimum, mean, variance, and standard deviation of the low-level features, as
+well as duration and rate of looking direction.
+E. Fusion of Multi-channels
+To determine the features best suited to classify depression, we investigated the performance of individual features
+from speech, eyes, and head. We also investigated fusing
+those individual features using different methods: feature,
+score, and decision fusion. In feature fusion, the feature
+vectors from each individual system have to be normalised
+before fusion to be in the same range. Score fusion will be
+performed by merging the score results (likelihood ratio in
+
+the case of Gaussian Mixture Model (GMM), and distance
+from the plan in Support Vector Machine (SVM)) of the
+individual features classification, using a weighted sum or
+SVM. Finally, the decision fusion will be calculated from
+the classification results of each individual feature using a
+weighted majority voting or SVM. The weights in the score
+and decision fusion will be selected using a grid search for
+the best results. Other fusion methods will be experimented
+on as well.
+F. Cross-Cultural Generalization
+As one of the research question of this work, I aim to
+investigate the generalization feasibility to different cultures
+and languages and their effect on the accuracy of the automatic detection of depression. The University of Pittsburgh
+has been collecting depression dataset, where their method
+is to interview depressed subjects using Hamilton questions
+and calculate the score at the end of each session. Each
+subject is invited to do 4 visits, 7 weeks apart, to detect
+the changes after treatment. In their data set, there is no
+control group, however, there are a few subjects who ended
+up with a low Hamilton score. They divided the subjects /
+sessions into 2 groups, T1 when the Hamilton score is more
+than 15 (high depression) and T2 when the Hamilton score
+is less than 7 (low depression). On the other hand, a small
+dataset will be collected in Saudi Arabia with a collaborative
+research with King Fahad Medical City (KFMC). The aim of
+this data set is to investigate the effect of cultual differences
+and language on detecting depression. The Arabic data
+set that will be collected at KFMC and will follow the
+same paradigm as in the Black Dog Institute dataset for
+comparison. These data sets will be used in my work to study
+the generalization and validity of our system’s methods.
+G. Classification and Evaluation
+Classification methods and techniques could be divided in
+two categories: generative model and discriminative models.
+Generative models, such as GMM, learn to cover subspace
+that belongs to one class. Discriminative models, such as
+SVM, learn boundaries between two classes. When it comes
+to low-level features (frame-by-frame), the dimensionality
+of the SVM super-vector depends on the duration of the
+interview, which might be problematic for unbalanced interview duration. Different classifiers have been used in
+emotion recognition, in this work we investigated some
+classifiers in [34], and we found the use of a hybrid classifier
+that combine GMM with SVM for the low-level features
+performs better for our task. For the GMM we empirically
+chose different number of mixtures for each channel. For the
+hybrid classifier, we create a GMM model for each subject
+then feed those models to SVM classifier. The use of GMM
+models served as dimensionality reduction, as well as to get
+the same number of features in each vector to be fed to the
+SVM regardless of the duration of the subject’s interview.
+
+On the other hand, for the functionals we use SVM for
+classification. In this work, the classification is performed in
+a binary (i.e. depressed/non-depressed) speaker-independent
+scenario. To mitigate the effect of the limited amount of
+data, a leave-one-subject-out cross-validation will be used
+in all classifiers without any overlap between training and
+testing data.
+IV. P ROGRESS TO DATE
+In [35], we investigated which features are better
+for recognising depression from spontaneous speech and
+whether initial gender separation influences the recognition
+rate. In general, we conclude that recognising depression
+from female subjects was better in most acoustic features
+than for male subjects. Log energy and shimmer features
+(individually) were the best for recognising depression in
+females, while loudness was the best feature for depression
+recognition in males. For mixed genders, MFCC, energy
+and intensity features gave better recognition rates. we
+also investigated the difference in expressing positive and
+negative emotions in depressed and control subjects. We
+found that talking about positive emotions in the interview
+resulted in higher correct recognition of depression. On the
+other hand, there were no statistically significant differences
+while expressing negative emotions between depressed and
+healthy subjects. Implying that depressed and control subjects express negative emotions in a similar manner and
+that the differences between the two cohorts best express
+themselves in the positive emotion data. Analysing duration,
+we found that the response time was longer in depressed, and
+that the interaction involvement was higher in controls. With
+the speech rate analysis, we found that the average syllable
+duration was longer in depressed, especially females, and
+that the articulation rate was lower in depressed females,
+which confirms previous results that depressed subjects
+speak more slowly than non-depressed.
+In [36], the results confirmed our hypotheses by examining and comparing subjects’ acoustic features using read and
+spontaneous speech. Our work found that using spontaneous
+speech gave a better result than using read speech for
+most features. We also found that jitter, shimmer, energy
+and loudness feature groups were robust in getting general
+characteristic of depressive speech. Remarkably, it is been
+found that the beginning of each sentence in the reading
+task gives better results than using all reading task acoustic
+features, indicating that diagnosing depression may be better
+before the depressed subjects engage in the task.
+In [34], we compared the performance of various acoustic
+and prosodic features and classifiers for this task. We also
+investigated the usage of a hybrid classifier, using GMM
+models as input to the other classifiers, which also reduced
+the dimensionality. Among the classifiers, the hybrid classifier using GMM with SVM performed best overall. Amongst
+the fusion methods, decision fusion worked best. Loudness,
+
+root mean square, and intensity were the strongest voice
+features to detect depression using the classifiers in this
+study.
+In my recent work [37], several low-level and functionals
+from linear and TEO non-linear speech features were extracted over depressed and non-depressed speech utterances.
+In general, the classification results from low-level were
+slightly better than the statistical functional features, which
+indicate the lose of information in the statistical measures.
+Even though most of emotional speech studies use voiced
+speech for the analysis, we found that unvoiced speech holds
+useful cues in detecting depression as well, which imply
+that unvoiced speech should be considered while analysing
+depression in particular and possibly emotions in general.
+Generally, using mixed signal performed best compared to
+voiced and unvoiced speech, indicating that mixed speech is
+rich of emotional cues and useful for detecting depression. In
+general, TEO non-linear energy speech features outperform
+(log 78% and RMS 80%) linear speech features, which
+points out the suitability of TEO based features in detecting
+depression, where more investigation is required. Finally,
+most speech features classification results are consistent with
+their statistical characteristics, which conforms the results of
+both physiological and affective computing studies.
+In another recent work [38], we investigated eye movement patterns using AAMs for recognising depression from
+video data of subject interviews. Although eye movements
+are complementary features, they gave good results on their
+own (70% and 75% average recall for low-level features and
+functionals, resp.). In general, we concluded that eye movement abnormality is a physical cue rather than behavioural,
+which is in line with the psychology literature in that
+depression leads to psycho-motor retardation. Interestingly,
+Ie found that the average distance between eyelids was
+significantly smaller and the average duration of blinks was
+significantly longer in depressed subjects, which might be
+an indication of fatigue and eye contact avoidance.
+Also in a recent work [39], we analysed the performance
+of head pose and movement features extracted from face
+videos using a 3D face model projected on face AAM.
+Even though, the head pose and movement would be used as
+complementary cue in detecting depression, its recognition
+rate was impressing by its own, giving 71.2% on average,
+which illustrate that head pose and movement holds effective
+cues in diagnosing depression. Our work also investigated
+the influence of gender-dependent classification, where the
+differences were not significant, which might indicate a
+physical abnormality rather than behavioural one. While
+investigating the differences in expressing positive and negative emotions between depressed and control subjects, recognising depression using positive emotions was higher than
+using negative emotions. We conclude that positive emotions
+are expressed less in depressed subjects at all times, and
+that negative emotions has less discriminatory power than
+
+positive emotions in detecting depression. Analysing the
+functional features statistically illustrate several behaviour
+patterns for depressives: (1) slower head movements (2) less
+change of head position, (3) longer looking to the right, (4)
+longer duration of looking down, which indicate fatigue and
+eye contact avoidance. Our work conclude that head movements are significantly different between depressed patients
+and healthy subjects, and could be used as complementary
+cue for detecting depression.
+V. C ONTRIBUTIONS AND F UTURE W ORK
+The main contributions of this work are:
+•
+
+•
+•
+•
+
+The intensive investigating on depressed speech, and
+finding the most distinguishable speech features for the
+automatic detection of depression.
+The analysis of the automatic detection of depression
+using eye movements and head pose.
+The fusion of different modalities to increase the accuracy of depression recognition.
+The generalization of our system in a cross-cultural and
+cross-language context.
+
+Fusing eye, head, and voice features using different methods of fusion will be a next step towards a multimodal
+system. An initial investigation of fusion has been performed
+on a mono-modal context using speech features in [34].
+More investigation is required using different methods of
+fusion for video-audio channels in future work.
+Generalizing our findings to different languages and
+culture would be useful for understanding the difficulties
+and differences that might be faced for such automatic
+depression detection system. An an initial work on generalization results with University of Pittsburgh database
+we were challenged by the differences in recording environment and methodology used for the data collection.
+Normalization techniques will be investigated to have a
+comparable features. However, the initial work revealed
+that using speech features, energy, and intensity feature
+groups were the distinguishable feature in recognizing the
+level of depression (high/low). Though, more investigation is
+needed to support those findings. Therefore, future work will
+investigate generalization of depression characteristics and
+recognition on American, German, and Arabic depression
+databses.
+ACKNOWLEDGEMENT
+I would like to thank prof. Michael Wagner for making
+my PhD study a reality. Also would like to thank Dr.
+Roland Goecke, primary supervisor and panel chair, for all
+the guidance, support and understanding. This research was
+funded in part by the Australian Research Council (ARC)
+Discovery Project grant DP130101094.
+
+R EFERENCES
+[1] H. P. USDHHS, “Healthy people 2010: Understanding and
+improving health,” 2000.
+[2] W. H. Organization, World health statistics 2012. World
+Health Organization, 2012.
+[3] M. Prendergast, Understanding Depression. e-penguin, 2006.
+[4] L. Kiloh, G. Andrews, and M. Neilson, “The long-term outcome of depressive illness.” The British Journal of Psychiatry,
+vol. 153, no. 6, pp. 752–757, 1988.
+[5] L. S. Matza et al., “Misdiagnosed patients with bipolar disorder: comorbidities, treatment patterns, and direct treatment
+costs,” Journal of Clinical Psychiatry, vol. 66, no. 11, pp.
+1432–1440, 2005.
+[6] A. T. Albrecht and C. Herrick, 100 Questions & Answers
+about Depression. Jones & Bartlett Learning, 2010.
+[7] J. C. Mundt, P. J. Snyder, M. S. Cannizzaro, K. Chappie, and
+D. S. Geralts, “Voice acoustic measures of depression severity
+and treatment response collected via interactive voice response (ivr) technology,” Journal of Neurolinguistics, vol. 20,
+no. 1, pp. 50–64, 2007.
+[8] H. Ellgring and K. R. Scherer, “Vocal indicators of mood
+change in depression,” Journal of Nonverbal Behavior,
+vol. 20, no. 2, pp. 83–110, 1996.
+[9] K. R. Scherer, “Vocal assessment of affective disorders,”
+Depression and expressive behavior, pp. 57–82, 1987.
+[10] E. Moore, M. Clements, J. Peifer, and L. Weisser, “Comparing
+objective feature statistics of speech for classifying clinical
+depression,” in IEMBS’04, vol. 1. IEEE, 2004, pp. 17–20.
+[11] A. Ozdas, R. G. Shiavi, S. E. Silverman, M. K. Silverman,
+and D. M. Wilkes, “Investigation of vocal jitter and glottal
+flow spectrum as possible cues for depression and near-term
+suicidal risk,” IEEE Trans. on Biomedical Eng., vol. 51, no. 9,
+pp. 1530–1540, 2004.
+[12] N. Cummins, J. Epps, M. Breakspear, and R. Goecke, “An
+Investigation of Depressed Speech Detection: Features and
+Normalization,” in Proc. Interspeech, 2011.
+[13] J. F. Cohn et al., “Detecting depression from facial actions
+and vocal prosody,” in Affective Computing and Intelligent Interaction and Workshops, 2009. ACII 2009. 3rd International
+Conference on. IEEE, 2009, pp. 1–7.
+[14] N. Kathmann, A. Hochrein, R. Uwer, and B. Bondy, “Deficits
+in gain of smooth pursuit eye movements in schizophrenia
+and affective disorder patients and their unaffected relatives,”
+American Journal of Psychiatry, vol. 160, no. 4, pp. 696–702,
+2003.
+[15] R. B. Lipton, S. Levin, and P. S. Holzman, “Horizontal and
+vertical pursuit eye movements, the oculocephalic reflex, and
+the functional psychoses,” Psychiatry Research, vol. 3, no. 2,
+pp. 193–203, 1980.
+[16] L. Abel, L. Friedman, J. Jesberger, A. Malki, and H. Meltzer,
+“Quantitative assessment of smooth pursuit gain and catch-up
+saccades in schizophrenia and affective disorders,” Biological
+psychiatry, vol. 29, no. 11, pp. 1063–1072, 1991.
+[17] J. Mackintosh, R. Kumar, and T. Kitamura, “Blink rate in
+psychiatric illness.” The British Journal of Psychiatry, vol.
+143, no. 1, pp. 55–57, 1983.
+[18] D. Heylen, “Head gestures, gaze and the principles of conversational structure,” International Journal of Humanoid
+Robotics, vol. 3, no. 03, pp. 241–267, 2006.
+[19] J. Pedersen et al., “An ethological description of depression,”
+
+View publication stats
+
+[20]
+
+[21]
+
+[22]
+
+[23]
+
+[24]
+
+[25]
+
+[26]
+[27]
+[28]
+
+[29]
+[30]
+
+[31]
+
+[32]
+[33]
+
+[34]
+
+[35]
+
+[36]
+[37]
+[38]
+
+[39]
+
+Acta psychiatrica scandinavica, vol. 78, no. 3, pp. 320–330,
+1988.
+L. Fossi, C. Faravelli, and M. Paoli, “The ethological approach to the assessment of depressive disorders,” The Journal of nervous and mental disease, vol. 172, no. 6, pp. 332–
+341, 1984.
+H. Peng et al., “User-centered depression prevention: An eeg
+approach to pervasive healthcare,” in PervasiveHealth. IEEE,
+2011, pp. 325–330.
+K. Krishnan, J. C. Hays, D. G. Blazer et al., “Mri-defined
+vascular depression,” Am J Psychiatry, vol. 154, no. 4, pp.
+497–501, 1997.
+J. Llinas, M. E. Liggins, and D. L. Hall, Handbook of
+Multisensor Data Fusion: Theory and Practice. CRC Press,
+2008.
+K. Truong and D. Van Leeuwen, “An open-setdetection
+evaluation methodology for automatic emotion recognition
+in speech,” in Workshop on Paralinguistic Speech-between
+models and data, 2007, pp. 5–10.
+F. Eyben, M. Wöllmer, and B. Schuller, “Opensmile: the
+munich versatile and fast open-source audio feature extractor,”
+in Proc. ACM Multimedia (MM’10). ACM, 2010, pp. 1459–
+1462.
+M. Brookes et al., “Voicebox: Speech processing toolbox for
+matlab,” Software, available [Mar. 2011], 1997.
+P. Boersma and D. Weenink, “Praat: doing phonetics by
+computer,” 2009.
+N. H. de Jong and T. Wempe, “Praat script to detect syllable
+nuclei and measure speech rate automatically,” Behavior
+research methods, vol. 41, no. 2, pp. 385–390, 2009.
+F. Goldman-Eisler, Psycholinguistics: Experiments in spontaneous speech. Academic Press, 1968.
+I. Bacivarov, M. Ionita, and P. Corcoran, “Statistical models
+of appearance for eye tracking and eye-blink detection and
+measurement,” IEEE Trans. on Consumer Electronics, vol. 54,
+no. 3, pp. 1312–1320, 2008.
+J. Saragih and R. Goecke, “Iterative Error Bound Minimisation for AAM Alignment,” in ICPR2006, vol. 2, Aug. 2006,
+pp. 1196–1195.
+F. E. Grubbs, “Procedures for detecting outlying observations
+in samples,” Technometrics, vol. 11, no. 1, pp. 1–21, 1969.
+D. F. Dementhon and L. S. Davis, “Model-based object pose
+in 25 lines of code,” International journal of computer vision,
+vol. 15, no. 1-2, pp. 123–141, 1995.
+S. Alghowinem et al., “A Comparative Study of Different Classifiers for Detecting Depression from Spontaneous
+Speech,” in ICASSP, 2013.
+S. Alghowinem and et al, “From Joyous to Clinically Depressed: Mood Detection Using Spontaneous Speech,” in
+Proc. FLAIRS-25, 2012.
+S. Alghowinem and et al., “Detecting depression a comparison between spontaneous and read speech,” in ICASSP, 2013.
+S. Alghowinem et al., “Characterising Depressed Speech for
+Classification,” in InterSpeech, 2013, in press.
+S. Alghowinem, R. Goecke, M. Wagner, M. Breakspear, and
+G. Parker, “Eye Movement Analysis for Depressed Patients
+in an Interview,” in ICIP, 2013, in press.
+S. Alghowinem, R. Goecke, M. Wagner, G. Parker, and
+M. Breakspear, “Head Pose and Movement Analysis as an
+Indicator of Depression,” in ACII, 2013, in press.
+
+

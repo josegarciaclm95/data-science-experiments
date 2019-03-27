@@ -1,0 +1,1879 @@
+Multimodal Human Attention Detection for Reading from
+Facial Expression, Eye Gaze, and Mouse Dynamics
+Jiajia Li, Grace Ngai, Hong Va Leong, and Stephen C.F. Chan
+Department of Computing
+The Hong Kong Polytechnic University
+Hong Kong
+{csjjli,csgngai,cshleong,csschan}@comp.polyu.edu.hk
+ABSTRACT
+Affective computing has recently become an important area in
+human-computer interaction research. Techniques have been
+developed to enable computers to understand human affects or
+emotions, in order to predict human intention more precisely and
+provide better service to users to enhance user experience. In this
+paper, we investigate into the detection of human attention level
+as a useful form of human affect, which could be influential in
+intelligent e-learning applications. We adopt ubiquitous hardware
+available in most computer systems, namely, webcam and mouse.
+Information from multiple input modalities is fused together for
+effective human attention detection. We invite human subjects to
+carry out experiments in reading articles when being imposed
+upon different kinds of distraction to induce them into different
+levels of attention. Machine-learning techniques are applied to
+identify useful features to recognize human attention level by
+building up user-independent models. Our results indicate
+performance improvement with multimodal inputs from webcam
+and mouse over that of a single device. We believe that our work
+has revealed an interesting affective computing direction with
+potential applications in e-learning.
+
+CCS Concepts
+• Human-centered computing ➝ Human computer interaction
+
+Keywords
+Facial expression, eye gaze pattern, mouse dynamics, human
+attention level, multimodal interaction.
+
+1. INTRODUCTION
+Recent advances in miniature hardware have accelerated humancomputer interaction research, in enabling the computer to
+interact better with human. Affective computing research [8][24]
+had gained tremendous momentum in recent years, demanding
+computers to understand human affects or emotions and to react
+accordingly in enhancing user experience. In order to recognize
+human affects, input signals reflecting human affects need to be
+acquired and processed. Under traditional KVM (keyboard-videomouse) settings, input signals are mostly tied to keyboard and
+mouse dynamics. One can deduce some information about human
+Copyright is held by the authors. This work is based on an
+earlier work: SAC'16 Proceedings of the 2016 ACM
+Symposium on Applied Computing, Copyright 2016 ACM 9781-4503-3739-7. http://dx.doi.org/10.1145/2851613.2851681.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+affect from the keyboard [6][36] and the mouse [35][40], but the
+accuracy is not particularly high.
+Webcam has become a de facto device thanks to the popularity of
+interactive social networking applications. A human can
+oftentimes deduce the emotion of a person sitting in front of a
+webcam to a certain degree of accuracy. Recent research in video
+processing and machine learning has demonstrated that human
+affects can be recognized via webcam video, noticeably via
+human facial features [42] and eye gaze behaviors [19]. Though
+there has been work on mind detection based on facial features
+and body gestures, research on cognition detection during reading
+is still limited in the aspects of feature recognition. There is also
+much work on reading behavior and the associated eye gaze
+behaviors [20][22][26]. Studies have shown that eye movement
+and eye behavior during reading is closely related to human
+comprehension and attention [26][27][28]. However, there are
+three main drawbacks in current state-of-the-art research works.
+First, many of them used intrusive devices, like the
+electrooculography systems, to track the eye movement, or detect
+the user’s mental state as ground truth, through the use of
+electroencephalography (EEG) devices. Second, numerous
+methods studied how lexical and linguistic variables affect the eye
+gaze behavior during reading instead of performing a thorough
+analysis on the eye gaze pattern for a more ubiquitous and
+efficient affect detection. They need to rely on linguistic analysis
+of the materials being read by the human. Third, some other work
+designed user-dependent models for the affect detection which
+might not be able to accommodate unseen new users in practical
+applications, since it is often not practical to ask a new user to
+strain up the model before actually using it. We believe that
+reading tasks form a major category of computer usage for many
+users, especially for laymen and students, to warrant more
+systematic investigation.
+In human computer interaction research, one would often exploit
+the expressive power resulted from multimodal interaction [23],
+in which the intention of a user is jointly specified by a plurality
+of input interaction modalities or signals representing the user. It
+could be effective in combining and fusing input signals acquired
+from the keyboard, the mouse and the webcam. In this paper, we
+investigate into the detection of human attention level when users
+are carrying out reading tasks based on a multimodal approach
+with ubiquitous hardware, namely, the webcam and the mouse,
+without relying on sophisticated devices such as head-mount
+devices, electrocardiogram devices or heart-beat belts for
+additional modalities. The webcam is capable of returning a
+stream of video frames, which is analyzed for eye gaze behavior
+
+37
+
+recognition, face recognition and then temporal change in facial
+expression. The mouse is capturing its movement and clicking
+events, indirectly modeling the user activities of moving down a
+page for reading. For simplicity, we do not consider keyboard
+dynamics, since users in general do not utilize the keyboard in
+reading tasks.
+We invite human subjects to carry out experiments in reading
+English articles, while recording the multimodal interaction data.
+Changes in human subject attention level are induced via the
+imposing of various levels of distraction during reading. We
+apply machine-learning techniques to identify useful features that
+assist in the determination of human attention level. Unlike in
+some other recent work relying on user-dependent models, we
+decide to build up the resilient user-independent model, which is
+more universal to different users, including unseen new users. Our
+results indicate that by combining the webcam and mouse inputs,
+there is a significant improvement in attention recognition over
+the use of a single modality alone. Our work demonstrates the
+feasibility of determining an interesting human affect, namely,
+attention level. It could find various applications in e-learning.
+For instance, animation and sound effects could be useful to
+attract teacher attention when a student starts to lose attention
+when learning. Change in materials presentation paradigm would
+be helpful, in a similar way as a teacher adapting to changes in
+perceived student attentiveness inside the classroom. Human
+physiological signals [14] could also be integrated into the
+framework with respect to human stress level during e-learning.
+Our contributions in this paper can be summarized as: (1) we
+investigate into human attention level detection based on a most
+commonly occurring task, i.e., reading, without the use of
+sophisticated nor intrusive devices; (2) we adopt multimodal input
+processing to extract human facial features, eye gaze features and
+mouse dynamics; (3) we apply machine-learning techniques to
+build up user-independent models to recognize human attention
+level on reading tasks; and (4) we conduct experiments with
+human subjects to evaluate the accuracy of our approach. We
+believe that our work opens up a useful approach for interesting
+future user-computer interaction applications, for instance, in elearning. The rest of this paper is organized as follows. In Section
+2, we survey some related work in human affect recognition. In
+Section 3, we describe our recognition framework based on
+webcam video processing and mouse dynamics analysis, as well
+as the associated machine-learning techniques. In Section 4, we
+explain the experimental setups and the experimentation with
+human subjects carrying out reading tasks. We then evaluate the
+effectiveness and accuracy of our method in the next section.
+Finally, we conclude this paper briefly, with an outline of future
+work in Section 6.
+
+2. RELATED WORK
+Reading is a complex cognitive task that is closely related to
+reader attention level, comprehension ability, visual interest,
+oculomotor processing constrain, etc. From a more mechanical
+view point, reading can be considered a task where visual
+processing and sensorimotor control takes place in a highly
+structured visual environment [25], since the text page is less
+complex than scenes of visual objects. The eye is found to play an
+important role in reading, which is also proven in our experiments.
+Human cognition detection during reading has become an
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+important research topic since reading is not only a remarkable
+human skill but also a good sample case to study the working of
+internal processes of the human mind and the external stimuli on
+the generation of complex human actions. However, human can
+get distracted when reading [1], for instance, by Instant
+Messaging [13]. It is therefore important to recognize the human
+attention level when formulating feedback for interactive
+applications to enhance user experience. Human reading
+cognition detection can contribute in applications such as elearning by predicting the readers’ mental state through their
+external behavior and brain activity during the reading process.
+The major source of inputs that can closely reflect human reading
+cognition rests with video streams, often captured via the webcam.
+Facial expression analysis based on webcam video stream has
+been applied to analyze cognitive states, psychological states,
+social behaviors, and social signals [10]. Most recent research on
+facial expression analysis has been focused on basic emotions, or
+prototypic emotions, including happiness, sadness, surprise, anger,
+disgust and fear [12]. These have also been extended to the
+recognition of fatigue [21], embarrassment [21], and pain [4].
+Cognitive states, like agreeing, disagreeing, interested, thinking,
+concentrating, unsure, and adult attachment have been
+investigated [41]. Human affects can be recognized effectively
+from webcam video [17]. Facial expression recognition, being a
+powerful technique, also finds its application in understanding the
+student engagement in a classroom [2]. Cognitive engagement is
+found to have close relationship with a person’s cognitive abilities,
+including focused attention, memory, and creative thinking in
+learning [3].
+Human behaviors are often better reflected by human-oriented
+signals. In reading tasks, the eye is the essential sensory organ
+involved, besides the brain. In particular, the eye is known to play
+an important role in reading by researchers, in addition to the
+obvious electrocardiogram signal, oriented from the human brain.
+In general, eye movements during reading can be categorized into
+saccades and fixations, which alternately occur during reading
+[26]. A saccade is a fast movement of the eye, which is usually in
+a direction parallel to that of the text. A fixation is the
+maintaining of the visual eye gaze on a single location. The
+purpose of a saccade is to locate a point of interest on which to
+focus, while processing of visual information takes place during
+fixations. Previous work has found that fixations tend to focus on
+long content words rather than short function words [16]. The
+frequency and length of the word can also affect the duration of
+the fixation on the word, with the gaze duration on longer or low
+frequency words being lengthier than that on shorter and high
+frequency words. In addition to eye movements, eye blinks have
+also been studied in conjunction with human cognition. Prior
+research has made use of the eye blinks as an indicator for fatigue
+detection. Divajak et al. [11] used eye dynamics and blinks to
+estimate human fatigue in computer use. They reported that
+primary eye fatigue indicators include the frequency and duration
+of blinks as well as the speed of eye closure. Techniques have
+been developed to accurately capture eye gaze behaviors from
+webcam videos [18] rather than relying on the use of proprietary
+external devices, such as Tobii [37]. It is also possible to derive
+human affects from eye gaze behaviors, such as stress level [19].
+Despite the simplicity of the mouse in tracking movement and
+clicking events, it has been found to deliver interesting signals
+
+38
+
+Figure 2: Facial landmark tracking via CLM
+
+Figure 1: Multimodal recognition framework
+indicating user anxiety [40], or for stress detection [36]. It is in
+general useful for e-learning environments [35]. Like mouse
+dynamics, keystroke dynamics has been studied to correlate
+human behavior [6]. Keystroke dynamics is particular useful in
+the analysis of writing tasks which rely primarily on keyboard
+activities. Reading tasks are more challenging, since the keyboard
+is often not well-utilized, and the mouse is only used to a limited
+extent. As a result, we propose in our research to rely on webcam
+for facial expression recognition as well as eye gaze behavior
+recognition. We would also like to augment it with the relatively
+simple mouse dynamics for improvement, giving rise to the
+multimodal input paradigm. Our experimental results do show
+improvement when multimodal interaction approach is adopted.
+The area of multimodal interaction research was pioneered by the
+seminal “Put-That-There” system [7], augmenting video for
+location recognition and audio for command recognition.
+Multimodal interfaces process two or more combined user input
+modes, for instance, speech and gesture, in a coordinated manner
+with multimedia system output, aiming to recognize naturally
+occurring forms of human language and behavior [23]. Humansmart environment can be built based on combined modalities of
+deictic gestures, symbolic gestures and voice [9].
+
+3. MULTIMODAL ARCHITECTURE
+In this paper, we employ multimodal interaction recognition
+approach to detect the attention level of a user when reading an
+article. There are three input modalities in our study: facial
+features captured and returned by a webcam in the form of a
+video clip, eye gaze behavior extracted from the webcam video
+clip, and the mouse dynamics captured by a mouse logger
+program. In the subsequent subsections, we will describe the
+actual feature extraction mechanisms for the three modalities,
+followed by the way to select the set of useful features. The
+overall mechanism is depicted in Figure 1.
+
+3.1 Facial Features
+A two-level facial feature extraction approach is adopted in our
+work: frame-level and segment-level, as depicted in Figure 1. We
+perform feature extraction in each frame of a video clip and
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+generate a set of frame-level facial feature vectors. We divide
+each video clip for an experimental subject carrying out a task
+into smaller units called segments. Each segment is composed of
+a good number of frames. Based on the frame-level facial feature
+vectors, segment-level feature extraction consolidates and
+generates a single segment-level feature vector to represent the
+whole segment. Before we perform frame-level feature extraction,
+we must first be able to recognize and track the human face in the
+video. Instead of performing face recognition from scratch for
+individual video frames, we adopt the face tracking approach.
+Once a face is recognized in a frame, we assume delta movement
+of the face in the subsequent frames. This can be achieved by
+computing for the facial landmarks and then their displacement
+across frames. Only in the event when the face loses track due to
+excessive movement (often due to large degree of head rotation)
+then the face needs to be recognized from scratch.
+To perform frame-level facial feature extraction, we apply
+Constrained Local Models (CLM) [30] to track 66 facial
+landmarks from the video clips. This model is trained on the
+CMU Multi-PIE Face database [15], which contains over 750,000
+images from 337 people. However, it fails to track some of the
+mouth movements, such as mouth corner depression. Thus, the
+Supervised Descent Method [39] is adopted to validate and
+optimize the 2D landmark locations. During CLM optimization,
+the 2D and 3D landmarks and other global and local parameters
+are adjusted iteratively until the face fitting regression model
+converges. Removing the rigid transformation from the acquired
+3D shape compensates for the influence of out-of-plane rotation
+and produces the aligned 3D landmarks. Figure 2 indicates our
+usage of CLM to track the 66 facial landmarks.
+We follow a standard approach to extract facial features, referred
+to as Action Units (AUs) [34]. We calculate the normalized
+distances and angles between the corresponding facial landmarks,
+which represent the direction and intensity of the facial
+movements, by extending AUs with only discrete intensity levels.
+Table 1 summarizes the descriptions and measurements of the 20
+facial features (f1 to f20) that we calculate from the 66 aligned 3D
+facial landmarks. Observing that the head orientation and position
+also play an important role in facial expression representation, we
+augment our feature list with 6 more head-oriented features (f21 to
+f26). The first three features measure head orientation with respect
+to x, y and z axes in the webcam coordinate system. The
+remaining three features measure head position, with the face
+center position represented in the 2D image coordinate and the
+size of the face, revealing the distance between the face and the
+screen.
+From our pilot study, we discover that variations in both head
+movement and lighting condition (e.g., heterogeneous
+
+39
+
+Table 1: Facial features extracted from video
+Feature
+
+f1,2,3,4
+f5,6
+f7,8
+f9
+f10,11
+f12
+f13
+f14
+f15
+f16
+
+Meaning
+Inner and
+outer brow
+movement
+Eye brow
+movement
+Eye lid
+movement
+Upper lip
+movement
+Lip corner
+puller
+Eye brow
+gatherer
+Lower lip
+depressor
+Lip pucker
+Lip
+stretcher
+Lip
+thickness
+variation
+
+f17
+
+Lip
+tightener
+
+f18
+
+Lip parted
+
+f19
+f20
+f21,22.23
+f24,25.26
+
+Lip
+depressor
+Cheek
+raiser
+Head
+orientation
+Head
+position
+
+Formulation
+Distance between eye brow corner and the
+corresponding eye corners (left & right)
+Distance between eye center and the
+corresponding brow center
+Sum of distance between corresponding
+landmarks on the upper and lower lid
+Distance between landmark 33 of nose
+bottom and landmark 51 of mouth outer
+contour
+Distance between mouth corner and the
+corresponding eye outer center
+Distance between inner eye brow corners
+Distance between landmark 8 of face contour
+and landmark 57 of mouth outer contour
+Perimeter of the mouth outer contour
+Distance between the mouth corners
+Sum of distance between corresponding
+points on the outer and inner mouth contours
+Sum of distance between corresponding
+points on upper and lower mouth outer
+contour
+Sum of distance between corresponding
+points on upper and lower mouth inner
+contour
+Angle between mouth corners and lip upper
+center
+Angle between nose wing and nose center
+Head orientation in 3D coordinate
+Face center position in 2D image coordinate
+and face size
+
+illumination and camera exposure) have posed significant
+challenges for the appearance-based features, especially with
+elderly people with natural wrinkles. As a result, we move away
+from texture- and color-based features to geometry-based features
+which are more resilient to variation to movement and
+illumination. This has significantly enhanced the robustness of
+our model in real-usage situations in the presence of
+uncontrollable environmental variations. The use of geometric
+facial features has effectively mitigated the noise arising from the
+textural and appearance channels.
+After performing frame-level facial feature extraction, we extract
+three kinds of segment-level facial features based on the framelevel facial feature vectors reflecting different statistical behaviors.
+The first behavior that we are interested in is the average frame
+inside the segment. The second behavior is the variation of frames
+contained within the segment over a moving window. The third
+behavior is the variation with respect to an anchor frame. We
+hope that this three-way representation of the frame statistical
+variations suffices in providing us with a good sense of the
+macro-behavior of the user, while is simple enough without
+introducing too many features to begin with. In our experiments,
+we select segments of length of 1 minute each.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+(a) facial and eye landmarks
+
+(b) key eye landmark distances
+
+Figure 3: Eye landmarks and features
+The first set of segment-level features derived from the 26 framelevel facial features in Table 1 is calculated as the mean value of
+the features. For each feature fi, we compute for each segment
+containing S frames the average feature values of all S frames
+inside the segment. For notational convenience, we denote this set
+of segment-level features as fi_mean, where fi (i  [1,26]) is the
+corresponding frame-level facial feature. Altogether, there are 26
+features in this set.
+The second set of segment-level features is computed based on
+moving windows of size W (we select W = 15 based on the frame
+rate of 15 in our experiment). The frames in the segment are
+divided into units of W frames each. For each feature fi, the
+difference in feature values between the first frame in the window
+and the last frame in the window is computed. Then we compute
+the mean and standard deviation of the set of S/W feature value
+differences for each feature over the segment. We denote this set
+of segment-level features as fi_window_mean and fi_window_std
+for the corresponding frame-level feature fi. There are a total of 52
+features in this set.
+The third set of segment-level features is computed based on a
+special anchor frame. In particular, we adopt the face in the first
+frame of the video as the neutral face and consider changes in
+face in other frames with respect to this neutral face (i.e., delta
+face). In this third set of features, we consider the face as a whole
+instead of individual features. As a result, we compute one single
+value for the face in each frame with respect to the anchor frame
+(first frame) for the neutral face. We treat those 26-element
+feature vectors for each frame as a unit, and compute the
+Euclidean distance between the feature vector of frame Fj and that
+of first frame F1. This will give us S1 Euclidean distances for a
+segment of size S. Finally, we compute the mean and standard
+deviation of those S1 distances to result in only 2 global features.
+These two features are denoted as face_mean and face_std.
+
+3.2 Eye Gaze Features
+As illustrated in Figure 1, we extract eye gaze features from the
+webcam videos by eye gaze tracking and eye gaze behavior
+recognition. In this paper, we analyze three kinds of eye gaze
+behaviors for reading attention detection, including eye blinks,
+eye fixations and eye saccades. Before this can be done more
+precisely, we need to estimate the position of the pupil center of
+each eye, as well as extracting some other useful eye landmarks.
+As presented in Section 3.1, the face CLM consists of 66 facial
+landmarks. Out of them, we identify 6 landmarks associated with
+the contour for each eye. This is depicted in Figure 3a, inclusive
+of 4 around the eye in red circles and 2 at the corners of the eye in
+green circles with red border. In order to accurately describe the
+eye gaze behaviors, it is crucial to properly locate the pupil center,
+which often cannot be detected from the appearance information
+of the eye region in unconstrained situations, reflected by the
+
+40
+
+Table 2: Eye gaze features adopted
+Feature
+
+e1
+e2,3
+e4
+e5,6
+e7
+e8,9
+
+Meaning
+Blink rate
+Blink
+duration
+Fixation rate
+Fixation
+duration
+Saccade rate
+Saccade
+duration
+
+Formulation
+Number of eye blinks per minute
+Mean (e2) and standard deviation (e3) of
+the eye blink durations
+Number of fixations per minute
+Mean (e5) and standard deviation (e6) of
+the fixation durations
+Number of saccades per minute
+Mean (e8) and standard deviation (e9) of
+the saccade durations
+
+facial landmarks. Furthermore, the low resolution in the video, as
+well as light reflections on glasses and cornea usually makes the
+region of the pupil and its periphery almost unobservable. To
+address these issues, instead of attempting to identify the pupil
+from individual frames, we apply the CLM based on the eye [18]
+to track the key pupil center and 8 other eye landmarks with good
+salient features on the iris contour and eye lid corners across
+frames, making use of the temporal consistency property. This is
+depicted in Figure 3a in the form of green circles. Note that the 2
+landmarks at the eye lid corners (green circles with red border)
+both serve among the 66 facial landmarks (facial features in
+Section 3.1) as well as among the 9 eye landmarks (eye gaze
+features in Section 3.2).
+Based on the 6 landmarks identified from the face and 9
+landmarks from the eye CLMs (a total of 13 landmarks), we can
+compute the 6 key eye landmark distances, d1 to d6, in Figure 3b
+accordingly. From these landmark distances for each eye, we
+would like to establish the eye geometry, namely, the eye
+openness, the relative horizontal position and vertical position of
+the eye gaze. Eye openness is employed in the detection of the
+eye blinks, whereas temporal changes in the horizontal and
+vertical positions of the eye gazes are adopted in the detection of
+eye fixations and saccadic movements.
+We first recognize eye blinks according to the value of
+of
+each eye, which represents the eye openness as shown in Figure
+3a. As in previous studies, an eye blink is defined as eyelid
+closure for a duration of 50 to 500 ms [31]. Given the eye
+openness of each frame in a video segment, eyelid closure events
+can be easily detected by identifying the moments when the eye
+openness value of each eye goes down to 0. The sequences of
+eyelid closure events with duration shorter than 50 ms or longer
+than 500 ms are discarded as noise, which may be caused by the
+occasional tracking failure of the eye CLM or the turning away of
+the subject’s head. The remaining eyelid closure event sequences
+are considered as eye blinks. The duration of the eye blink is the
+length of corresponding eyelid closure sequence.
+Upon identifying eye blinks, we need to classify the remaining
+eye gaze behaviors into eye fixations and saccades, namely,
+whether the eye gaze is focused on a word for mental processing,
+or moving for reading. To distinguish fixations and saccades, we
+analyze the horizontal and vertical movements of both eyes. For
+each eye, we compute the relative eye gaze position within the
+eye, independent on the actual coordinates of the eye in the frame.
+These relative horizontal and vertical eye gaze positions for an
+eye are computed as
+and
+in each frame. As illustrated
+
+that for most human, both left and right eyes move together, we
+thus simplify the representation of eye gaze position by
+computing the mean value of the eye gaze positions of the left and
+right eyes. The eye gaze position sequence can then be
+represented as
+= < EG1, … EGk > of k eye gaze points:
+(1)
+where
+is the horizontal component of the eye gaze position
+of the ith item in the sequence, defined as the average of the
+horizontal positions of the two eyes, and
+is the
+corresponding vertical component, as the average of the vertical
+positions. The movement of the eye gaze is measured as the
+Euclidean distance between the corresponding eye gaze points in
+the eye gaze sequence
+.
+Eye fixations are defined to be periods in which the eye gaze
+remains stationary on a specific location. However, due to the
+inherent error of the eye CLM model and head movement,
+detecting fixations from the eye gaze signal EG becomes more
+than simply looking for periods during which the eye gaze
+positions do not change. To determine the extent of noises on
+fixation detection, a pilot study was carried out to analyze the
+samples of gaze fixation on a single word. The eye gaze position
+sequences were calculated and the eye gaze movements between
+successive frames were analyzed to estimate the potential impact
+of noises. Let us define
+and
+as the mean and
+standard deviation of the eye gaze movements detected by the eye
+CLM model between successive frames for the periods of eye
+fixation. To filter the noise exerted on the eye gaze signal, we
+as the fixation amplitude threshold, where
+define
+(2)
+Define as the eye gaze movement between successive eye gaze
+points
+and
+, a vector can then be constructed from
+, where
+(3)
+This gives us a binary vector in which elements with a value of 1
+correspond to the moments when the eye gaze could be
+considered to be stationary. Since it has been found that fixations
+are rarely less than 100 ms and usually in the range of 200 to 400
+ms [29], we label fixations as continuous stationary sequences
+that last for longer than 100 ms but shorter than 500 ms. Once the
+eye blinks and eye fixations have been identified, the sequences
+in between the fixations with duration shorter than 200 ms are
+considered as saccadic eye gaze movements as defined in [32].
+The duration of a fixation and a saccade is the length of the
+corresponding eye gaze sequence.
+After the three different eye gaze behaviors have been identified
+from the sequence of eye gaze positions, we construct the 9
+statistical features that will be used to describe these three
+behaviors as shown in Table 2.
+
+in Figure 3a, the movements of the eyes over a temporal period
+can be analyzed from the eye gaze position sequence. Considering
+
+According to our observation of the eye gaze behaviors, the eye
+fixation is very indicative of the human attention level. It is
+notable that a reader tends to have long fixations while paying
+high attention to reading. This implies the reader makes efforts to
+process the information from the reading materials. In contrast,
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+41
+
+Table 3: Mouse features adopted
+Feature
+
+m1
+m2
+m3
+m4,5
+m6
+m7
+
+Meaning
+Mouse click
+Mouse
+distance
+Mouse
+direction
+Mouse scroll
+count
+Mouse scroll
+step size
+Mouse scroll
+speed
+
+Formulation
+Number of mouse clicks
+Distance traveled by the mouse in pixels
+over the screen
+Amount of change in direction
+encountered by the mouse in angle
+Number of scrolls and number of changes
+in scroll direction (up and down)
+Number of discrete steps per scroll
+Average speed of mouse scrolls (step size
+over time period of scroll)
+
+short fixations happen when the reader’s attention level is low.
+The fixation rate is also important. Readers at low attention level
+usually read repeatedly until they fully understand the reading
+materials, which results in a high fixation rate. Besides eye
+fixations, eye blinks and saccades may also contribute to our
+research problem. Previous studies [11] have shown that eye
+blinks are correlated with human cognition, such as fatigue. Eye
+saccades can reflect the reading speed, which is closely related to
+the attention level.
+
+3.3 Mouse Dynamics Features
+Mouse dynamics have been shown to provide indicative
+information for affect detection in various research works
+[35][40]. In this paper, we attempt to relate mouse dynamics with
+human reading attention level, by analyzing typical mouse
+dynamics, including mouse click, mouse movement and mouse
+scrolling. Similar to facial expression recognition, we process raw
+mouse events to establish mouse dynamics over time. We then
+extract features representing mouse dynamics for each segment to
+align with the segment in the video clip. This enables signal
+fusion among the different modalities, namely, mouse signals and
+webcam signals.
+As depicted in Figure 1, we pre-process the mouse activity log to
+clean extreme data values that may be due to noise. We then
+extract mouse patterns and then compute the actual features
+reflecting the mouse dynamics at the segment granularity. For
+instance, we compute the total distance traveled by the mouse by
+summing up the individual Euclidean distances traveled
+throughout the segment for each pair of sampled mouse
+coordinates. Similarly each pair of mouse coordinates indicates a
+mouse moving direction and the change in mouse movement
+direction is computed as the absolute difference in angle between
+the directions indicated by two consecutive pairs of mouse
+coordinates. Mouse scrolling features are computed based on the
+log of scrolling events, each of which occurs when the wheel is
+scrolled one discrete step. Consecutive scrolling events occurring
+within 1 second are considered to belong to the same scroll when
+the scroll step size is computed. The set of features extracted for
+mouse dynamics is depicted in Table 3, which can be categorized
+into three types: mouse click (m1), mouse movement (m2,3), and
+mouse scrolling (m4,5,6,7), generated from the three mechanical
+components of the mouse (button, trackball and scroll wheel).
+We notice that mouse direction is an important feature in
+demonstrating the “roughness” of the user. A conscious user
+would normally move the mouse in relatively straight lines
+without many changes in directions. Rapid directional changes
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+Table 4: Potential facial features for consideration
+Ranking
+1
+3
+6
+8
+13
+17
+20
+25
+26
+32
+35
+
+Feature
+f14_mean
+f5_window_mean
+f10_mean
+f7_window_std
+face_std
+f7_window_mean
+f1_window_std
+face_mean
+f3_window_mean
+f13_mean
+f24_window_std
+
+Table 5: Final set of features adopted
+Facial feature
+
+Attribute
+
+Eye
+gaze
+
+f14_mean
+
+lip pucker
+
+e5
+
+eye brow
+movement
+eye lid
+f7_window_std
+movement
+face_std
+whole face
+eye lid
+f7_window_mean
+movement
+inner eye
+brow
+f1_window_std
+movement
+head
+f24_window_std
+position
+f5_window_mean
+
+e4
+e8
+e1
+e2
+
+Attribute
+fixation
+duration
+fixation
+rate
+saccade
+duration
+blink rate
+blink
+duration
+
+Mouse
+Attribute
+dynamics
+scroll step
+m6
+size
+mouse
+m3
+direction
+mouse
+m2
+distance
+
+often indicate confusion or restlessness. An increase in number of
+scrolling steps indicates relatively fast article reading, implying
+generally a higher level of attention.
+
+3.4 Feature Selection and Classification
+After extracting the set of potential useful features, feature
+selection needs to be conducted to remove non-indicative features
+and to improve classification performance in pattern recognition
+and machine learning applications. In our work, we have
+extracted an initial set of 80 facial features, 9 eye gaze features
+and 7 mouse features, too many to be effective for practical realtime recognition, especially for facial features.
+We adopt the wrapper method for feature selection which is
+reported to outperform filter method by considering the
+relationship between different features and selecting one feature
+subset that is best for the chosen classifier [33]. We adopt the best
+first searching approach for its efficiency, based on the Linear
+Support Vector Machine (SVM) for classification. This filtering
+step is very efficient in reducing the set of potential facial features
+from 80 down to 11. In other words, many of the original 80
+features would not contribute much to the recognition task,
+manifested by the fact that recognition performance is not
+affected upon their removal. The list of potentially useful facial
+features is depicted in Table 4.
+In Table 4, the ranking indicates the relative importance of the
+single feature contributing to recognition. It is simply computed
+as the percentage of training sets that the feature is selected for
+classification. Note that features in pair form are often of similar
+
+42
+
+experiment survey, all subjects are skilled in using computer and
+capable of reading in English though their English ability varies.
+All are non-native speakers; the native language of two subjects is
+Mandarin while that of the other four subjects is Cantonese. This
+dictates the choice of the distracting vocal stimuli used in the
+experiments. Although they share the common written Chinese
+characters, the two dialects differ enough that speaker in one
+dialect without proper training or sufficient immersion would
+have much difficulty in understanding the other.
+
+Figure 4: Experimental setup
+values and would often contribute similarly towards recognition,
+so that one of them would suffice and the better one would be
+selected, e.g., left eye brow movement (f5 ranked 3rd) edges out
+right eye brow movement (f6 ranked 5th). The second ranked
+feature f16 on lip thickness also highly correlates with the first
+ranked feature f14 on lip pucker, so that the use of f16 suffices. It
+also subsumes other top-ranked lip features such as f9 and f11, and
+eventually f10. Some features may rank high when used alone, but
+not compatible with other features in a way that putting them
+together may actually lower the accuracy. That is why a simple
+regression-like algorithm in eliminating weak features may not
+always work, and backtracking is needed in the heuristic feature
+selection approach. There are only 9 features for eye gaze and 7
+features for mouse dynamics, making initial feature selection
+unnecessary.
+After initial feature selection in trimming down the set to a
+manageable size, we can explore different feature subset
+combinations via an exhaustive search for the most impressive
+feature set to build up our attention level recognition model. We
+end up with 7 top facial features, 5 top eye gaze features and 3 top
+mouse dynamics as the best combination, as depicted in Table 5.
+
+4. EXPERIMENTS
+We invite experimental subjects to conduct experiments to
+validate our multimodal approach in attention detection for
+reading tasks in a real-world setup. The subject is reading an
+article in full screen, using the mouse to navigate through the
+article. This is depicted in Figure 4.
+In order to induce different attention levels for experimental
+subjects when reading, different types of vocal stimuli are applied
+to distract the subjects. Subjects would need to self-report their
+level of attention to serve as ground truth for classification. The
+subjects’ facial expressions and mouse dynamics are both
+recorded in real time during the experiment. The subjects are also
+required to do pre-experiment survey and post-experiment survey
+for information collection and labeling.
+
+4.1 Participants and Experiment Setup
+We have recruited 6 subjects aged between 22 and 30, averaging
+25.5. Two are undergraduates and four are graduates, whereas
+four are female and two are male. According to the pre-
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+The experiment is carried out in a common office environment in
+the CHI Lab. As shown in Figure 4, the standard setup of the
+experiment consists of a 22-in flat LCD screen with a resolution
+of 1680  1050 pixels for displaying the articles to read, a
+common webcam fixed on the top of the display to record the
+subjects’ face and upper body, and a common wired mouse. All
+the devices are non-intrusive to the subjects. The light in the room
+is adjusted to be suitable for reading and is maintained stable
+throughout the experiment. The subjects are seated about 60 cm
+away in front of the display.
+Data collection programs run on the computer displaying the
+article for reading. Both the content shown on the screen and the
+webcam vision are recorded by a free-trial version of the software
+Camtasia, capturing the two video streams at a frame rate of 15
+per second onto the hard disk. We develop a C++ program to
+capture and log mouse events to determine mouse dynamics,
+including mouse click, mouse scrolling and mouse movement,
+together with their timestamps. Mouse click and scroll events are
+logged when they occur, and mouse coordinate is sampled at a
+rate of approximately 15 per second for mouse movement. The
+program is run concurrently and the timestamped information is
+stored in the hard disk for temporal alignment.
+
+4.2 Experiment Design
+In our experiment, each subject is required to read three different
+English articles chosen from TOFEL (Test of English as a Foreign
+Language) reading comprehension materials. We decide to select
+articles from TOFEL because the topic, length and difficulty of
+the articles are proper for our non-native speaker subjects in this
+reading experiment. The time spent on reading is not constrained.
+In this paper, a reading session refers to the particular experiment
+in which one subject reads one TOEFL article. To make sure that
+the subjects really read the articles with reasonable amount of
+efforts instead of just killing time, they are required to write a
+short summary of at least 50 words after finishing reading the
+article in each session.
+In the first set of sessions, the subjects read in a quiet environment
+without anything to distract them. To induce different levels of
+attention on the subjects, we choose two kinds of vocal stimuli to
+distract the subjects on purpose during reading in the second and
+third set of sessions. One of the vocal stimuli is heavy metal
+music which carries a “high information-load” and supposedly to
+be able to impair performance significantly in reading
+comprehension task [5]. The other vocal stimuli is sound
+recording of famous funny talk shows that the reader would very
+likely be interested in. Considering the different native languages
+of our subjects, we choose Mandarin and Cantonese talk shows
+for the subjects based on their native language. By doing this we
+make sure that all the subjects can understand the contents of the
+talk shows easily even in the background, so as to distract them.
+
+43
+
+Table 6: Normalized confusion matrix for facial feature model
+Classified as
+Ground truth
+Low
+Medium
+High
+
+Low
+
+Medium
+
+High
+
+0.73
+0.19
+0.07
+
+0.21
+0.69
+0.29
+
+0.06
+0.12
+0.64
+
+Table 7: Classification performance for facial feature model
+Performance
+Attention level
+Low
+Medium
+High
+
+Precision
+
+Recall
+
+F-measure
+
+0.75
+0.60
+0.76
+
+0.73
+0.69
+0.64
+
+0.74
+0.64
+0.69
+
+At the end of each session, the subjects label their level of
+attention throughout the reading tasks with “low”, “medium” or
+“high” on a per minute basis. To help the subjects remember the
+reading process and their mental state so that to make a reliable
+labeling of the level of attention, they are displayed with video
+clips of the screen and their face recorded during the reading task
+minute by minute and they label immediately after watching each
+minute. It has been demonstrated recently that watching video
+clips and giving a label for the entire video is a more impressive
+approach for labeling than giving continuous labels while
+watching video clips [38].
+
+4.3 The Dataset
+We have to perform pre-processing to the video clips since there
+are occasional instances with subjects showing only a partial face,
+caused by inappropriate sitting position of the subject. As our
+facial expression model depends on the key landmarks throughout
+the face, a partial face without the mouth would not be useful. We
+thus remove those occasional corrupted video data. The amount of
+such bad data only contributes to less than 10% of the total data.
+Finally, we are able to collect data of a length of 147 minutes for
+all the six subjects (about 25 minutes per subject).
+We next establish the ground truth and baseline from the dataset
+for evaluation purpose. According to the attention level labeled by
+our subjects, 35.4% of the data is labeled as “high”, 34.7% of the
+data is labeled as “medium” and 29.9 % of the data is labeled as
+“low”. This is a set of very well-mixed data, since the three
+classes are roughly equally represented without much skewness.
+The baseline of the dataset is 35.4%, since the bottom line for
+random guessing in classification is to output the label of the
+largest class for a “best” result. This baseline of a dataset is
+widely used to evaluate the classification performance of an
+algorithm. In this paper, we build up user-independent models for
+attention detection based on this dataset.
+
+Table 8: Normalized confusion matrix for eye gaze feature model
+Classified as
+Ground truth
+Low
+Medium
+High
+
+Low
+
+Medium
+
+High
+
+0.77
+0.39
+0.27
+
+0.19
+0.53
+0.30
+
+0.04
+0.08
+0.43
+
+Table 9: Classification performance for eye gaze feature model
+Performance
+Attention level
+Low
+Medium
+High
+
+Precision
+
+Recall
+
+F-measure
+
+0.56
+0.54
+0.76
+
+0.77
+0.53
+0.43
+
+0.65
+0.53
+0.55
+
+user-dependent models cannot. We build up user-independent
+models and evaluate our approach in this section.
+We compare the classification performance of our multimodal
+approach with the performance produced by using only a single
+modality. The results illustrate that the multimodal models
+perform better than the single modality ones, achieving higher
+correct classification rates (CCR) and F-measures.
+
+5.1 Attention Detection with Facial Features
+Our first evaluation is concentrated on the use of facial features
+extracted from the webcam video to recognize attention level in
+reading tasks. There are a total of 80 extracted facial features
+across three categories, trimmed down to 11 via the wrapper
+approach upon adopting the Linear Support Vector Machine
+(SVM) with 10-fold cross-validation to classify the dataset.
+From the set of 11 potential facial features, we attempt different
+subset combinations and select 7 producing a best performance, as
+shown in Table 5. We can see that features describing the change
+of frame-level feature vectors are mostly chosen. This indicates
+that the magnitude of the change of facial expression of specific
+areas on the face varies with the level of attention of the subjects.
+Within all the selected features, the change of eye brow position
+and eye brow movement are particularly important when
+compared with other features.
+Since we are building user-independent models, the gold standard
+in evaluating the effectiveness is the leave-one-subject-out crossvalidation test. From the set of n subjects, we train the userindependent model with dataset from n1 subjects and test the
+model on the left-out subject. We repeat the experiment n times
+by leaving out a different subject and the average performance is
+reported. The confusion matrix normalized by the ground truth
+and the performance matrix for classification are shown in Table
+6 and Table 7.
+
+In this section, we evaluate our multimodal attention detection
+approach by building user-independent models based on the
+combined dataset of all subjects. In classification research, a userindependent model is usually not as accurate as a user-dependent
+model, but is more applicable in practice. The former can be built
+easily but the latter has to be built for each individual subject and
+the amount of data needed for training the classifier will be much
+larger. User-independent models can be applied on new users, but
+
+From Table 6 and 7, it can be observed that the average CCR for
+the three classes is 68.7%, and this is significantly higher than the
+baseline of 35.4% with an improvement of 33.3% (doubling the
+accuracy). It can also be seen that most of the errors come from
+misclassifying as the neighboring attention level class, i.e., low 
+medium and medium  high. Only very few errors are due to
+misclassification of extreme classes between low  high.
+Similarly, we are able to achieve a high precision as well as a
+high recall, without having to sacrifice one metrics for the other.
+The resultant F-measure is also as high as 0.7, close to the CCR.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+44
+
+5. EVALUATION
+
+Table 10: Normalized confusion matrix for mouse dynamics model
+Classified as
+Ground truth
+Low
+Medium
+High
+
+Low
+
+Medium
+
+High
+
+0.44
+0.29
+0.23
+
+0.31
+0.43
+0.29
+
+0.25
+0.28
+0.48
+
+Table 11: Classification performance for mouse dynamics model
+Performance
+Attention level
+Low
+Medium
+High
+
+Precision
+
+Recall
+
+F-measure
+
+0.48
+0.43
+0.44
+
+0.44
+0.43
+0.48
+
+0.46
+0.43
+0.46
+
+5.2 Attention Detection with Eye Gaze
+Features
+We believe that the 9 eye gaze features will not contribute equally
+to the attention level classification. To explore the most indicative
+set of eye gaze features, we compare the classification
+performance with different combination of eye gaze features and
+find out 5 useful eye gaze features, as shown in Table 5. Those 5
+eye gaze features are e1, the rate of eye blinks, e2, the average
+blink duration, e4, the rate of eye fixations, e5, the average
+fixation duration, and e8, the average saccade duration. It is worth
+noticing that features representing all three kinds of eye gaze
+behaviors analyzed in this paper are selected in the subset. It
+indicates that there is a strong correlation between the eye gaze
+behaviors and the level of attention in our reading task. Moreover,
+the top two ranked features are both eye fixation features, which
+validates our findings that eye fixation is critical to the attention
+level detection in our work. According to Table 5, none of the eye
+gaze features representing the standard deviation of the eye gaze
+behaviors (e3, e6 and e9) is selected. It perhaps implies that the eye
+gaze behavior patterns are quite stable with a certain attention
+level. We build a user-independent model based on eye gaze
+features alone and perform the leave-one-subject-out crossvalidation test. The confusion matrix normalized by the ground
+truth and the performance matrix for classification are shown in
+Table 8 and Table 9.
+As shown in Table 8 and 9, the average CCR for the three classes
+is 58.5%, which is higher than the baseline by 23.1% with only 5
+features. Similar with the facial feature model, the CCR of the low
+class is better than that of the medium class, while the high class
+is still the one with biggest misclassifying errors. Although the
+errors still mainly come from misclassifying between low 
+medium and medium  high as in the facial feature model, we
+note that the error to misclassify high as low becomes bigger than
+the facial feature model. It means the eye gaze behaviors analyzed
+in this paper do not correspond that well with the level of
+attention as with facial expressions. This may sound intuitive,
+since the facial expression carries inherently richer information
+than the eye gaze alone. Nevertheless, the eye gaze features still
+contribute a lot to the attention level classification, despite its
+relatively small amount of features and landmarks required.
+Finally, the average recall and precision for the three classes are
+0.57 and 0.62 respectively, whereas the average F-measure is 0.57,
+consistent with the CCR and somewhat lower than those
+performance based on facial features.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+Table 12: Normalized confusion matrix for multimodal model
+Classified as
+Ground truth
+Low
+Medium
+High
+
+Low
+
+Medium
+
+High
+
+0.81
+0.12
+0.11
+
+0.13
+0.76
+0.20
+
+0.06
+0.12
+0.68
+
+Table 13: Classification performance for multimodal model
+Performance
+Attention level
+Low
+Medium
+High
+
+Precision
+
+Recall
+
+F-measure
+
+0.79
+0.71
+0.77
+
+0.81
+0.76
+0.68
+
+0.80
+0.74
+0.72
+
+5.3 Attention Detection with Mouse Dynamics
+There are only 7 mouse dynamics features but not all of them
+contribute well to the classification process. We therefore explore
+different subsets of feature combinations for mouse dynamics and
+we land on 3 useful mouse features for classification as shown in
+Table 5. Those useful features are m6, the amount of scrolling
+steps, m3 and m2, the amount of changes in mouse direction and
+total distance that the mouse travels. In our experiment, we
+observe that the mouse click events are not indicative at all. This
+is because most subjects only use the mouse scrolling button to
+navigate up and down the article, instead of clicking on the scrollbar in the application window in this reading task. The distance
+traveled and direction changed for the mouse come up as
+important features contributing to the classification of the
+attention level. The mouse click events would be more useful
+when writing tasks are studied, so would keyboard dynamics be.
+In any case, the selected features demonstrate that the mouse
+trajectory is indicative for attention level classification. The
+normalized confusion matrix on classification and its accuracy
+based on mouse dynamic features is depicted in Table 10 and
+Table 11.
+According to Table 10 and 11, the average CCR for the three
+classes is around 44.9%, which is not as good as the performance
+of the facial feature model and the eye gaze feature model. When
+compared with the baseline of 35.4%, there is still an
+improvement of 9.5%, even with as few as 3 mouse features.
+Although the improvement is not as impressive when compared
+with those of facial features, the result is already acceptable with
+just 3 features. We believe that the lack of useful information
+about the mouse dynamics during the reading task drags the
+classification performance to a certain extent. It can also be
+observed that there are more classification errors across extreme
+classes, i.e., low  high. This is perhaps due to the fact that
+mouse dynamics do not correspond that well with the attention
+level as with facial features and eye gaze features. Nevertheless,
+the recall and precision metrics and the F-measures for the three
+classes remain stable at about 0.45, similar to the CCR.
+
+5.4 Attention Detection with Multimodalities
+We have already observed good recognition with the unimodal
+models based on facial features and acceptable recognition based
+on eye gaze behaviors and mouse dynamics in our study. We now
+adopt the multimodal model by combining the features of all the
+modalities. There are a total of 15 features in this multimodal
+recognition study as shown in Table 5. We build user-independent
+
+45
+
+Table 14: Normalized confusion matrix for multimodal models
+Facial + eye gaze
+Low
+Medium
+High
+Facial + mouse
+Low
+Medium
+High
+Eye gaze + mouse
+Low
+Medium
+High
+
+Low
+0.79
+0.25
+0.11
+Low
+0.83
+0.22
+0.16
+Low
+0.83
+0.37
+0.18
+
+Medium
+0.15
+0.73
+0.20
+Medium
+0.12
+0.69
+0.18
+Medium
+0.15
+0.49
+0.27
+
+High
+0.06
+0.02
+0.68
+High
+0.06
+0.10
+0.66
+High
+0.02
+0.14
+0.55
+
+Table 15: CCR improvement for individual modalities
+A+B
+facial+eye gaze
+facial+mouse
+eye gaze+mouse
+
+CCRA+B
+73.5%
+72.8%
+62.6%
+
+CCRA
+68.7%
+68.7%
+58.5%
+
+CCRB
+58.5%
+44.9%
+44.9%
+
+ΔA
+4.8%
+4.1%
+4.1%
+
+ΔB
+15.0%
+27.9%
+17.7%
+
+Δ
+9.9%
+16.0%
+10.9%
+
+Figure 5: Improvement breakdown against models
+three combinations are summarized in Table 14. It can be seen
+that they exhibit intermediate performance with respect to those
+for single component modalities and the one for the full set of
+modalities, as compared with those in the previous tables. The
+precision/recall metrics show a similar pattern as in the previous
+experiments and are thus omitted.
+
+models based on SVM and apply 10-fold cross-validation in the
+evaluation. As before, we employ the challenging leave-onesubject-out cross-validation experiment over the n subjects. The
+confusion matrix normalized by the ground truth and the
+performance matrix for classification are shown in Table 12 and
+Table 13.
+
+For comparison, we report the CCR for these combinations,
+alongside those of the individual feature sets. We also compute
+the improvement in CCR performance for each combination. This
+improvement indirectly measures the “synergic” effect between
+the two feature sets. It is conceivable that a higher synergic effect
+is more preferred. The results are depicted in Table 15.
+
+From the two tables, the average CCR for the three classes is
+found to be 75.5%, an improvement of 40.1% over the baseline,
+with the accuracy of one class going up to 81%. Although the
+classification performance based on mouse dynamics is much
+lower than that one based on facial features or eye gaze features,
+the overall performance has been improved compared with
+individual performance, when the three modalities are combined.
+The classification errors across neighboring classes and especially
+the extreme classes of low  high have all been reduced when
+compared with the use of features of single modality. It is also
+worth noticing that the performance of the medium class improves
+dramatically compared with the eye gaze feature model and the
+mouse dynamics model. When we look at the recall and precision
+metrics, they show similar pattern as that of CCR with a
+comparable F-measure. In summary, we believe that our selected
+features of different modalities contribute to the attention level
+detection during reading in a synergic way.
+
+We can observe from Table 15 that facial features integrate well
+with mouse features to produce a best improvement of 16% in
+terms of CCR performance, whereas the other two combinations
+only produce about 10% improvement. This observation yields a
+slightly different conclusion based on absolute performance alone,
+which suggests that the model based on facial features combined
+with eye gaze features performs the best at 73.5% against 72.8%
+for facial features combined with mouse features. Nevertheless,
+this higher performance is attained at the expense of adopting the
+higher cost eye gaze feature set than the lower cost mouse feature
+set.
+
+We conduct three more experiments based on (a) combined facial
+and eye gaze features, (b) combined facial and mouse features,
+and (c) combined eye gaze and mouse features. From there, we
+would be able to identify the contribution by individual modality
+more precisely. The corresponding confusion matrices for the
+
+Let us make a simplifying assumption that all feature sets are
+somewhat synergic to one another, in order for us to take a glance
+on the contributions by the individual modalities. In other words,
+we assume that the models would not have negative impact on
+one another when combined. The synergic effect is much higher
+than the interference effect. We can then attempt to break down
+for the individual contributions based on a simple additive model
+as shown in Figure 5. This provides us with a glance on the
+individual contribution to the overall performance. The more
+performance that can be “explained” by the overlapping part of
+two models, the more “similar” are the two sets of features and
+the higher possibility that the two models are making similar
+classification. As a result, there would be less additional
+improvement incurred in the multimodal model. Finally, it can be
+seen that any of the three models alone would produce an
+accuracy of close to 40%, which accounts for more than half of
+the attainable performance for the three models. Actually, this
+already represents the majority of the performance for the mouse
+feature model. This is a pretty high degree of “similarity” among
+the three individual models. Also, the “similarity” between facial
+feature model and eye gaze feature model is relatively high and
+this is understandable, as both come from the same video captured
+by the webcam.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+46
+
+5.5 Contributions by Individual Modalities
+We can attain different performance based on features generated
+from each individual input modality. From Section 5.1 to 5.3, it is
+easily seen that facial features produce the best performance,
+followed by eye gaze features and finally mouse features.
+However, in terms of computational cost, the reverse is true. This
+is the rationale behind the choice of a proper multimodality
+feature set to yield a good enough recognition rate. In this section,
+we proceed to analyze more deeply the individual contribution by
+each modality and see which combinations would produce a
+better integrative performance.
+
+Table 16: CCR improvement for existing users
+Model
+Leave-one-subject-out
+All-subjects-included
+
+Facial
+68.7%
+70.1%
+
+Eye gaze
+58.5%
+61.2%
+
+Mouse
+44.9%
+45.6%
+
+Multimodal
+75.5%
+78.9%
+
+Table 17: Normalized confusion matrix for existing users
+Classified as
+Ground truth
+Low
+Medium
+High
+
+Low
+
+Medium
+
+High
+
+0.83
+0.10
+0.09
+
+0.13
+0.82
+0.20
+
+0.04
+0.08
+0.70
+
+Table 18: Classification performance for existing users
+Performance
+Attention level
+Low
+Medium
+High
+
+Precision
+
+Recall
+
+F-measure
+
+0.83
+0.72
+0.84
+
+0.83
+0.82
+0.70
+
+0.83
+0.77
+0.77
+
+5.6 Performance for Existing Users
+So far in all our evaluations, we assume the setting of leave-onesubject-out for recognition performance to cater for unseen new
+users. It is also common in reality that the model is used by an
+existing user. One would expect that the accuracy will be higher.
+In our next experiment, we keep all subjects in the 10-fold crossvalidation and compare the performance with the leave-onesubject-out setting as presented in Table 16. We observe a bit of
+improvement in terms of CCR. On the other hand, this small
+improvement also demonstrates that our approach is very robust,
+in delivering good performance even for unseen new users based
+on training data from just a small number of subjects (n1 = 5).
+Table 17 and Table 18 provide more information of the
+recognition performance of the multimodal model with 10-fold
+cross-validation. Compared with Table 12 and Table 13, we
+observe that there are improvements of the CCR for each class,
+and the misclassifying errors between neighboring classes and
+extreme classes are further decreased. Thus, our research
+represents a good initial attempt to attention detection based on
+ubiquitous devices and a small number of features extracted from
+webcam videos and mouse activities.
+
+In the future, we would like to study the improvement by means
+of user-dependent models, upon collecting a larger dataset.
+Furthermore, we would like to build up a number of good userindependent models based on an initial classification on the user
+category. We could then start from those more specific userindependent models to move towards more accurate models
+tailored made for individual users. We would also like to expand
+our scope of investigation to include writing tasks, making use of
+keyboard dynamics, so as to integrate the three ubiquitous
+modalities, namely, webcam video, mouse dynamics and
+keyboard dynamics to cover the major categories of user activities,
+namely, reading and writing tasks, that take up a huge chunk of
+computer usage.
+
+7. ACKNOWLEDGMENTS
+The authors would like to thank the subjects who participated in
+the experiments. This research is supported in part by the Hong
+Kong Research Grant Council and the Hong Kong Polytechnic
+University under Grant numbers PolyU 5222/13E and PolyU
+152126/14E.
+
+8. REFERENCES
+[1]
+[2]
+
+[3]
+
+[4]
+[5]
+[6]
+
+[7]
+
+6. CONCLUSION AND FUTURE WORK
+In this paper, we propose to recognize human attention level via
+the use of ubiquitous equipment loaded with most computers,
+namely, the mouse and the webcam. We extract facial features
+and eye gaze features from the videos captured by the webcam, as
+well as mouse dynamics due to mouse usage. We adopt machinelearning techniques on modeling the data captured and build userindependent models capable of recognizing the attention level for
+unseen new users. We conduct our experiments via the reading
+tasks, with which the subjects are induced to different levels of
+attention, through the use of different vocal stimuli to distract
+them. Our results based solely on the webcam (i.e., facial features
+and eye gaze features) indicate good performance, and those
+solely on the simplistic mouse still achieve improvement over the
+baseline. Finally, we demonstrate that combining the three sets of
+features together is giving us the best performance, whereas only
+15 important features need to be utilized.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+[8]
+[9]
+
+[10]
+
+[11]
+[12]
+[13]
+
+Adamczyk, P.D. and Bailey, B.P. If not now, when? Proceedings of
+Conference on Human factors in Computing Systems - CHI ’04,
+ACM Press (2004), 271–278.
+Ambadar, Z., Cohn, J.F., and Reed, L.I. All Smiles are Not Created
+Equal: Morphology and Timing of Smiles Perceived as Amused,
+Polite, and Embarrassed/Nervous. Journal of Nonverbal Behavior 33,
+1 (2009), 17–34.
+Anderson, A.R., Christenson, S.L., Sinclair, M.F., and Lehr, C.A.
+Check & Connect: The importance of relationships for promoting
+engagement with school. Journal of School Psychology 42, 2 (2004),
+95–113.
+Ashraf, A.B., Lucey, S., Cohn, J.F., et al. The Painful Face - Pain
+Expression Recognition Using Active Appearance Models. Image
+and Vision Computing 27, 12 (2009), 1788–1796.
+Avila, C., Furnham, A., and McClelland, A. The influence of
+distracting familiar vocal music on cognitive performance of
+introverts and extraverts. Psychology of Music 40, 1 (2012), 84–93.
+Bixler, R. and D’Mello, S. Detecting boredom and engagement
+during writing with keystroke analysis, task appraisals, and stable
+traits. Proceedings of International Conference on Intelligent User
+Interfaces - IUI ’13, ACM Press (2013), 225–234.
+Bolt, R.A. “Put-that-there.” Proceedings of Conference on Computer
+Graphics and Interactive Techniques - SIGGRAPH ’80, ACM Press
+(1980), 262–270.
+Calvo, R.A. and D’Mello, S. Affect Detection: An Interdisciplinary
+Review of Models, Methods, and Their Applications. IEEE
+Transactions on Affective Computing 1, 1 (2010), 18–37.
+Carrino, S., Péclat, A., Mugellini, E., Abou Khaled, O., and Ingold,
+R. Humans and smart environments. Proceedings of International
+Conference on Multimodal Interfaces - ICMI ’11, ACM Press (2011),
+105–112.
+Cunningham, D.W., Kleiner, M., Bülthoff, H.H., and Wallraven, C.
+The components of conversational facial expressions. Proceedings of
+Symposium on Applied perception in Graphics and Visualization APGV ’04, ACM Press (2004), 143–150.
+Divjak, M. and Bischof, H. Eye blink based fatigue detection for
+prevention of computer vision syndrome. Proceedings of IAPR
+Conference on Machine Vision Applications, (2009), 350–353.
+Ekman, P. Universals and Cultural Differences in Facial Expression
+of Emotion. Nebraska Symposium on Motivation, (1972), 207–283.
+Fox, A.B., Rosen, J., and Crawford, M. Distractions, Distractions:
+Does Instant Messaging Affect College Students’ Performance on a
+
+47
+
+Concurrent Reading Comprehension Task? CyberPsychology &
+Behavior 12, 1 (2009), 51–53.
+Fu, Y., Leong, H.V., Ngai, G., Huang, M.X., and Chan, S.C.F.
+Physiological Mouse: Towards an Emotion-Aware Mouse.
+Proceedings of International Conference Workshops on Computer
+Software and Applications, IEEE (2014), 258–263.
+Gross, R., Matthews, I., Cohn, J., Kanade, T., and Baker, S. MultiPIE. Proceedings of International Conference on Automatic Face &
+Gesture Recognition, IEEE (2008), 1–8.
+Henderson, J.M. and Hollingworth, A. Eye movements during scene
+viewing: an overview. In G. Underwood, ed., Eye Guidance in
+Reading and Scene Perception. Elsevier Science, 1998, 269–293.
+Huang, M., Ngai, G., Hua, K., Chan, S., and Leong, H.V. Identifying
+User-Specific Facial Affects from Spontaneous Expressions with
+Minimal Annotation. IEEE Transactions on Affective Computing PP,
+99 (2015), 1–14.
+Huang, M.X., Kwok, T.C.K., Ngai, G., Leong, H.V., and Chan,
+S.C.F. Building a Self-Learning Eye Gaze Model from User
+Interaction Data. Proceedings of International Conference on
+Multimedia - MM ’14, ACM Press (2014), 1017–1020.
+Huang, X.M., Li, J., Ngai, G., and Leong, H.V. StressClick: Sensing
+Stress from Gaze-Click Patterns. To appear in Proceedings of
+International Conference on Multimedia, (2016).
+Inhoff, A.W. and Rayner, K. Parafoveal word processing during eye
+fixations in reading: Effects of word frequency. Perception &
+Psychophysics 40, 6 (1986), 431–439.
+Ji, Q., Lan, P., and Looney, C. A probabilistic framework for
+modeling and real-time monitoring human fatigue. IEEE
+Transactions on Systems, Man, and Cybernetics - Part A: Systems
+and Humans 36, 5 (2006), 862–875.
+Liversedge, S.P. and Findlay, J.M. Saccadic eye movements and
+cognition. Trends in Cognitive Sciences 4, 1 (2000), 6–14.
+Oviatt, S.L. Multimodal interfaces. In Human-Computer Interaction
+Handbook: Fundamentals, Evolving Technologies, and Emerging
+Applications. L. Erlbaum Associates Inc, Hillsdale, NJ, USA, 2007,
+286–304.
+Picard, R.W. Affective computing. MIT Press, Cambridge, MA, USA,
+1997.
+Radach, R. and Kennedy, A. Theoretical perspectives on eye
+movements in reading: Past controversies, current issues, and an
+agenda for future research. European Journal of Cognitive
+Psychology 16, 1-2 (2004), 3–26.
+Rayner, K. Eye movements in reading and information processing:
+20 years of research. Psychological bulletin 124, 3 (1998), 372–422.
+Reichle, E.D., Reineberg, A.E., and Schooler, J.W. Eye Movements
+During Mindless Reading. Psychological Science 21, 9 (2010),
+1300–1310.
+Rodrigue, M., Son, J., Giesbrecht, B., Turk, M., and Höllerer, T.
+Spatio-Temporal Detection of Divided Attention in Reading
+Applications Using EEG and Eye Tracking. Proceedings of
+International Conference on Intelligent User Interfaces - IUI ’15,
+ACM Press (2015), 121–125.
+
+[29] Salvucci, D.D. and Goldberg, J.H. Identifying fixations and saccades
+in eye-tracking protocols. Proceedings of Symposium on Eye
+Tracking Research & Applications - ETRA ’00, ACM Press (2000),
+71–78.
+[30] Saragih, J.M., Lucey, S., and Cohn, J.F. Deformable Model Fitting
+by Regularized Landmark Mean-Shift. International Journal of
+Computer Vision 91, 2 (2010), 200–215.
+[31] Schleicher, R., Galley, N., Briest, S., and Galley, L. Blinks and
+saccades as indicators of fatigue in sleepiness warnings: looking
+tired? Ergonomics 51, 7 (2008), 982–1010.
+[32] Sen, T. and Megaw, T. The Effects of Task Variables and Prolonged
+Performance on Saccadic Eye Movement Parameters. In A.G. Gale
+and F. Johnson, eds., Theoretical and Applied Aspects of Eye
+Movement Research. Elsevier, 1984, 103–111.
+[33] Talavera, L. An Evaluation of Filter and Wrapper Methods for
+Feature Selection in Categorical Clustering. In A. Famili, J. Kok, J.
+Pena, A. Siebes and A. Feelders, eds., Advances in Intelligent Data
+Analysis VI. Springer Berlin Heidelberg, 2005, 440–451.
+[34] Tsalakanidou, F. and Malassiotis, S. Real-time 2D+3D facial action
+and expression recognition. Pattern Recognition 43, 5 (2010), 1763–
+1775.
+[35] Tsoulouhas, G., Georgiou, D., and Karakos, A. Detection of
+Learners’ Affective State Based on Mouse Movements. Journal of
+Computing 3, 11 (2011), 9–18.
+[36] Vizer, L.M., Zhou, L., and Sears, A. Automated stress detection
+using keystroke and linguistic features: An exploratory study.
+International Journal of Human-Computer Studies 67, 10 (2009),
+870–886.
+[37] Weigle, C. and Banks, D.C. Analysis of eye-tracking experiments
+performed on a Tobii T60. Presented at the Conference on
+Visualization and Data Analysis, (2008), San José, California, USA.
+[38] Whitehill, J., Serpell, Z., Foster, A., and Movellan, J.R. The Faces of
+Engagement: Automatic Recognition of Student Engagementfrom
+Facial Expressions. IEEE Transactions on Affective Computing 5, 1
+(2014), 86–98.
+[39] Xiong, X. and De la Torre, F. Supervised Descent Method and Its
+Applications to Face Alignment. Proceedings of Conference on
+Computer Vision and Pattern Recognition, IEEE (2013), 532–539.
+[40] Yamauchi, T. Mouse Trajectories and State Anxiety: Feature
+Selection with Random Forest. Proceedings of Humaine Association
+Conference on Affective Computing and Intelligent Interaction, IEEE
+(2013), 399–404.
+[41] Zeng, Z., Hu, Y., Roisman, G.I., Wen, Z., Fu, Y., and Huang, T.S.
+Audio-Visual Spontaneous Emotion Recognition. Artifical
+Intelligence for Human Computing 4451, (2007), 72–90.
+[42] Zeng, Z., Pantic, M., Roisman, G.I., and Huang, T.S. A Survey of
+Affect Recognition Methods: Audio, Visual, and Spontaneous
+Expressions. IEEE Transactions on Pattern Analysis and Machine
+Intelligence 31, 1 (2009), 39–58.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+48
+
+[14]
+
+[15]
+[16]
+[17]
+
+[18]
+
+[19]
+[20]
+[21]
+
+[22]
+[23]
+
+[24]
+[25]
+
+[26]
+[27]
+[28]
+
+ABOUT THE AUTHORS:
+
+Jiajia Li received the BEng and MEng degrees in Automation Science from Qilu
+University of Technology and Beihang University in 2009 and 2012, respectively.
+Currently, she is working toward the PhD degree in the Department of Computing at
+the Hong Kong Polytechnic University, Hong Kong SAR, China. Her research
+interests include affective computing, human computer interaction, and cross-modal
+art generation.
+
+Grace Ngai received her Ph.D. degree from Johns Hopkins University in Computer
+Science in 2001. She worked for Weniwen Technologies, a natural language and
+speech firm in Hong Kong, and joined the Hong Kong Polytechnic University in
+2002. She is currently an associate professor at the Department of Computing. Her
+research interests are in affective computing, human computer interaction, wearable
+computing, and education.
+
+Hong Va Leong received his PhD degree from the University of California at Santa
+Barbara in 1994 and joined the Hong Kong Polytechnic University. His research
+interests lie in distributed systems, distributed databases, and mobile computing. He
+has served on the program committee and organizing committee of numerous
+international conferences as well as chairing some of them. He is a member of the
+ACM, IEEE Computer Society and IEEE Communications Society.
+
+Stephen C.F. Chan received his Ph.D. degree in Electrical Engineering from the
+University of Rochester in 1987. He had worked for the National Research Council
+of Canada, and was the Canadian representative for the ISO-10303 STEP standard
+for the exchange of industrial product data. He is currently an associate professor in
+the Department of Computing at the Hong Kong Polytechnic University. His
+research interests are data and text mining, human-computer interaction and servicelearning.
+
+APPLIED COMPUTING REVIEW SEP. 2016, VOL. 16, NO. 3
+
+49
+
+

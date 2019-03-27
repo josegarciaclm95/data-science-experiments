@@ -1,0 +1,719 @@
+2013 Humaine Association Conference on Affective Computing and Intelligent Interaction
+
+Shopmobia: An Emotion-based Shop Rating System
+Nouf Alajmi
+naalajmi@ksu.edu.sa
+
+Eiman Kanjo
+ekanjo.c@ksu.edu.sa
+
+Nour El Mawass
+nour.elmawass@ieee.org
+
+Alan Chamberlain *
+Alan.Chamberlain@nottingham.ac.uk
+
+College of Computer and Information Sciences, King Saud University (Riyadh, Saudi Arabia)
+* School of Computer Science, University of Nottingham (United Kingdom)
+
+itself has to be pleasant, warm, cordial, welcoming and
+attractive. Its design needs to be focused upon the creation and
+development of memorable customer experiences. The ability
+to measure customer arousal, in and around a particular store
+can help us evaluate and understand the role that these
+emotional responses might play in influencing shopping
+behaviors.
+
+Abstract—this work proposes a system for rating shops and for
+monitoring the cell phone-based emotion responses of customers
+in a shopping mall environment. To measure customer
+satisfaction in a shopping environment, a mobile, non-intrusive
+and comfortable wearable biosensor is used to measure the
+Electrodermal Activity (EDA) of the shopper. The users’
+proximity to the store is detected using NFC tags that report to
+the custom application on the mobile phone. The custom emotion
+recognition software analyses these streams of data in real-time
+and associates emotion levels to each event. The aim of this
+project is to demonstrate the possibility of using pervasive
+affective computing to explicate consumer behavior towards the
+stores in shopping malls. By triggering positive emotions through
+enhancing services and improving advertising campaigns,
+retailers can trigger positive emotional states, which ultimately
+contribute to a positive and memorable shopping experience.
+
+In this project we measure the physiological changes of the
+consumers based around a series of shops located in a shopping
+mall environment. The data that was collected from a large
+number of users is aggregated and clustered in order to come
+up with a rating index that represents the customer satisfaction
+level in a particular store.
+Mobile sensing technology [3] was key to these
+experiments, since mobile phones are widely available and
+pervasive affective sensor technology has been developed with
+wireless capabilities [4]. Identification and access sensors such
+as Near Field Communication (NFC) tags are also on the
+increase, particularly in shopping environments. Many mobile
+phones are already equipped to communicate with this shortlink technology. Our intention is to use the NFC tags as
+proximity sensors, which will easily and reliably mark a
+consumer’s presence near a particular shop. This is a new area
+of research in relation to the use of NFC tags and their
+associated application.
+
+Keywords—Mobile Sensing, Pervasive Computing, Affective
+Computing, Electrodermal Activity, Neuro-Marketing.
+
+I.
+
+INTRODUCTION
+
+The joy and instant gratification felt when browsing through
+physical shops is irreplaceable for some customers. Emotions
+play an important role in our judgment, perception, learning
+and many other related cognitive functions. Emotions also have
+a considerable effect on our day-to-day decision-making and
+our reactions to stimuli. Upon entering a shopping
+environment, consumers might experience a vast array of
+emotions ranging from, for example; excitement, joy, interest,
+and pleasure, through to anger, surprise, frustration, or even
+arousal [1].These emotions can affect the physiological state of
+the consumers and result in noticeable variations in bodily
+arousal [2].
+
+The results will be made available to customers and shop
+owners, in similar fashion to Tripadvisor1 and booking.com2.
+Emotion signatures taken close to the stores will be available
+on a recommender application, available via both mobile and
+on a web-based service. The idea of physically labeling and
+rating shops may be seen to influence in-store behavior and
+impact the outcomes of the interpersonal and dyadic nature of
+the retail services, leading to better and more satisfactory retail
+service provision.
+
+A shopping mall may be said to be the contemporary
+incarnation of the marketplace, it is often made up of a
+collection of retail stores, services, food outlets, and leisurebased activities. The shopping mall is a place where urban
+citizens can enjoy, and have the ability to physically shop in a
+marketplace containing a diverse range of products all within
+the confines of a modern indoor setting.
+
+The remainder of the paper is organized thus: Section 2
+gives a background to the research, based on related works in
+the fields of emotion monitoring and Neuro-Marketing. Section
+3 then presents the main research concepts for developing
+Shopmobia, including the system design. Section 4 presents
+
+In today’s retail settings, mere customer satisfaction with a
+purchased object isn’t sufficient anymore, a bond with the
+brand needs to be developed. The current trend within sales
+and marketing is to create a durable and personal relationship
+between customers and brands. It is not only the brand that the
+relationship has to be made with, but the retail environment
+978-0-7695-5048-0/13 $26.00 © 2013 IEEE
+DOI 10.1109/ACII.2013.138
+
+1
+
+http://www.tripadvisor.com/
+http://www.booking.com
+
+2
+
+745
+
+details on the system deployment, data collection and
+aggregation and presents the preliminary results of the study.
+We conclude by summarizing the research issues relating to
+the study and by describing future and ongoing work in
+sections 5 and 6.
+II.
+
+took place in a big supermarket that contained: an electrical
+store; DIY store; household goods; and so on. During the
+course of the study, the authors attempted to find the hot spot in
+the supermarket, i.e. a place that contains the most positive
+emotion, and this led them to conclude that “more happiness is
+more satisfaction with the brand”.
+
+RELATED WORK
+
+Emotion is an important factor in the creation of a
+successful customer-retailer experience [12], with the
+development of the Neuro-marketing concept arising from this.
+Neuro-marketing is believed to remove traditional market
+research subjectivity. Instead of a customer reporting his
+opinion, neuro-marketing uses objective biological measures to
+assess a customer state [13]. Many big brands have already
+used the concept in order to develop their business and benefit
+from these new understandings e.g. Google and Microsoft [14].
+
+For decades, marketing research methods have aimed to
+explain and predict the effectiveness of advertising campaigns.
+Since emotions are strong mediators of how consumers
+process messages, being able to understand and model
+cognitive responses to advertising and in-store selling has
+always been a challenge.
+For instance, researchers have primarily relied upon the
+consumers’ abilities to report how they feel about a particular
+advertised product, either in a confidential setting such as a
+face-to-face interview, surveys, or in a group setting such as a
+focus group [24]. Unfortunately, these methods have
+considerable limitations. Firstly, they assume that people are
+actually able to describe their own cognitive process which we
+now know has many subconscious components. Secondly,
+numerous factors motivate research participants and can distort
+the reporting of their feelings. These include incentives, time
+constraints and even peer pressure.
+
+Unlike product evaluation and Neuro-marketing systems,
+‘customer experiences’ in stores and mall environments receive
+less attention. There is very little literature on how to measure
+and evaluate customer emotion. However, user experience
+modeling, in the form of store rating is indispensable for
+guiding the design of a retail store environment.
+The interest in recognizing emotion has increased in recent
+years and more people are using sensors to measure biosignals, even though in the past these have been costly.
+However, recently, new technological tools have emerged to
+allow a robust and affordable measurement [15].
+
+In addition, empirical studies in real-world shopping
+environments have shown the usefulness of pervasive
+computing technology in physical shopping experiences. Many
+researchers have analyzed customers’ trajectories in shopping
+environments. For example, Takayuki Kanda et al., [5]
+developed a technique to distinguish window shoppers from
+busy commuters; Chuang-Wen You et al. [6] devised a
+pervasive system to sense physical shopping activities while
+tracking shopping time at physical stores. Meschtscherjakov et
+al., [7] proposed a prototype display that depicts dynamic
+visualizations of customer activity in a retail store on a
+conventional map.
+
+The majority of previous studies have focused on studying
+Electrodermal Activity (EDA) in lab settings [16]. In order to
+understand the meaning of the EDA signal, careful
+experimental settings have to be followed. However, this
+cannot be the case in a shopping in a real-world context where
+it is difficult to control the environmental variables in the
+setting. The out-of-lab (in the wild) environment of the study
+poses great problems and adds noise and unexpected situations
+to the experiments, but also offers great opportunities in regard
+to understanding the issues that may impact upon a real-world
+design that would be used in such a context.
+
+While shopping, contemporary customers want more than
+just a traditional shopping - see and buy - experience. They are
+searching for an experience that combines leisure and
+entertainment. Researchers and store managers increasingly
+acknowledge the importance of the store environment in
+shaping a customer’s emotions, thereby creating a memorable
+experience of the store. This puts more pressure on retail stores
+that want to stand out from their competitors and create a
+unique and enjoyable shopping experience [8].
+
+Outdoor, or out-of-lab measurement has been the subject
+of several recent studies, such as the sleeping at home
+experiments [17], or the "inside out" experiment [18], where
+users were asked to wear the EDA sensor continuously during
+the day or the night. Unlike our experiment time that focused
+upon the time spent on the task (shopping in this case) the
+measurement time in these studies was much longer, and can
+include recordings of several days and nights, due to its focus
+on understanding long term behavioral patterns.
+
+Past research in retailing has found that the specific
+characteristics of stores, most notably “appearance, décor,
+product assortments, location, service quality and store
+atmosphere” affects consumers’ store evaluations and shops
+choices [9] [10].
+
+To the best of our knowledge, currently no previous work
+has proposed the monitoring of customers’ emotions toward
+stores using physiological sensors.
+III.
+
+In the emotional shopper study [11] the authors look for
+the shoppers’ emotions by tracing their faces. They believe that
+facial recognition can give a clearer indication of the
+customers’ affective state than self-reporting can. The study
+
+SYSTEM DESIGN
+
+A. Emotion Model In Physical Environment
+Mehrabian & Russell [19] proposed a model, which related
+features of the surrounding environment to behavioral
+
+746
+
+responses. These responses were mediated by
+b the individual’s
+emotional states, Pleasure-Arousal-Dom
+minance (PAD),
+induced by the environment. In 1982, Donnovan & Rossiter
+implemented Mehrabian & Russell’s framew
+work into retailing
+and service settings [20]. Since then, the PA
+AD framework has
+been widely used in marketing and consumerr research.
+
+by measuring the moisture levvel in skin. The moisture level
+varies when an individual iss aroused, stressed or excited,
+causing the skin electrical condductance to change as well [16].
+By monitoring the EDA, itt is possible to detect periods of
+excitement, stress, interest andd attention. For the purpose of
+this study, EDA is used as a prroxy to understand how much a
+shop stimuli can positively provvoke and engage customers.
+
+Emotional states:
+Shop and
+enviromental
+stimuli
+
+Pleasure
+Arousal
+
+For our experiments, we used
+u
+an Affectiva Q-sensor3, an
+Electrodermal Activity (EDA) wristband wearable sensor, that
+also measures skin temperatture and 3 dimensional hand
+motions. It can be easily wornn on the wrist and can measure
+skin conductance in a non-lab environment
+e
+such as a shopping
+mall. Custom software was devveloped for the Android platform
+in order to store EDA and skin
+s
+temperature data using an
+instant Bluetooth connection in
+i conjunction with the sensor,
+see Figure 4.
+
+Approach or
+avoidance
+
+Dominance
+Figure 1. Emotion flow according to Mehrabian & Russell applied to
+a shopping environment.
+
+We adopt the PAD model in this work. Our physiological
+sensors measure the emotional reaction to shop stimuli, then
+our classification algorithms help in labeeling the data by
+categorizing them into emotional traitss. The resulting
+qualitative data aided customers and shop owners in
+m of Approach or
+improving shopping experiences in a form
+Avoidance.
+
+The performance of the seensor was evaluated in [22]. Its
+ability to measure arousal arouund a particular store can help us
+evaluate the role emotion plays
+p
+in influencing shopping
+behaviors outcomes and can lead to a greater understanding of
+the role of emotions in the shoppping process.
+
+1 involves taking
+The architecture, as shown in Figure 1,
+steps in order to provide ultimate shoppingg benefits for both
+customers and shop owners, while Figuure 2 shows the
+architechture of Shopmobia system.
+
+Therefore, we started coollecting data from different
+subjects. This data was storeed in order to help in finding
+obvious visual patterns and alsso for feature extraction. Figure
+3, shows the EDA data (w
+with moving average applied)
+collected from one individual around
+a
+one shop in a happy state
+(given a voucher and samplees), Frustrated (with a toddler
+present) and relaxed (listening to music) states. The frustrated
+signal displays a pattern of faast changes, however the happy
+signal displays a phasic patternn.
+
+In the next two sub-sections we desccribe the emotion
+monitoring and localisation techniques used in this work.
+
+Emotion
+Monitoring
+User
+Localization
+
+Figure 2. Architecture of the data collectioon system
+
+B. Emotion Monitoring
+To monitor emotions we used Galvaniic Skin Response
+(GSR) sensors. The autonomic nervous systeem can be divided
+into sympathetic and parasympathetic divissions and emotion
+can be measured by many sensors. Emotion
+E
+variation
+indicators like heart racing, rapid breathing, tense muscles and
+mic nervous system
+sweaty palms are all induced by the autonom
+which controls heart muscle, smooth musscle, and exocrine
+glands [21]. GSR sensors, however, have the advantage of
+offering the best indicators of sympatheticc nervous system
+arousal. They indirectly display the individuaal’s mental activity
+
+Figure 3. EDA output of subbjects Frustrated, Happy and
+Relaxed Localization
+L
+
+3
+
+http://www.affectiva.com/q-sensoor
+
+747
+
+shoes and makeup. These malls are Riyadh Gallery4, Hayat
+Mall5 and Sahara Plaza6. The former are giant malls with a
+large collection of branded clothing, a grocery store and a
+spacious food court in each mall; they are seen as the one-stop
+entertainment and shopping environments in the city of
+Riyadh. We selected shops to give identical or similar brands
+
+Knowing when and where a detected sensing event
+occurred can be just as useful as what physically triggered it.
+In order to identify which shop the costumer is visiting, we
+utilized a shop identification method to suit shopping mall
+environment where GPS doesn’t work.
+Instead of using exact conventional tracking techniques
+such as GPS localization, camera analysis, or sensor networks,
+we will utilize NFC to tag user's data with the new shop being
+visited. Therefore, the location log relies on precise proximity
+information obtained through NFC tags and unlike other
+localization technologies; it is characterized by relatively low
+computational requirements and is perfectly suited to indoor
+environments and shops’ size variance [23]. Not all smart
+phones have NFC chips in them. We have adopted Samsung S3
+phones in particular as the main mobile platform since they are
+equipped with NFC. Figure 4 shows a screenshot of
+Shopmobia application.
+
+Figure 5 Riyadh Gallery mall, and ground floor plan where
+we deployed our system.
+
+in all three shopping malls.
+
+Figure 4 Shopmobia screenshot
+
+IV.
+
+Before conducting the experiments, each user had to wear
+the sensor for a 5-minute warm-up period during which their
+skin conductance and body temperature increased to a plateau.
+A relaxation period of 10 minutes followed in order to establish
+a baseline setting.
+
+DEPLOYMENT AND PRELIMINARY RESULTS
+
+We recruited 24 participants from two major shopping malls in
+Riyadh. Participants’ age ranged from 22 to 50 years old. The
+majority of our users were women from a variety of
+educational backgrounds. Their occupations included
+housekeepers, students, teachers and professors. In our
+deployment, each user was asked to wear a wristband emotion
+sensor, to carry a mobile phone, and to proceed with their
+normal shopping around 10 specified stores. The map and the
+layout of one of the experiment areas is shown in figure 5. In
+this paper, we will focus on data collected in Riyadh Gallery,
+where 120 valid entries of location data from 12 users around
+10 shops were registered. Entries from 6 other users were
+dismissed due to detected errors in the emotion readings and
+the NFC localization. While we are still analyzing the data
+collected from these experiments, we present in this paper
+some preliminary results from our experiments in the Riyadh
+Gallery only.
+
+Afterwards the user started shopping around the designated
+shops one after the other. The whole experiment took
+approximately 40 minutes. NFC tags registered their presences
+around shops which allowed us to aggregate the data according
+to the shop ID. We used long range (about 50 cm) NFC tags in
+order to allow automatic sensor data tagging without direct
+contact; however users were advised to walk near the tags.
+Figure 6 closely shows an interesting finding in which
+multiple skin conductance responses (SCRs) were evident
+when the user was entering shoes shops. One user commented,
+“When she has to "size up" (buy larger) clothing in the other
+shops she gets depressed and feels as if she's overweight. But
+when she sizes up a new shoe (get a larger shoe size) it felt
+good”. However, it is difficult at this stage to infer whether the
+increase in arousal is due to excitement or other factors.
+
+We randomly selected three well known shopping malls in
+Riyadh; we then selected representatives’ stores and brands
+from these three malls from each of the major types: clothes,
+
+4
+
+http://www.riyadhgallery.com
+http://www.hayat-mall.com
+6
+http://www.saharaplaza.com
+5
+
+748
+
+Whose input is the EDA signal and output is a class label
+that corresponds to the inferred most prominent emotion. In
+other words, we exploited the quantitative emotion patterns
+observed through EDA in order to identify the qualitative
+aspects of emotions when a customer is nearby a shop. For the
+comprehensive analysis, we will develop and compare many
+scoring and updating methods based on different machine
+learning techniques such as Logistic regression and GMM.
+Also, in order to extract one emotional value that represents the
+measurements collected at one shop we will consider applying
+2-D Gaussian distribution weighted by the residence time at
+each measurement. Clustering methods such as k-means are
+also being developed to classify each individual aggregated
+data.
+
+Figure 6 this graph shows the time against EDA level around 10
+shops
+
+An initial statistical feature extraction has been applied on the
+dataset of 6 experiments by different users around 10 shops.
+We can see higher levels of EDA near shops 3, 6 and 8 which
+are mainly shoes shops.
+
+Besides this we are also examining the concept of Emotionbased Recommendation. We can use existing recommendation
+algorithms for verifying the affective entity scoring framework.
+In addition to studying the variability of emotion levels
+within a shopping mall we will look at the variability between
+different malls.
+Our findings will be disseminated in the form of a shop
+rating application to demonstrate the effectiveness of the
+system for both customers and shop owners.
+VI.
+
+Figure 7. BoxPlot of emotions recorded around 10 shops (6
+experiments per shop).
+
+Once the data was statistically analyzed, it proved that the
+SCR value had direct relationship with the level of arousal.
+In this project, SCR is used for emotion recognition, therefore
+observing the change in these values is more important than
+the absolute values.
+V.
+
+APPLICATIONS
+
+As we have already written there are obvious applications
+for the kinds of technology that we are developing,
+particularly within the retail, sales and marketing sectors.
+Currently we have been examining the role of these sorts of
+technologies in regard to their use in in-situ physical settings.
+However we envisage that the technologies that we are
+developing could also be used within a co-located sales
+setting, which is a setting where a customer is physically in a
+different place, but is able to use mobile technology to browse
+the store and discuss purchases in a face-to-face manner
+(although digitally mediated) with a sales assistant. This
+would enable us to better understand some of the factors that
+make shopping in the real world different from a co-located
+shopping experience. We could then attempt to develop
+systems that supported co-located shopping in a way that
+made it feel better for the customer. Being able to shop in this
+manner would also have implications for other shops that are
+based outside of the mall, perhaps in rural areas. Imagine
+being able to buy products from the bazar or market place, and
+being able to enjoy the experience from the comfort of your
+own home.
+
+EMOTION CLASSIFICATION AND SHOP RATING
+
+More user experiments are being conducted to produce the
+training set based on: 12 participants and 26 datasets in total.
+We then apply the running mean on each signal value in order
+to distinguish between phasic, fast changes and tonic, slow
+moving components in the analyzed signals. The extracted
+features from each signal will be: Standard deviation, Mean,
+Max, Min, Slope, first and third quartiles.
+
+Robotic sales is also another avenue of research that we can
+see evolving from this research, being able to understand
+people’s emotional responses to robots in the shopping mall
+could prove invaluable, particularly in shops that could be
+staffed 24 hours a day, or indeed in robots that may be
+designed to carry out mundane tasks such as shopping. By
+using the evidence and datasets that we are starting to collate,
+one would be able to give robots the ability to react to their
+environment in what would appear to be a natural way.
+
+K-mean clustering will be then used as an unsupervised
+learning method to classify our data according to the training
+set.
+We also define the task of inferring the emotion of a user as
+a supervised classification problem where we seek to learn a
+function f such as:
+
+yi=f(xi)
+
+749
+
+[9]
+
+VII. CONCLUSION
+In this paper, we have presented the shop rating system based
+on customers’ emotion. Such an experimental setup could
+have the potential to benefit both customers and shop owners.
+Using data collected from a real-world deployment, we argue
+that our shop rating system can effectively provide customers
+and retailers with systematic feedback regarding customer
+satisfaction and enable owners to better understand customer
+behaviors. In the future, we hope to scale up to larger
+deployments in more shopping malls and recruit more users
+from different backgrounds and ages.
+
+[10]
+
+[11]
+
+[12]
+
+[13]
+
+I.
+
+ACKNOWLEDGMENTS
+
+[14]
+
+This research project was supported by the Research Center of
+the College of Computer and Information Sciences in King
+Saud University, project code (RC121265).
+II.
+[1]
+
+[2]
+
+[3]
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+
+[8]
+
+[15]
+
+REFERENCES
+
+[16]
+
+James R. Bettman, Mary F. Luce, and John W. Payne,
+"Constructive consumer choice processes," Journal of consumer
+research, vol. 25, no. 3, pp. 187-217, 1998.
+Robert J. Donovan, John R. Rossiter, Gilian Marcoolyn, and
+Nesdale Andrew, "Store atmosphere and purchasing behavior,"
+Journal of Retailing, vol. 70, no. 3, pp. 283–294, 1994.
+Eiman Kanjo, Peter Landshoff, David Roberts, and Jean Bacon,
+"MobSens: Making Smart Phones Smarter", IEEE Pervasive
+Computing,
+vol.
+8,
+issue
+4,
+pp.
+50-57,
+2009,
+doi:10.1109/MPRV.2009.79.
+Eiman Kanjo, and Lulwah Albarrak, "NeuroPlace: Making sense
+of a place", 4th International Conference on Augmented Human in
+Cooperation with ACM, Stuttgart Germany, ACM, March, 2013.
+Doi:10.1145/2459236.2459267.
+Takayuki Kanda, Dylan F. Glas, Masahiro Shiomi, Hiroshi
+Ishiguro, and Norihiro Hagita, "Who will be the customer?: a
+social robot that anticipates people's behavior from their
+trajectories," in Proceedings of the 10th international conference
+on Ubiquitous computing, 2008, pp. 380-389.
+Chuang-Wen You, Chih-Chiang Wei, Yi-Ling Chen, Hao-Hua
+Chu, and Ming-Syan Chen, "Using mobile phones to monitor
+shopping time at physical stores," Pervasive Computing IEEE, vol.
+10, no. 2, pp. 37-43, 2011.
+Alexander Meschtscherjakov, Wolfgang Reitberger, Micheal
+Lankes, and Manfred Tscheligi, "Enhanced shopping: a dynamic
+map in a retail store," in Proceedings of the 10th international
+conference on Ubiquitous computing, 2008, pp. 336-339.
+Peter C. Verhoef et al., "Customer experience creation:
+determinants, dynamics and management strategies," Journal of
+Retailing, vol. 85, no. 1, pp. 31-41, 2009.
+
+[17]
+
+[18]
+
+[19]
+
+[20]
+
+[21]
+
+[22]
+
+[23]
+
+[24]
+
+750
+
+Jordan J. Louviere and Richard D. Johnson., "Reliability and
+validity of the brand-anchored conjoint approach to measuring
+retailer images," Journal of Retailing, vol. 66, no. 4, pp. 359-382,
+1990.
+J. E. B. M. Steenkamp and Michel Wedel, "Segmenting retail
+markets on store image using a consumer-based methodology,"
+Journal of Retailing, 1991.
+Orlando Wood and Wendy Lanchin, "The emotional shopper: why
+understanding how your consumers are feeling can improve
+business effects," 2011.
+M. Healy, M. Beverland, Harmen Oppewal, and Sean Sands,
+"Understanding retail experiences: The case for ethnography,"
+International Journal of Market Research, vol. 49, no. 6, pp. 751778, 2007.
+Kevin Randall. (2009, September) Neuromarketing Hope and
+Hype: 5 Brands Conducting Brain Research. [Online].
+fastcompany.com.
+"Neuromarketing: When science and marketing collide," 4imprint,
+2010.
+Nour El-Mawass, and Eiman Kanjo, "A Supermarket Stress Map",
+Workshop on “Pervasive Technologies in Retail Environments”,
+Ubicomp conference, Zurich, Switzerland, ACM, September,
+2013.
+Rui Henriques, Ana Paiva, and Cláudia Antunes, "On the need of
+new methods to mine electrodermal activity in emotion-centered
+studies," Agents and Data Mining Interaction, pp. 203-215, 2013.
+Akane Sano and Rosalind W. Picard, "Toward a taxonomy of
+autonomic sleep patterns with electrodermal activity," in
+Engineering in Medicine and Biology Society, EMBC, 2011
+Annual International Conference of the IEEE, 2011, pp. 777-780.
+J. Hernandez, D. McDuff, R. Fletcher, and R. W. Picard, "InsideOut: Reflecting on your Inner State," in Work-in-progress in
+Pervasive Computing, San Diego, CA, 2013.
+Albert Mehrabian and James A. Russell, An approach to
+environmental psychology. Cambridge, MA: MIT press., 1974,
+vol. 11.
+Robert J. Donovan and John R. Rossiter, "Store atmosphere: an
+environmental psychology approach," Journal of retailing, vol. 58,
+no. 1, pp. 34-57, 1982.
+Hisanori Kataoka et al., "Development of a skin temperature
+measuring system for non-contact stress evaluation," in In
+Engineering in Medicine and Biology Society 1998. Proceedings
+of the 20th Annual International Conference of the IEEE., vol. 2,
+1998, pp. 940-943.
+Ming-Zher Poh, Nicholas C. Swenson, and Rosalind W. Picard, "A
+wearable sensor for unobtrusive, long-term assessment of
+electrodermal activity," Biomedical Engineering, IEEE
+Transactions on, vol. 57, no. 5, pp. 1243-1252, 2010.
+Ben Zhang et al., "Location-log: Bringing Online Shopping
+Benefits to the Physical World with Magnetic-based Proximity
+Detection," 2012.
+Iris B Mauss, Michael D Robinso,n "Measures of emotion: A
+review". Cognition and Emotion. 2009; 23(2):209-237. pp.209237. DOI:10.1080/02699930802204677
+
+

@@ -1,0 +1,793 @@
+2013 Humaine Association Conference on Affective Computing and Intelligent Interaction
+
+Depression Detection & Emotion Classiﬁcation via
+Data-Driven Glottal Waveforms
+David Vandyke
+Human-Centred Computing Lab
+University of Canberra, Australian Capital Territory, Australia
+david.vandyke@canberra.edu.au
+details the prior work of the author. A review of the use of the
+glottal waveform for depression detection (Subsection IV-A)
+and for emotion classiﬁcation (Subsection IV-B) is then given.
+Sections V, VI, VII and VIII describe the proposed research
+questions, experimental methodology, foreseeable challenges
+and a timeline respectively.
+
+Abstract—This doctoral consortium paper outlines the author’s proposed investigation into the use of the voice-source
+waveform for affective computing. A data-driven glottal waveform
+representation, previously examined in the authors earlier doctoral studies for its speaker discriminative abilities, is proposed to
+be studied for both depression detection and emotion recognition,
+including severity classiﬁcation when considering depression.
+‘Data-driven’ refers to a parameterisation focus on the small
+but consistent idiosyncrasies of the glottal wave rather than only
+the mean shape and ratio measures. A review of the literature
+is given covering existing studies of the glottal waveform for
+depression detection and emotion classiﬁcation. The beneﬁts of
+developing easily accessible automatic recognition systems is
+stressed. The value of developing objective tools for clinicians in
+diagnosing depression is also conveyed. Finally research questions
+are framed and experimental methodologies discussed in order
+to address these. The studies proposed here will expand the body
+of knowledge regarding the information content of the glottal
+waveform and aim to improve depression detection and emotion
+classiﬁcation accuracies based on the voice-source alone.
+
+II.
+
+A. Depression detection
+Major depression is a extremely debilitating condition for
+individuals that typically severely limits their capabilities,
+interest levels and mood whilst also potentially causing physical health problems. Directly or indirectly the illness also
+affects the family and friends of the sufferer. Mild depression,
+dysthymia, has similar but less severe effects. Unfortunately
+depression is not only serious, it is also common. Depressive
+disorders are among the most signiﬁcant reasons for disability
+worldwide. In the United States of America approximately
+6.7% of the population (totalling nearly 15 million people)
+are affected each year by a severe mental illness, and it is the
+leading cause of disability for Americans aged between 1544 [1]. In Australia 1 in 5 people aged 16-85 experiences a
+mental illness in any one year [2]. The Australian Bureau of
+Statistics states that over 40% of 16 to 85 years across both
+genders will experience some form of mental disorder during
+their lives [3].
+
+Keywords—Automatic Depression Recognition, Emotion Classiﬁcation, Voice-Source Waveform, Glottal Waveform, Affect Classiﬁcation
+
+I.
+
+I NTRODUCTION
+
+Through the process of forcing air from the lungs, past
+the vocal folds, into the vocal tract and past the oral and
+nasal cavities out into the environment a longitudinal pressure
+wave is created which human beings have evolved the ability
+to manipulate, perceive and process in order to exchange
+information. The beauty of this one-dimensional signal is
+that is contains multiple layers of (often mutually exclusive)
+information. Speech processing is a mature ﬁeld in several
+of these information domains. Automatic speech recognition
+(ASR) aims to extract the linguistic content of the signal, while
+automatic speaker recognition (ASk R) and forensic voice
+comparison (FVC) are concerned with the identity related
+information. Both of these areas are mature research problems.
+The speech wave however also holds information pertaining to
+health, personality, gender, dialect, education, intelligence, and
+emotion. This work is focused on the comparatively nascent
+ﬁelds of a) automatic emotion classiﬁcation and b) automatic
+depression detection and severity grading. It proposes to investigate the employment of data-driven features derived from the
+under utilised glottal waveform, a signal entwined within the
+speech waveform that relates to the quasi-periodic motion of
+the vocal folds, in order to improve each of these two domains.
+
+The costs of the illness are large by any metric, be it of individual health or of an individuals contribution to society, where
+economic costs are the common measure of this. Regarding
+health, the lifetime risk of suicide for depressive patients
+when left untreated is placed at 20% [4]. Encouragingly when
+treated the suicide risk is reduced to below 1% [5]. These
+statistics convey information on only the most extreme effect
+depression can have on health. There are many other signiﬁcant
+health related concerns related to the condition; people with
+depressive illnesses carry a higher risk of developing other
+serious health problems such as stroke and heart attack [6] for
+example.
+The cost of depression has also been reported in economic
+terms, where signiﬁcant detrimental impacts are observed. In
+the USA it has been estimated that depressive illnesses cost
+up to $51 billion dollars annually in lost production and
+absenteeism [7]. In Australia the cost is $14.9 billion dollars
+and over 6 million working days lost annually [8]. Across the
+Asia-Paciﬁc region [9] concluded that the untreated cost of
+depression was similarly signiﬁcant for the several countries
+
+The remainder of the paper is organised as follows: Section
+II outlines the aims of the proposed study, whilst Section III
+978-0-7695-5048-0/13 $26.00 © 2013 IEEE
+DOI 10.1109/ACII.2013.112
+
+P ROJECT MOTIVATION & AIMS
+
+642
+
+analysed. Sobocki et al. in a 2006 study concluded that within
+Europe,“In 28 countries with a population of 466 million,
+at least 21 million were affected by depression. The total
+annual cost of depression in Europe was estimated at Euro 118
+billion in 2004, which corresponds to a cost of Euro 253 per
+inhabitant.” [10]. The authors go on to state that depressive
+illnesses are thus the most costly brain disorder in Europe,
+and that this cost totals 1% of the European gross-domesticproduct.
+
+This element of the authors doctoral work aims to study
+further the use, and in particular parameterisations, of glottal features for emotion classiﬁcation based on closed-phase
+inverse ﬁltering of the speech waveform. The studies aims
+are to increase the recognition rates of automatic emotion
+classiﬁcation systems using solely, and in combination with
+other features, the information from the speakers voice-source
+signal. Review of the use of these signals is described in
+Section IV-B before research questions and methodologies are
+explicitly proposed in Sections V and VI respectively.
+
+There are reasons to hope however. Results on improving
+peoples lives once depression is detected are positive with 70 to
+80% of people successfully treated [6]. That is if depression is
+detected. Unfortunately it is estimated that only 20% of people
+with a depressive illness seek treatment [6].
+
+III.
+
+AUTHORS PREVIOUS WORK
+
+The authors previous doctoral work has primarily focused
+on parameterisations and modelling of data-driven signals representative of the speakers voice-source, or glottal, waveform.
+This research has been done in the domain of automatic
+speaker recognition, and forensic voice comparison.
+
+Organisations such as Beyond Blue [8] and the Black Dog
+Institute [2] continue to educate the public to seek treatment
+and to look out for others, slowly removing the stigma which
+may be perceived to be attached to the illness. We believe
+however that detection rates and rates of people seeking
+treatment can be improved via simpler automatic tools which
+are minimally invasive and which can diagnose depression
+earlier and in an environment of the patients choosing. With
+increasing bandwidths and the propagation of mobile devices,
+such automatic tools that can analyse information submitted
+via microphone and camera and quickly output a useful health
+related synopses including suggestions on how the patient
+may proceed can be expected to have large beneﬁts in both
+economic and health domains.
+
+A preliminary study used glottal features for a speaker
+identiﬁcation experiment where glottal waveforms corresponding to individual pitch-periods of voiced speech where separated at the frame level with a 65% correct identiﬁcation
+rate using support-vector-machines for modelling with 20 male
+speakers from the YOHO speech corpus [12]. This work was
+extended to recognition at the utterance level in a further
+speaker identiﬁcation experiment [13], where for the 20 male
+YOHO speakers 85% of the test utterances were correctly assigned to the true speaker. This was an encouraging result that
+compared well with other glottal studies on the YOHO corpus
+[14], further conﬁrming that speaker identity information is
+present within the glottal waveform. The working hypothesis
+has been that the glottal waveform is a complimentary source
+of information to common speaker recognition parameters
+such as spectral magnitude features, and relative improvement
+of equal-error-rates (EER) of nearly 10% over the baseline
+mel-frequency cepstral coefﬁcient (MFCC) system have been
+obtained via successful score fusion in unpublished work by
+the author on all male speakers from the YOHO database.
+
+Improving the toolkit of automatic methods for depression
+detection and severity grading can also assist the health care
+provider. Currently methods rely on self reporting coupled with
+the health care practitioners informed assessment, which can
+vary signiﬁcantly across practitioners. We believe an automatic
+tool for depression detection eliminates sources of subjective
+bias and improves health care for patients and the working
+environment for practitioners. Such a tool does not aim to and
+cannot replace the doctor, psychologist or psychiatrist but can
+provide them with an objective tool to support their decisions.
+
+A novel and exciting technique for score post-processing
+for improving raw recognition scores was accepted for the
+proceedings of Interspeech 2013 in Lyon. The technique, entitled r-Norm for regression normalisation, was applied to the
+raw scores from an MFCC Gaussian-Mixture-Model (GMM),
+Universal-Background-Model (UBM) [15] speaker veriﬁcation experiment on the National Institute of Standards and
+Technology 2003 Speaker Recognition Evaluation database
+where the EER was improved from the poor baseline (due
+to a under trained background model) of 19% to 7% [16].
+An improvement was also observed in the minimum of the
+Detection Cost function. The theory behind the regression
+normalisation approach is based on capturing inter-model
+relations that are present amongst the scores of a test probe
+against all enrolled models. These relations are captured via a
+Twin-Gaussian Process Regression (TGPR) on a set of scores
+from development data and then applied to real test data.
+
+This proposed component of the authors doctoral studies
+aims to improve upon the use of the glottal waveform extracted
+from the speech signal for the detection and potential grading
+of depressive type illnesses. Investigations may also be made
+into how best to combine this information with other features
+or modalities to form a ﬁnal, single output system. Explicit research questions are given in Section V and methodologies and
+discussion are found in the immediately proceeding sections.
+B. Emotion classiﬁcation
+As mentioned, there is an increasing presence and capability of computational devices in our daily lives. One of the key
+components of increasing the functionality of these devices
+is building in a pseudo-intelligence (initially at least) that is
+based on executing different responses for different users and
+different user emotional states and needs. Essential to this
+is the accurate, real-time recognition of human emotions as
+they are naturally conveyed through gesture, expression and
+speech [11]. This is one of the primary research goals of
+Human-Computer-Interaction (HCI) ﬁeld established over the
+last decade.
+
+The author has also submitted work on using the glottal
+waveform for FVC where experiments were performed with
+a forensically challenging dataset comprising 26 young Australian females with extremely similar speech characteristics
+to the human ear [17]. This work was accepted for the
+
+643
+
+International Association of Forensic Phonetics and Acoustics
+(IAFPA) annual 2013 conference as an abstract after full
+peer review. This present work marks the commencement of
+the authors research into the glottal waveform for affective
+computing.
+IV.
+
+showed correlates of condition with fundamental frequency
+measures [22]. This study is interesting and unique in the
+detail that it is difﬁcult and thus rare to obtain recordings of
+the same subject in multiple states of health. In [23] energy
+measures of the speech waveform are shown to achieve the
+highest depressed/non-depressed classiﬁcation scores on average across a range of modelling techniques. References 1,4-9
+contained within [24] give a broad account of the research into
+prosodic features for depression detection. References 13-21
+and 22-28 within [25] cover prosodic and spectral information
+for depression diagnosis respectively.
+
+L ITERATURE REVIEW: A FFECT PREDICTION VIA THE
+VOICE - SOURCE WAVEFORM
+
+Affect prediction is a still nascent but rapidly growing
+ﬁeld of research with the top level aims of increasing the
+emotional intelligence of our computers in order to facilitate
+more natural and intelligent human-computer interaction that
+is based on awareness, perception and measured response. This
+bridge towards the development of pseudo intelligence begins
+the journey away from the initial injective output for a given
+input paradigm of computing. Key to developing the ability of
+programmed machines to interact with human users in a natural
+way is an intelligent recognition of the environment, including
+the wishes and emotional state of the user. Current research
+problems are focused on the foundation blocks of recognising
+the patterns within audio and visual signals that represent
+these emotional states. Early work on employing the voice
+for affect prediction [18] demonstrated what is intrinsically
+known to humans; the voice contains much greater depth than
+just linguistic content, both of a desired (convey mood) and
+unintentional manner (lying, health). This research plan proposes to study the use of the voice-source waveform extracted
+from the digitised speech signal for emotion classiﬁcation and
+depression detection. We now review previous studies in these
+ﬁelds.
+
+There exist reasons for exploring in detail the use of the
+glottal waveform for affect prediction that are stronger than
+the fact that it is under researched in comparison to other
+information sources. Depression can cause changes in voice,
+perhaps even dysphonia. Emotional stress causes changes in
+tension applied to vocal folds during their opening (abduction)
+and closing (adduction) phases of quasi-periodic vibration.
+This is not detected by fundamental frequency measurements
+(including jitter and shimmer) but is contained in the waveform
+shape of the glottal pulse during a voiced pitch-period. Table
+6.1 in Rosalind Picard’s seminal book on affective computing
+lists several indicators of affect within the speech signal and
+production process. Several of these relate strongly to the
+voice-source waveform. Anger for example is said to be
+characterised by being breathy and having a chesty tone [11].
+By analysing spectral energy envelopes of the speech and
+glottal signals, [26] observed that emotion classiﬁcation rates
+for seven emotions was signiﬁcantly higher (90% correct
+identiﬁcation) than compared to a baseline spectral system
+(38%) and concluded that most of the emotional information
+is introduced by the voice-source wave. In a small study using
+groups of 15 males and 18 females approximately evenly
+split between control and patient groups, common statistical
+measures of the glottal waveform other than the average were
+determined to be statistically signiﬁcant by ANOVA and shown
+to given good classiﬁcation results [25]. Limitations of this
+study (and these are typical) are primarily the limited number
+of subjects, which makes drawing strong statistical conclusions
+difﬁcult. A study highlighting this point is presented in [27].
+An audio-visual database containing subjects without any affective disorder at the time of recording was initially collected.
+Within two years of this recording a small group numbering
+15 were assessed by a psychologist to have developed a major
+depressive disorder. Via an analysis using glottal ratio based
+parameters it was claimed that with 69% accuracy the onset of
+depression could be predicted within the proceeding two years
+given the recording of a currently mentally healthy patient.
+
+A. The voice-source waveform for depression recognition
+The voice-source waveform or glottal waveform describes
+the air pressure wave that passes into the vocal tract having
+been modulated by the vibratory motion of the speakers vocal
+folds. Electroglottograph (EGG) measurements allow signals
+to be obtained that are most reﬂective of the true quasiperiodic motion of the vocal folds but are impractical for most
+situations, particularly for developing systems that may be
+installed on users portable devices. As such estimates of the
+voice-source waveform are typically obtained from the digitised speech signal via linear-predictive theory which couples
+strongly with the source-ﬁlter theory of speech production.
+Through this process a ﬁlter representing the transfer function
+of the vocal tract is estimated and used to remove the vocal
+tract resonances from the speech signal over a small period of
+time where the vocal tract ﬁlter may be assumed stationary.
+For a thorough review regarding obtaining the glottal pulse
+from the speech waveform please see [19].
+
+In [28] a study with 10 high-risk for suicide depressed
+patients, 10 low-risk depressed patients and 10 non-depressed
+controls, found that the slope of the glottal ﬂow spectrum was
+a statistically signiﬁcant discriminator between all 3 classes,
+however again larger databases are required for conﬁrmation.
+Interestingly the work was initiated by psychiatrists reviewing
+their case history and realising that the patients voice, independent of linguistic content, was their primary information source
+for insight into near-term suicide risk. Automated methods are
+not yet able to classify types of depressive illness (bi-polar,
+retarded and agitated depression) or accurately rate the severity
+of a subjects detected depressive illness from the speech signal
+
+Early investigations of the speech signal for depression
+(and affect in general) focused on prosodic and spectral magnitude features primarily relating to the vocal-tract conﬁguration.
+Pitch related parameters (F0-contour, F0-bandwidth and F0amplitude) were shown to have a strong correlation with almost
+two-thirds of the 30 depressive in-patients in [20]. As early as
+1965, 32 hospitalised depressive patients recorded interview
+data which was also paired with mood assessments from
+two clinicians. Large adjustments in patient mood were able
+to be detected using spectral information [21]. Recordings
+of 16 people before and after having a depressive illness
+
+644
+
+alone, however there is a growing body of research which
+exhibits tentative but positive results regarding the potential
+accuracy of automatic depression detection from the speech
+waveform.
+
+for the desired independence of phonetic content on emotion
+recognition [37].
+The accuracy of speech recognition is today very high in
+controlled environments. The opposite operation, namely textto-speech whilst intelligible remains to be comparable with
+natural human speech and the largest component that it lacks is
+the ability to convey emotion realistically. This is also required
+for semantic content, as meaning typically comprises higher
+levels of information than solely linguistic content. Beneﬁts
+of improving these areas include improved human-computer
+interaction and enhanced forensic tools. Learning to detect
+signatures of emotion classes in natural speech is also likely
+to lend insight into this domain of synthesis. Importantly interesting synthesis experiments involving switching the glottal
+waveform of two speakers and noting perceptual differences
+provide evidence for the glottal waveforms signiﬁcant effect
+on voice quality [38].
+
+B. The voice-source for emotion classiﬁcation
+Improved automated emotion categorisation is required
+for creating intelligent computational systems. There is “considerable evidence” that emotional arousal affects the respiratory, phonatory and articulatory processes and that these
+effects are present within the speech signal [28]. Similar
+trends however are observed between emotion classiﬁcation
+research and depression detection research in the sense that
+spectral and prosodic information have been the larger research
+focus for detecting these effects within the speech pressure
+wave [29], [30]. Voice quality, however, is a combination of
+several equally important variables [31]. Work by Sun et al.
+has shown that prosody alone is not enough to differentiate
+between certain emotional states [32]. It was found that
+glottal ratio based parameters were statistically signiﬁcant in
+classifying emotional states that prosodic measures uniformly
+misclassiﬁed. Further work on authentic speech data using
+glottal parameters again showed these to complement more
+common prosodic measures. Prosodic features are shown to
+distinguish between so called activation and power dimensions
+of emotional output, whilst glottal features were best able to
+differentiate expectation and valence [24] (these four emotional
+dimensions are described in the SEMAINE database meta
+information). Earlier studies have demonstrated that there
+exists a strong correlation between the glottal waveform and
+emotional stress [33],[34]. Statistical parameters of the glottal
+waveform such as strength of glottal closure, instantaneous
+frequency, sharpness of epoch and delta related information of
+epoch strength were extracted from the glottal closure region
+of the glottal period in [29] where they were then used to
+classify 6 emotional categories with up to 61% accuracy.
+
+V.
+
+P ROPOSED RESEARCH QUESTIONS
+
+The research questions the author proposes to study are
+detailed as follows, broken into depression and other affect
+domains. Note that ‘data-driven’ with respect to ‘data-driven
+glottal waveform’ describes the approach to parameterising the
+inverse-ﬁltered signals, that focuses on not only the mean type
+shape of the glottal wave, but also the small but discriminative
+deviations from the mean shape that have observed to be consistently produced across speakers. It is hypothesised that these
+differences may help to accurately allocate group membership
+regarding depression and emotion class also.
+Depression detection research questions:
+1)
+
+2)
+
+Three simulated emotional states - happiness, anger and
+sadness - in a small 6 subject database were classiﬁed using
+glottal ratios describing the symmetry of the glottal pulse
+in [35]. The glottal wave was obtained by inverse ﬁltering
+with reference to a laryngographic ground truth signal for
+comparison and alignment. A certain robustness to additive
+Gaussian noise of the glottal waveform was demonstrated in
+[36] where identiﬁcation accuracy was reduced from 67% to
+52% for classifying 6 emotional categories of acted speech.
+
+3)
+
+4)
+
+One of the issues with emotion classiﬁcation research is
+the selection and availability of appropriate speech corpora.
+There is debate regarding the appropriateness of simulated
+emotions for such research and also the issue regarding the
+non-discrete nature of the emotional variability space, where
+ground truth labels can be somewhat subjective. An interesting
+study presented in [37] collected a small database via a speech
+induction task where several physiological parameters that
+are more objectively indicative of an emotional ground truth
+were recorded in parallel. This is key research for linking
+assumptions of emotionally-induced physiological changes directly affecting the speech waveform. Voice quality parameters
+focusing on fundamental frequency measures are shown to
+correlate well with emotional categories and to also hold
+across longer term averaging of features which gives evidence
+
+Can the glottal waveform, in a data-driven form
+that is extracted from each voiced pitch-period of
+the speech signal and contains small but informative
+idiosyncrasies that are not captured by ratio or slope
+measurements, be utilised to recognise depression?
+What is the optimal way to model these data for
+detecting depression?
+Is it possible to rate the severity of detected depression from reference to these glottal data? Is it possible
+to detect the onset of depression, or the improvement
+of depressed subjects from reference to these data?
+Investigate the appropriateness of the Bayesian likelihood ratio framework for clinicians to update their
+prior assessment given the analysis of the speech
+evidence.
+
+Emotion classiﬁcation research questions:
+1)
+2)
+3)
+
+VI.
+
+Can emotion be correctly classiﬁed from the speech
+signal alone using this data-driven glottal waveform?
+What is the optimal way to model these data for
+classifying emotion?
+Which emotions are best classiﬁed from reference to
+the voice-source data?
+P ROPOSED EXPERIMENTS & METHODOLOGY
+
+The following sections outline the proposed experiments
+and methodologies designed to address the above mentioned
+research questions.
+
+645
+
+Depression detection experimental work
+The author has been granted access to audio-visual data
+from the Black Dog Institute1 (BDI) that comprises 30
+non-depressed control subjects and 30 depressed subjects as
+determined by clinicians. The data is evenly split between
+genders in both categories. All subjects were recorded under
+similar conditions answering an interviewers questions. The
+controlled recording conditions are suitable for obtaining
+the glottal waveform by inverse ﬁltering methods. Signal
+characteristics should be perturbed in a consistent way with
+regard to minimal echo and phase distortion effects. Clinical
+data recorded under similar circumstances was shown to be
+highly informative in other studies [34], [25]. It must be
+noted also the perspective that the numbers extracted may
+represent a glottal waveform that differs slightly from the
+actual volume velocity ﬂow of air through the glottis as the
+speech wave was produced, but that these features are or may
+be shown to be reproducible, complementary and informative.
+The diarised audio extracted from the video sequence results
+in approximately 5 minutes of subject speech. This provides
+a suitably large corpus for addressing the presented research
+questions and obtaining, at least weak, statistical conclusions.
+It is submitted to perform gender independent experiments
+where glottal information will be extracted from all subjects
+data and leave-one-out cross validation will provide enough
+training data for building models for each of the two classes
+‘depressed’ and ‘non-depressed’. The glottal waveform will be
+extracted via closed-phase inverse ﬁltering [12] and iterative
+methods [25]. The correctness of the glottal pulse will be
+indicated by the objective measures reviewed in [39]. It is
+also planned for the BDI data collection process to begin
+capturing the EGG signal in parallel to the speech signal,
+thus providing a ground truth for the inverse ﬁltered signal.
+It is planned to empirically determine parameterisations of
+the data-driven glottal waveforms for optimal classiﬁcation
+accuracy, and to use modelling methods from which a score
+is output and may be thresholded for classiﬁcation purposes.
+In this way a continuum is present and may prove insightful
+with regard to severity grading and patient monitoring.
+Classiﬁcation scores will be analysed for correlations with
+the clinicians depression rating values. Probabilistic models
+such as Gaussian mixtures that output a probability value or
+support-vector-machines from which a distance measure from
+a deciding hyperplane may be interpreted as a conﬁdence
+measure are initially proposed for this. Initial experimental
+work has been performed including the extraction of the
+glottal signal from the BDI data, and preliminary classiﬁcation
+results are encouraging.
+
+It is proposed to begin the investigation into the use of the
+data-driven glottal waveform parameterisation the author
+has previously employed for speaker identity research for
+emotion classiﬁcation on the 2009 Interspeech Emotion
+Challenge FAU Aibo Emotion Corpus described in [40].
+Access is also available to the large SEMAINE 2 and Belfast
+Naturalistic Emotional Database3 corpora amongst others.
+The proposed experimental methods are tentative and would
+beneﬁt from knowledgable feedback from the ACII audience.
+With suitably large databases such as these it is proposed to
+create disjoint training and testing sets and explore informed
+parameterisations of the data-driven glottal waveforms in
+combination with several established machine learning
+techniques for modelling. A key component in informing
+parameterisation approaches and model selection involves as a
+ﬁrst step completing a deeper review of the existing literature
+concerning emotion classiﬁcation from the speech waveform.
+VII.
+
+C HALLENGES
+
+Challenges facing successfully drawing conclusions on the
+proposed research questions fall in two distinct categories.
+The ﬁrst category relates to uncertainty in how best to design
+experiments, primarily meaning how best to construct features
+and model them, in order to develop strong results. This
+issue can be informed by research of existing techniques,
+and discussion with colleagues in order to develop hypotheses
+regarding the most appropriate methods. It may be that there
+are different aspects of information within the glottal waveform
+and that different parameterisations are appropriate for the
+depression and emotion domains. Researching new techniques
+and empirical study will overcome this issue.
+The second category of challenges is more fundamental and
+relates to the data. For the proposed research into depression
+detection and judging its severity it will be difﬁcult to make
+statistically strong conclusions due to the limited size of the
+available database. It is a fundamentally difﬁcult task to collect
+a large database of depressed and non-depressed subjects.
+For preliminary investigations the available data is suitable.
+Beyond this it is known that the Black Dog Institute is growing
+their database and the release of more data is anticipated.
+Ideally the collection of multiple speech data from a single
+subject (particularly depressed) over a long period of time
+along with time matched clinical assessments of the patients
+health would be possible as it would enable the study of how
+the glottal characteristics of a depressed patient really changes
+as inﬂuenced or potentially caused by the depressive illness.
+This data would enable the development of more rigorous
+models, even patient speciﬁc ones which would facilitate the
+introduction of self monitoring tools to assist the patients back
+to health and in monitoring their own health into the future.
+
+Scoring within a Bayesian likelihood ratio frameworkcombining a measure of similarity (how speech features
+match depressed models) with one of typicality (how the
+speech features are described by non-depressed models)
+-will be investigated as means for a) practitioners to update
+a priori beliefs in a scientiﬁc way post analysis of the
+speech evidence and, b) to possibly provide a theoretic
+framework for the fusion of glottal and other features. The
+BDI data is believed to be sufﬁcient for these proposed studies.
+
+VIII.
+
+P ROPOSED ORDER OF RESEARCH WORK
+
+This piece of writing commences the authors investigation
+into the use of the glottal waveform for affective computing.
+It is planned to commence experimental work on the BDI
+database and execute the experimental framework described
+above. Also prior to the ACII 2013 conference it is planned
+
+Emotion classiﬁcation experimental work
+
+2 http://semaine-db.eu/
+1 http://www.blackdoginstitute.org.au
+
+3 http://www.idiap.ch/mmm/corpora/emotion-corpus
+
+646
+
+[20]
+
+to have completed a comprehensive literature review of the
+glottal waveform for emotion classiﬁcation, including a review
+of other more prevalent speech features for the same task.
+It is anticipated that stronger evidence will be established
+demonstrating that there are physiological reasons to expect
+the glottal waveform to be informative regarding emotion
+categorisation and that it is an under represented research
+area, dominated by prosodic and spectral related features.
+Preliminary emotion classiﬁcation experimental work will be
+carried out in order to maximise the beneﬁt of discussing the
+research questions and proposed methodologies with the ACII
+audience.
+
+[21]
+
+[22]
+
+[23]
+
+[24]
+
+R EFERENCES
+
+[25]
+
+[1] National Institue of Mental Health (USA), “The numbers count:
+Mental disorders in america,” [Online] http://www.nimh.nih.gov/health/
+publications/the-numbers-count-mental-disorders-in-america/index.
+shtml, 2013.
+[2] Black Dog Institute, “Facts and ﬁgures about mental health and
+mood disorders,” [Online] http://www.blackdoginstitute.org.au/docs/
+Factsandﬁguresaboutmentalhealthandmooddisorders.pdf, 2012.
+[3] The Australian Bureau of Statistics,
+“Mental health,” [Online]
+http://www.ausstats.abs.gov.au/ausstats/subscriber.nsf/LookupAttach/
+4102.0Publication25.03.094/$File/41020 Mentalhealth.pdf, 2009.
+[4] I. Gotlib and C. Hammen, Handbook of depression, New York: Guilford
+Press., 2002.
+[5] G. Isacsson, “Suicide prevention a medical breakthrough?,” Acta
+Psychiatrica Scandinavica, vol. 102, no. 2, pp. 113–117, 2000.
+[6] B. Murray and A. Fortinberry, “Depression facts and stats,” [Online]
+http://www.upliftprogram.com/depression stats.html, 2005.
+[7] CA Rand Corporation, Santa Monica, “The societal promise of
+improving care for depression,” [Online] http://www.rand.org/content/
+dam/rand/pubs/research briefs/2008/RAND RB9055-1.pdf, 2008.
+[8] Beyond Blue, “The facts: Depression and anxiety,” [Online] http://www.
+beyondblue.org.au/the-facts, 2012.
+[9] T. Hu, “The economic burden of depression and reimbursement policy
+in the asia paciﬁc region,” Australas Psychiatry, vol. 12, 2004.
+[10] P. Sobocki, B. Jnsson, J. Angst, and C. Rehnberg, “Cost of depression
+in europe,” The Journal of Mental Health Policy and Economics, vol.
+9(2), pp. 87–98, 2006.
+[11] R W. Picard, Affective computing, MIT Press, Cambridge, MA, USA,
+1997.
+[12] D. Vandyke, M. Wagner, R. Goecke, and G. Chetty, “Speaker identiﬁcation using glottal-source waveforms and support-vector-machine
+modelling,” in Proceedings of Speech Science and Technology, 2012,
+pp. 49–52.
+[13] D. Vandyke, M. Wagner, and R. Goecke, “Voice source waveforms for
+utterance level speaker identiﬁcation using support vector machines,”
+in International Conference on Information Technology in Asia, 2013.
+[14] T. Drugman and T. Dutoit, “On the potential of glottal signatures for
+speaker recognition,” in Interspeech, 2010, pp. 2106–2109.
+[15] D. Reynolds, T. Quatieri, and R. Dunn, “Speaker veriﬁcation using
+adapted gaussian mixture models,” in Digital Signal Processing, 2000,
+pp. 19–41.
+[16] D. Vandyke, M. Wagner, and R. Goecke, “R-norm: Improving interspeaker variability modelling at the score level via regression score
+normalisation,” in Proceedings of Interspeech, Lyon, August 2013.
+[17] D. Vandyke, P. Rose, and M. Wagner, “The voice source in forensicvoice-comparison: a likelihood-ratio based investigation with the challenging yafm database,” Proceedings International Association of
+Forensic Phonentics and Acoustics, 2013.
+[18] KR. Scherer and B. Zei, “Vocal indicators of affective disorders,”
+Psychother Psychosom, vol. 49(3-4), pp. 179–8, 1998.
+[19] P. Alku, “Glottal inverse ﬁltering analysis of human voice production
+a review of estimation and parameterization methods of the glottal
+excitation and their applications,” Sadhana, pp. 1–28, 2011.
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+
+[30]
+
+[31]
+
+[32]
+
+[33]
+
+[34]
+
+[35]
+
+[36]
+[37]
+
+[38]
+
+[39]
+
+[40]
+
+647
+
+S. Kuny and HH Stassen, “Speaking behavior and voice sound
+characteristics in depressive patients during recovery,” Journal of
+Psychiatric Research, vol. 27(3), pp. 289–307, 1993.
+WA.. Hargreaves, JA. Starkweather, and KH Blacker, “Voice quality in
+depression,” Journal of Abnormal Psychology, vol. 70(3), 1965, pages
+218-220.
+A. Nilsonne, “Acoustic analysis of speech variables during depression
+and after improvement,” Acta Psychiatr Scand, vol. 76(3), 1987, pages
+235-45.
+S. Alghowinem, R. Goecke, M. Wagner, J. Epps, M. Breakspear, and
+G. Parker, “A comparative study of different classiﬁers for detecting
+depression from spontaneous speech,” in IEEE International Conference
+on Acoustics, Speech and Signal Processing, ICASSP, 2013, pp. 26–31.
+R. Sun and E. II Moore, “Investigating glottal parameters and teager
+energy operators in emotion recognition,” in Affective Computing and
+Intelligent Interaction, 2011, pp. 425–434.
+E. Moore, M.A. Clements, J.W. Peifer, and L. Weisser, “Critical
+analysis of the impact of glottal features in the classiﬁcation of clinical
+depression in speech,” IEEE Transactions on Biomedical Engineering,
+vol. 55, no. 1, pp. 96–107, 2008.
+L. He, M. Lech, and N. Allen, “On the importance of glottal
+ﬂow spectral energy for the recognition of emotions in speech,” in
+Proceedings of Interspeech, 2010, pp. 2346–2349.
+KEB. Ooi, LSA. Low, M. Lech, and N. Allen, “Early prediction
+of major depression in adolescents using glottal wave characteristics
+and teager energy parameters,” in IEEE International Conference on
+Acoustics, Speech and Signal Processing, 2012, pp. 4613–4616.
+A. Ozdas, R.G. Shiavi, S.E. Silverman, M.K. Silverman, and D.M.
+Wilkes, “Investigation of vocal jitter and glottal ﬂow spectrum as
+possible cues for depression and near-term suicidal risk,” IEEE
+Transactions on Biomedical Engineering, vol. 51, no. 9, 2004, pages
+1530-1540.
+SG. Koolagudi, R. Reddy, and KS. Rao, “Emotion recognition from
+speech signal using epoch parameters,” in International Conference on
+Signal Processing and Communications, SPCOM, 2010, pp. 1–5.
+H. Meng and N. Bianchi-Berthouze, “Affective state level recognition
+in naturalistic facial and vocal expressions,” IEEE Transactions on
+Cybernetics, vol. PP, no. 99, pp. 1–1, 2013.
+G. Klasmeyer, “The perceptual importance of selected voice quality
+parameters,” in IEEE International Conference on Acoustics, Speech,
+and Signal Processing, ICASSP, 1997, vol. 3, pp. 1615–1618 vol.3.
+R. Sun, E. Moore, and J.F. Torres, “Investigating glottal parameters for
+differentiating emotional categories with similar prosodics,” in IEEE
+International Conference on Acoustics, Speech and Signal Processing,
+2009, pp. 4509–4512.
+KE. Cummings and MA. Clements, “Analysis of the glottal excitation
+of emotionally styled and stressed speech.,” in Journal of the Acoustic
+Society of America, 1995.
+E. Moore, M. Clements, J. Peifer, and L. Weisser, “Investigating the role
+of glottal features in classifying clinical depression,” in Proceedings of
+the 25th Annual International Conference of the IEEE Engineering in
+Medicine and Biology Society., 2003, vol. 3, pp. 2849–2852 Vol.3.
+AI. Iliev and MS. Scordilis, “Emotion recognition in speech using
+inter-sentence glottal statistics,” in 15th International Conference on
+Systems, Signals and Image Processing, IWSSIP, 2008, pp. 465–468.
+A. Iliev and M. Scordilis, “Spoken emotion recognition using glottal
+symmetry,” EURASIP Journal of Advances in Signal Proceeding, 2011.
+T. Johnstone and K.R. Scherer, “The effects of emotions on voice
+quality,” Proceedings of the XIV Int. Congress of Phonetic Sciences,
+pp. 2029–2032, 1999.
+LR. Yanguas and TF. Quatieri, “Implications of glottal source for
+speaker and dialect identiﬁcation,” in Proceedings IEEE International
+Conference on Acoustics, Speech, and Signal Processing, 1999, vol. 2,
+pp. 813–816.
+E. Moore and J. Torres, “A performance assessment of objective
+measures for evaluating the quality of glottal waveform estimates,”
+Speech Communication, vol. 50(1), pp. 56–66, 2008.
+B. Schuller, S. Steidl, and A. Batliner, “The interspeech 2009 emotion
+challenge,” in Proceedings of Interspeech, 2009, pp. 312–315.
+
+

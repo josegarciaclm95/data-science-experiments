@@ -1,0 +1,402 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/300562034
+
+Using Social Networks Data for Behavior and Sentiment Analysis
+Conference Paper · September 2015
+DOI: 10.1007/978-3-319-23237-9_25
+
+CITATIONS
+
+READS
+
+3
+
+292
+
+3 authors:
+Barbara Calabrese
+
+Mario Cannataro
+
+Universita' degli Studi "Magna Græcia" di Catanzaro
+
+Universita' degli Studi "Magna Græcia" di Catanzaro
+
+29 PUBLICATIONS   106 CITATIONS   
+
+337 PUBLICATIONS   2,712 CITATIONS   
+
+SEE PROFILE
+
+SEE PROFILE
+
+Nicola Ielpo
+Universita' degli Studi "Magna Græcia" di Catanzaro
+7 PUBLICATIONS   14 CITATIONS   
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+TUMORI EREDITARI View project
+
+Educational Modules on High Performance Computing Bioinformatics Algorithms View project
+
+All content following this page was uploaded by Barbara Calabrese on 18 December 2016.
+The user has requested enhancement of the downloaded file.
+
+Using social networks data for behavior and
+sentiment analysis
+Mario Cannataro? , Nicola Ielpo, and Barbara Calabrese
+University ”Magna Graecia”
+viale Europa, 88100, Catanzaro, Italy
+
+Abstract. With the advent of social networks every day, it is generated
+and stored a huge amount of information. The social network therefore
+represents a potentially infinite source of user data, usable both for scientific and commercial applications. Specifically, they store a lot of data
+regarding individual and collective behavior, and informations relative
+to individuals and their relationship with other users. The combination
+of behavior and sentiment analysis tools with methodologies of affective
+computing could allow the extraction of useful data that convey information for different applications, such as depression state detection in
+psychology field.
+Keywords: social network, behavior analysis, sentiment analysis, affective computing
+
+1
+
+Social Networks: a main data source for detecting
+behaviors and emotions
+
+In recent years, social networks have seen an exponential increase and now they
+store a lot of data regarding individuals and their relationship with other individuals as well as data regarding groups or communities of users. Thus, analyzing
+social network data may be helpful to detect behaviour and emotions of individualsa as well as well of communities.
+Social networks are the most representative models of Graph Databases. In
+social networks [26], the nodes are people and groups, while the links show
+relationships or flows between the nodes. Some examples are the friendships,
+business relationships, research networks (collaboration, co-authorship), recordings of communications (mail, phone calls, etc . . . ), computer networks, national
+security. There is an increasing activity in the field of social networks analysis,
+visualization and data processing in such networks.
+Social networks provide some interfaces that allow to access to the data of its
+members in respect of their privacy. However, since they base their own business
+model on these data, consequently the access modes (legal) to the data and the
+amount of data extracted from the social network are very low. Alternatively,
+?
+
+Corresponding author
+
+2
+
+Mario Cannataro et. al.
+
+there are other methods for extracting data from social network associated with
+the Web Scraping.
+To analyze social networks data the following main tasks need to be performed: social network data extractions (e.g. through the APIs provided by major social networks providers); data storage (e.g. through the emerging NoSQL
+databases well suited to store graph-based data); data analytics (to discover behaviors and emotions) eventually coupled with complementary approaches such
+as affective computing, eye movement and facial movement detection.
+Below are shown the main features of the two most popular social network:
+Facebook and Twitter.
+1.1
+
+Facebook API
+
+Facebook is a social network that allows registered users to create their own
+profile to upload photos, videos and send messages, in order to keep in touch
+with friends, family and colleagues. It also has the following features: groups,
+events, pages, chat, marketplace and privacy manager. In order to try to extract
+information from a user, you must be registered to the social network. If the user
+belongs to my friends network then I can have access to all the information that
+he has made available on its user profile. Instead in the case in which he is not
+my friend, the data that I might be able to collect depend entirely on how he
+has set the privacy for his profile. So with regard to Facebook, find information
+about a user that is not in our friends network turns out to be a very complicated
+operation and appears to be influenced by the level of privacy that this user has
+set for herself. Generally most of the registered users on Facebook do not change
+these settings and leave the default ones that allow the tracing of the person on
+the search engines and leave public the basic information of the profile.
+Facebook is characterized by the social graph, the graph in which nodes represent entities (such as people, pages or applications) and arcs represent entities
+connections. Therefore each entity or object is a node in the social graph and
+every action of an entity is an arc. It is possible interact with the social graph in
+a unique way, ie through HTTP calls to the Facebook API [21]. The interaction
+involves two main components: the Graph API for reading and writing of the
+social graph and the OGP (Open Graph Protocol), which is the protocol that
+allows you to insert any object in the social graph by simply entering within it
+the meta-data RDFa (Resource Description Framework in Attributes).
+The Graph API allow you to have a uniform view of the Facebook social
+graph through simple HTTP calls; it is obtained, therefore, a subset of the
+nodes and connections of the graph. Each entity of the social graph has a
+unique identifier; then the properties of the object can be tracked at https :
+//graph.f acebook.com/ < id >. Alternatively, all entities with a username field
+(such as user profiles and pages) are accessible using this field instead of the id.
+HTTP calls return a response message with a well-defined structure (XML or
+JSON); the latter is the most widely used format for response messages of Web
+services because it is much lighter than XML. It is possible to examine the connections between the various objects of the social graph using the following URL
+
+Using social networks data for behavior and sentiment analysis
+
+3
+
+structure:https : //graph.f acebook.com/ < id > /connection type. The request
+URL may include the access token parameter in case in which it is expected the
+authenticated and authorized access process of to the information contained.
+The Graph API therefore allow to easily access all public information of
+an object; in case you wish to obtain additional information, you need permission of the entity that owns them. As previously described, the authentication
+mechanism of Facebook is based on OAuth 2.0 protocol, which provides for the
+acquisition of an access token. There are different ways of acquiring the access
+token; the easiest is to go into the Graph API Explorer and press the ”Get
+Access Token”. Then you will need to select the permissions you are interested
+in selecting the appropriate boxes. Of course this can also be done via HTTP,
+just hanging to the query string of the API HTTP address the access token
+parameter (https : //graph.f acebook.com/me?access token = ...).
+The Graph API provide three types of permits: base permits (do not require
+any access token); user data and friends data permits (they are designed to
+restrict access to personal data of users); extended permits (required for publication and access to sensitive data). So, the access token is a mechanism whose
+aim is to provide a temporary and limited access to the Facebook API. Graph
+API calls return most of the properties of the object of the social graph related
+to the query sent; to select the parameters that you want returned you must
+enter the fields parameter in the search string of the API call.
+1.2
+
+Twitter API
+
+Twitter is a service of micro-blogging with two main characteristics: its users
+send messages (tweets) of 140 characters usually compounds by keywords (in
+the form of hashtags), natural language and common abbreviations; moreover,
+each user can follow other users so that his timeline is populated by their tweets.
+It is much easier to obtain user data because the profiles are public and can be
+viewed by anyone. As for Facebook there is the ability to change the settings
+relating to privacy so that users can see their profile only after we have accepted
+their request. Even in this case, however, users who choose this route about privacy are few; moreover also any person not registered in Twitter can access to
+user profiles. Both Social Network provide APIs (Application Programming Interface) with OAuth authentication mechanism. The purpose of this protocol is
+to provide a framework for the verification of the identity of the entities involved
+in secure transactions. There are at the moment two versions of this protocol:
+OAuth 1.0 [19] and OAuth 2.0 [20]. Both versions support two-legged authentication, in which a server is guaranteed about the user identity and three-legged
+authentication, in which a server is guaranteed by an application about the user
+identity. This type of authentication requires the use of the access token and it
+is currently implemented by the Social Network.
+Compared to Facebook, Twitter connections are bidirectional: there is an
+asymmetric network consisting of friends, that is the accounts that a user follow
+and followers, that is the accounts that follow the user. The timeline of a user
+
+4
+
+Mario Cannataro et. al.
+
+that you can trace in the home consists of a real-time stream containing all the
+tweets of his friends.
+As well as Facebook provides the Graph API Explorer useful to explore the
+API, Twitter provides the Twitter Console; generally Twitter offers an extensive
+collection of APIs, all based on HTTP [22]. Twitter supports two authentication
+methods based on the OAuth protocol: the first one based on OAuth 1.0a related
+to the user and the second one based on OAuth 2.0 related to an application.
+The first mode defined application-user authentication includes an HTTP
+authorization request that communicates what application is making the request,
+on behalf of which user the application is making the request, if the user has
+authorized or not the application and if during transit the request has been
+tampered by third parties.
+In the second mode, defined application-only authentication, the application
+encodes its consumer key and its secret key in a set of encoded credentials and
+then performs an HTTP POST request to endpoint oauth2/token to exchange
+these credentials with a bearer token. The bearer token obtained is used to
+authenticate the application that it represents in the REST API. The latter
+approach is much simpler because it is not required that the call is signed.
+The typology of the Twitter API end-point is the following: https : //api.twitter.com/1.1/ <
+resource > / < action >. The Twitter API include 16 resources: timeline, tweet,
+search, streaming, direct messages, friends and followers, users, user suggested,
+favorites, lists, saved search, places, trends, spam reporting, OAuth, help. The
+Twitter Search API allows the execution of real-time queries on recent tweet. In
+particular, the query must be simple, limited to a maximum of 1000 characters,
+including operators and it is always required some form of authentication. In this
+case the only available resource is the tweet. The Twitter Streaming API allow a
+real-time update of information relating to specific resource, thereby eliminating
+the need to repeatedly call at regular intervals (polling) its REST end-point.
+
+1.3
+
+NoSQL Database
+
+In recent years it has increased more and more the volume of data to be stored
+and the need to process large amounts of data in a short time; therefore you
+are heading for a new model of data management that moves away from the
+relational model: the NoSQL model. It provides four main families of database:
+Key-Values stores; Column-oriented databases; Document databases and Graph
+databases [1]. Graph databases have become a topic of interest in the last years,
+mainly due to the large amount of data modeled as a graph introduced by
+web. A graph, the key element of the Graph database, is defined as a simple
+mathematical structure that consists of nodes and arcs connecting the nodes.
+More formally, a graph is an ordered pair of sets G = (V, E), with V a set of
+nodes and E a set of arcs, such that the elements of E are elements of V pairs
+[2].
+
+Using social networks data for behavior and sentiment analysis
+
+2
+
+5
+
+Behaviour Analysis
+
+With the rise of social media, users are given opportunities to exhibit different
+behaviors such as sharing, posting, liking, commenting, and befriending conveniently. By analyzing behaviors observed on social media, it is possible to classify
+these behaviors into individual and collective behavior. Individual behavior is exhibited by a single user, whereas collective behavior is observed when a group
+of users behave together [18].
+In [3], the authors investigated whether posts on FB would also be applicable for the prediction of users psychological traits such as self-monitoring (SM)
+skill that is supposed to be linked with users expression behavior in the online
+environment. They present a model to evaluate the relationship between the
+posts and SM skills. They first, evaluate the quality of responses to the Snyders
+Self-Monitoring Questionnaire (inerire rif) collected via the Internet; and secondly, explore the textual features of the posts in different SM-level groups. The
+prediction of posts resulted in an approximate 60% accuracy compared with the
+classification made by Snyders SM scale. They concluded that the textual posts
+on the FB Wall could partially predict the users SM skills.
+Zhang et al. propose a socioscope model for social-network and humanbehavior analysis based on mobile-phone call-detail records. They use multiple
+probability and statistical methods for quantifying social groups, relationships,
+and communication patterns and for detecting human-behavior changes. They
+propose a new index to measure the level of reciprocity between users and their
+communication partners. For the validation of our results, we used real-life call
+logs of 81 users which contain approximately 500 000 h of data on users’ location, communication, and device-usage behavior collected over eight months at
+the Massachusetts Institute of Technology (MIT) by the Reality Mining Project
+group [17].
+
+3
+
+Sentiment Analysis
+
+Sentiment analysis aims to analyze people’s sentiment, opinions, attitudes, emotions. Different techniques and software tools have been developed to carry out
+Sentiment Analysis. Most of works in this research area focus on classifying texts
+according to their sentiment polarity, which can be positive, negative or neutral.
+Therefore, it can be considered a text classification problem, since its goal consists of categorizing texts within classes by means of algorithmic methods. The
+paper [10] offers a comprehensive review about this topic and compares some
+free access web services, analyzing their capabilities to classify and score different
+pieces of text with respect to the sentiments contained therein.
+In the last years, thanks to the increasing amount of information delivered
+through social networks, many researches have been focused on applying sentiment analysis to these data [12], [13]. Sentiment analysis aims at mining users
+opinion and sentiment polarity from the posted text on the social network.
+In [7], the authors apply data mining techniques to psychology, specifically to
+the field of depression, to detect depressed users in social network services. The
+
+6
+
+Mario Cannataro et. al.
+
+create an accurate model based on sentiment analysis. In fact, the main symptom
+of the depression is severe negative emotions and lack of positive emotions.
+In [11], a new method for sentiment analysis in Facebook has been presented
+aiming (i) to extract information about the users sentiment polarity (positive,
+neutral or negative), as transmitted in the messages they write; and (ii) to model
+the users usual sentiment polarity and to detect significant emotional changes.
+The authors have implemented this method in SentBuk, a Facebook application. SentBuk retrieves messages written by users in Facebook and classifies
+them according to their polarity, showing the results to the users through an
+interactive interface. It also supports emotional change detection, friends emotion finding, user classification according to their messages, and statistics, among
+others. The classification method implemented in SentBuk follows a hybrid approach: it combines lexical-based and machine-learning techniques. The results
+obtained through this approach show that it is feasible to perform sentiment
+analysis in Facebook with high accuracy (83.27%).
+
+4
+
+Affective Computing
+
+Affective Computing is computing that relates to, arises from, or deliberately
+influences emotion or other affective phenomena [9]. Existing emotion recognition technologies include physiological signals recording, facial expression and/or
+voice analysis [14], [15]. Physiological emotion recognition is based on obtrusive
+technologies that require special equipment or devices, e.g. skin conductance
+sensors, blood pressure monitors, ECG and/or EEG recording devices. Facial
+expressions and voice systems for emotion recognition, instead, use devices that
+should be positioned in front of the face of the user or should always listen to the
+voice of user [8]. In the following, some examples of emotion recognition systems
+are reported and discussed.
+C. Peter et al. proposed wearable system architecture for collecting emotionrelated physiological signals such as heart rate, skin conductivity, and a skin
+temperature of users [4]. They developed a prototype system, consisting of a
+glove with a sensor unit, and a base unit for receiving the data transmitted from
+the sensor unit. S. V. Ioannou et al. realize an emotion recognition system based
+on the evaluation of facial expressions [5]. They implemented a neuro-fuzzy network based on rules which have been defined via analysis of facial animation
+parameters (FAPs) variations of users. With experimental real data, they also
+showed acceptable recognition accuracy of higher than 70%. A. Batliner et al.
+presented an overview of the state of the art in automatic recognition of emotional states using acoustic and linguistic parameters [6]. They summarized core
+technologies such as corpus engineering, feature extraction, and classification
+have been used for building emotion recognition systems via the speech analysis.
+In [8], the authors present a machine learning approach to recognize emotional states through the acquisition of some features related to user behavioral
+patterns (e.g. typing speed) and the user context (e.g. location) in the social network services. They developed an Android application that acquires an analyzes
+
+Using social networks data for behavior and sentiment analysis
+
+7
+
+these features whenever the user sends a text message to Twitter. They built a
+Bayesian classifier that recognizes seven classes: one neutral and six relative to
+basic emotions with an accuracy of 67,52%.
+The paper [16] describes an intelligent and affective tutoring system designed
+and implemented within a social network. The tutoring system evaluates cognitive and affective aspects and applies fuzzy logic to calculate the exercises that
+are presented to the student. The authors use Kohonen neural networks to recognize emotions through faces and voices and multi-attribute utility theory to
+encourage positive affective states.
+
+5
+
+Towards an integration of existing approaches
+
+Social networks user often expresses her/his feeling or emotional states eith written text or by using emoticon. However, some users have difficulties to express
+their feelings or can simulate. These limits could overcome by adopting emotion
+recognition technologies related to affective computing and combinining them
+with typical text-mining methodologies of behavior and sentiment analysis.
+
+References
+1. Eifrem, E.: A nosql overview and the benefits of graph databases. Nosql East 2009
+2. Trudeau, R. J.: Introduction to Graph Theory, Dover Publications, 1994
+3. He, Q., Glas, C. A. W., Kosinski, M., Stillwell, D. J., Veldkamp, B. P.,: Predicting self-monitoring skills using textual posts on Facebook. Computers in Human
+Behavior. 33, 69–78 (2014)
+4. Peter, C., Ebert, E., Beikirch, H.,: A wearable multi-sensor system for mobile acquisition of emotion-related physiological data. Affective Computing and Intelligent
+Interaction. 3784, 691-698 (2005)
+5. Ioannou, S. V., Raouzaiou, A. T., Tzouvaras, V. A., Mailis, T. P., Karpouzis, K.
+C., Kollias,S. D.,: Emotion recognition through facial expression analysis based on
+a neurofuzzy network. Neural Networks. 18:4, 423-435, (2005)
+6. Batliner, A.,Schuller, B., Seppi, D., Steidl, S., Devillers, L., Vidrascu, L., Vogt,
+T., Aharonson, V., Amir, N.,: The automatic recognition of emotions in speech.
+Emotion-Oriented Systems. 2, 71-99, (2011)
+7. Wang, X., Zhang, C., Ji, Y., Sun, L., Wu, L.,: A Depression Detection Model Based
+on Sentiment Analysis in Micro-blog Social Network. Trends and Applications in
+Knowledge Discovery and Data Mining. LNCS, vol. 7867, 201–213, (2013)
+8. Lee, H., Choi, Y. S., Lee, S., Park, I. P.,:Towards Unobtrusive Emotion Recognition
+for Affective Social Communication. In: 9th Annual IEEE Consumer Communications and Networking Conference, pp. 260–264. IEEE, (2012)
+9. Picard, R.,: Affective Computing. Cambridge MIT Press, (2000)
+10. Serrano-Guerrero, J., Olivas, J. A., Romero, F. P., Herrera-Viedma, E.,: Sentiment
+analysis: A review and comparative analysis of web services. Information Sciences.
+311, 18-38, (2015)
+11. Ortigosa, A., Martin, J. M., Carro, R. M.,: Sentiment analysis in Facebook and its
+application to e-learning. Computers in Human Behavior. 31, 527-541, (2014).
+
+8
+
+Mario Cannataro et. al.
+
+12. Go, A., Bhayani, R., Huang, L.,: Twitter sentiment classification using distant
+supervision. Technical report. Stanford University. Stanford Digital Library Technologies Project, (2009)
+13. Pak, A., Paroubek, P.,: Twitter as a corpus for sentiment analysis and opinion
+mining. In Proceedings of the seventh conference on international language resources
+and evaluation, pp. 1320-1326, (2010)
+14. Armony, J. L.,: Affective Computing. Trends in Cognitive Sciences. 2(7), 270,
+(1998)
+15. Calvo, R.A., D’Mello, S.,: Affect Detection: An Interdisciplinary Review of Models,
+Methods, and Their Applications. Affective Computing, IEEE Transactions on. 1(1),
+18–37, (2010)
+16. Barrn-Estrada, M. L., et al.: An Intelligent and Affective Tutoring System within
+a Social Network for Learning Mathematics. Advances in Artificial Intelligence IBERAMIA 2012. LNCS Volume 7637, pp. 651–661 (2012)
+17. Zhang, H., Dantu, R., Cangussu, J.W.,: Socioscope: Human Relationship and Behavior Analysis in Social Networks.Systems, Man and Cybernetics, Part A: Systems
+and Humans, IEEE Transactions on. 41(6), 1122–1143, (2011)
+18. Zafarani R., Liu, H.,: Behavior Analysis in Social Media. IEEE Intelligent Systems.
+29(4), (2014)
+19. Hammer-Lahav, E.,: The OAuth 1.0 Protocol. RFC 5849, April 2010
+20. Hardt, D.,: The OAuth 2.0 Authorization Framework. RFC 6749, October 2012
+21. Facebook.
+Graph
+API
+Facebook
+Developers.
+https://developers.facebook.com/docs/reference/api/, Mar. 2012
+22. Twitter API. https://dev.twitter.com/overview/documentation
+23. Catanese, S.A., De Meo P., Ferrara, E.,: Crawling facebook for social network analysis purposes. In: Proceedings of the International Conference on Web Intelligence,
+Mining and Semantics (2011)
+24. Traud, A. L., Kelsic, E. D., Mucha P. J., Porter, M. A.,: Comparing Community
+Structure to Characteristics in Online Collegiate Social Networks. SIAM review
+53(3): 17 (2008)
+25. Traud, A. L., Mucha P. J., Porter, M. A.: Social Structure of Facebook Networks.CoRR: 82 (2011)
+26. Hanneman, R. A.,: Introduction to Social Network Methods. Technical report,
+Department of Sociology, University of California, Riverside (2001).
+
+View publication stats
+
+

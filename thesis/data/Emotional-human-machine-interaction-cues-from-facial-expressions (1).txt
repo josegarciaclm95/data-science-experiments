@@ -1,0 +1,559 @@
+Emotional Human-Machine Interaction: Cues from
+Facial Expressions
+
+Tessa—Kan'na Tews, Michael Oehl, Felix W. Siebert,
+Rainer Héger, and Helmut Faasch
+
+Leuphana University of Liineburg, Institute of Experimental Industrial Psychology,
+Wilschenbrucher Weg 843., 21335 Lﬁneburg, Germany
+(tews , oehl , fsiebert , hoeger , pfister} @uni . leuphana . de
+
+Abstract. Emotion detection provides a promising basis for designing future-
+on'ented human centered design of Human—Machine Interfaces. Affective
+Computing can facilitate human—machine communication. Such adaptive
+advanced driver assistance systems (ADAS) which are dependent on the
+emotional state of the driver can be applied in cars. In contrast to the majority
+of former studies that only used static recognition methods, we investigated a
+new dynamic approach for detecting emotions in facial expressions in an
+artiﬁcial setting and in a driving context. By analyzing the changes of an area
+deﬁned by a number of dots that were arranged on participants' faces, variables
+were extracted to classify the parﬁcipants’ emotions according to the Facial
+Action Coding System. The results of our novel way to categorize emotions
+lead to a discussion on additional applications and limitations that frames an
+attempted approach of emotion detection in cars. Implications for further
+research and applications are outlined.
+
+Keywords: Emotion detection, human-computer interaction, human—centered
+design, affecﬁve computing.
+
+1 Introduction
+
+Although it is common knowledge that people are good at recognizing facial
+expression, it is not at all clear how algorithms can learn to encode or decode a human
+face in a real environment. Faces are complex, multidimensional, and they differ from
+each other. It is, therefore, a tremendous task to construct algorithms that enable
+computers to distinguish emotions just as well as humans can. In order to recognize
+facial expressions, we uied to implement a new dynamic approach in a realistic
+setting: in cars. The intention when driving is usually to reach a desired destination.
+En route, several events can cause the driver to feel intense emotions. Drivers can be
+annoyed by other road users, be nervous due to complex situations or just feel happy
+because all trafﬁc lights seeming to be green. The effects on driving performance and
+accident risk caused by other inﬂuences such as alcohol, fatigue, smoking, and use of
+mobile phones during driving have been shown in several studies, e.g., [1] and [2].
+The inﬂuence of emotions however has not been researched comprehensively. The
+
+M.J. Smith, G. Salvendy (Eds.): Human Interface, Part1, HCH 2011, LNCS 6771, pp. 641—650, 2011.
+© Springer—Verlag Berlin Heidelberg 2011
+
+642 T.-K. Tews et al.
+
+importance of this topic can be derived from several statistics: every year about
+39,000 people die in trafﬁc accidents across Europe [3]. One approach to reduce the
+number of accidents is to detect mistakes made while driving and their real causes.
+During the more recent years emotions have drawn more and more attention, but to
+what extent emotions are responsible for accidents is still unresolved. However,
+Mesken and her colleagues reported that participants who reported feeling anger
+while driving tended to drive faster and exceeded the speed limit more often than
+participants who did not report similar feelings [4]. Nesbit et a1. indicate that anger is
+associated with aggressive driving [5]. Most studies point out that happiness [4,6] and
+anger [5,7] are the most common emotions to inﬂuence how a car is driven [8].
+
+For this reason this paper describes how neutral, happiness, and anger in facial
+expressions can be detected, and which methods can be applied to extract several
+emotions that correlate with certain facial expressions. We tried to inﬂuence the
+emotions within a driving context with up-to-date evaluated clips taken from movie
+sets in a real environment. After the driving contexts, we recorded a second set of
+artiﬁcial data. Here the participants were asked to facially express happy, angry and
+no emotions. Most of the current studies only apply static recognition methods that
+analyze the individual frames of a video. Furthermore, these experiments were mainly
+carried out in artiﬁcial settings, or were merely focused on anger while driving. Only
+very few studies cover multiple aspects, e.g., threatening driving [9] or personal
+violations [10]. To get an overview of current studies in this context Zeng et a1. [11]
+presented a survey of audio, visual, and spontaneous affect recognition methods.
+
+2 Method
+
+In contrast to the majority of former studies that only make use of static recognition
+methods in rather artificial settings [12,13,14], we researched a new dynamic
+approach to detect emotions in facial expressions in an artiﬁcial setting and directly in
+a driving context. Within this context this paper tries to demonstrate how dynamic
+changes in neutral, happy and angry facial expressions can be analyzed. To prove this
+approach, an experiment was conducted with N = 59 (40 female) subject's at the age
+of M = 23.39 years (SD = 4.51). The facial expression data were recorded with a
+Logitech Quickcam Sphere camera (640x480 pixel) in a driving simulator STISIM
+DRIVETM 2.0 as shown in ﬁgure 1. The videos were progressed for further analyses
+by independent raters in regard to the emotional content of the facial expressions.
+Variations were resolved by discussing the observed differences.
+
+ 
+
+Fig. 1. The driving simulator
+
+Emotional Human-Machine Interaction: Cues from Facial Expressions 643
+
+In order to record the driving videos, the participants had to drive along an ordinary
+road in the simulator as shown ﬁgure 2. Afterwards, a random movie was shown to
+each participant in order to trigger anger, happiness, or no certain emotion. This can
+be a possible efﬁcient method to activate deﬁned target emotions [15]. We used up-
+to—date evaluated clips out of movie sets which speciﬁed on and ranked the highest on
+the intended target emotion. The stimulus material that was used were clips taken
+from following movies: ‘Hannah and her Sisters’ (neutral), ‘When Harry met Sally’
+(happiness / amusement) [both from 16] as well as ‘Schindler’s List’ (anger) [17]. We
+evaluated the induction of emotions in pre-tests. Additionally, we applied the Self-
+Assessment Manikin (SAM) as a non—verbal pictorial assessment technique to
+measure participants’ affective reactions [18,19]. The Self-Assessment Manikin
+(SAM) is of interest to distinguish between positive and negative emotional states.
+After driving, we recorded a second set of artificial data where the participants
+were asked to show happy, angry and no facial expressions for 3 seconds in two trials.
+
+ 
+
+ 
+
+ 
+
+ 
+
+51H Neutral _ Neutral
+Movie Dave
+Neutral 5 a Happiness _ Happiness SEW
+r.r”—fk..n..u Drive Movie Drive Emotions
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Anger _ Anger
+91"] Movie Dn'va
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Fig. 2. Experimental procedure
+
+During the entire experiment the participants were videotaped. To detect the facial
+expressions in this experiment, small dots were placed in their faces as shown in [20]
+and [21], but with fewer dots than in these studies. The dots (diameter 8 mm) were
+placed on 10 relevant facial muscles, e.g., ﬁgure 3 (a).
+
+ 
+
+Fig. 3. (a) The positions of 10 relevant facial muscles, (b) Cluster detections, (c) The area
+deﬁned by four blue dots, and (d) Three deﬁned areas: the bigger above (area 1), the centered
+above (area 2), and the mouth area (area 3)
+
+644 T.-K. Tews et al.
+
+The exact positions of the dots were derived from earlier studies which had
+investigated facial muscle movement with the help of EMG, as well as observations
+of human mimics [22]. Since blue has the smallest part in the color-spectrum of the
+human face, blue was chosen as the color of the dots for the experiment. A software
+algorithm was developed which is able to detect the blue dots placed on the subjects’
+face by comparing special indicators of the recorded videos. The software detects the
+blue dots by searching each frame line by line for the blue color-spectrum and
+gathering all neighboring pixels to a cluster, see ﬁgure 3(b). By calculating the area
+between the dots, speciﬁc graphs of emotion can be generated and compared to each
+other. The variance of three areas between four dots was calculated dynamically over
+time, using an algorithm, see ﬁgure 3(c). 5 participants' videos were used to initialize
+the algorithm and the same number of videos were needed to test the software. In two
+major steps, we initialized the facial expressions' software: ﬁrst, the algorithm was
+entered with the 5 participants’ neutral, happy, and angry face data to distinguish
+between each emotion. The algorithm calculated the arithmetic mean of each emotion
+of the three areas as shown ﬁgure 3(d). Afterward the variance of each area was
+calculated using the arithmetic mean (see for example the neutral facial expression
+data formula 1):
+
+. 1 N 2
+Vartancemm, x = W Xi: 0 meannmml— xi (1)
+
+Xi = area size data
+
+The algorithm summed up these initialized data and calculated the arithmetic mean
+of the area size with their variance for each emotion. Second, it calculated the three
+areas of the 5 remaining test participants' videos with their variance. During the next
+step the algorithm classiﬁed the emotions by comparing the test data video with the
+initialized data.
+
+N
+1 Zi=0 meanneutral_ yi 2
+
+’"dexnm y WW (2’
+
+neutral
+
+yi = test area size data
+
+This index is used to determine the variation from each test area size yi to each
+emotion (see the second formula). The emotion with the smallest index value is the
+observed emotion. Finally, the results were presented in a graph.
+
+3 Results
+
+The Self-Assessment Manikin (SAM) is a non-verbal pictorial assessment technique
+that measures participants’ affective reactions. Especially the valence of affective
+reactions is of interest to distinguish between positive and negative emotional states.
+For the ﬁrst drive, i.e., the neutral route, participants across all experimental
+conditions reported no signiﬁcant differences for the valence of emotional states
+(F(2,55) = 2.06; p > .05). During the second emotional route after the target emotion
+
+Emotional Human-Machine Interaction: Cues from Facial Expressions 645
+
+was induced by showing movie clips we observed a signiﬁcant difference of the
+reported valence (F(2,54) = 3.37; p < .05). Compared to the neutral route the ratings
+for the emotional route in the neutral condition were on a ten—points-scale M = 6.55
+(+0.00; SD = 1.38), in the happiness condition M = 6.09 (+0.25; SD = 1.13), and in
+the anger condition M = 5.41 (-0.59; SD = 6.00). This indicates by trend an effective
+emotion induction and a carry-over effect of the target emotion in the ﬁlms for the
+emotional routes. Participants, however, showed no visible emotional expressions on
+the videotaped data and the driving data could not be used for our software
+evaluation.
+
+The results in this paragraph were calculated from the second data set. Due to
+technical dropouts only n = 10 subjects' data could be analyzed. The graphs in ﬁgure
+4 (neutral face video) and ﬁgure 5 (happy) show the histogram of a neutral and a
+happy face video. The histogram of an angry face video is very similar to the happy
+face video. Therefore, this histogram was not included.
+
+ 
+
+————————— -—.--.....~~\..:t..1~..... n- *'-=-
+-_..—............n._;..—...:_...z_..ngEUW‘
+
+Fig. 4. A neutral face video results
+
+I IMJCI‘J,
+
+1a
+
+ 
+
+_____________
+
+Fig. 5. A happy face video results
+
+The arithmetic mean of each area is set to 100% and each value was summed up.
+The frequency was summed up on the x-axis and describes how often an area has this
+speciﬁc size. The average relation is shown on the y—axis and reﬂects the size of an
+
+646 T.-K. Tews et al.
+
+area. The raw data of the neutral face video does not show any strong variation of the
+arithmetic mean. All values are concentrated around 100%, because there have been
+few movements in the face as expected in a neutral face. In contrast, the happy and
+angry face videos show stronger facial movements, which the program can use to
+distinguish between facial expressions. The areas were extensively changing in size
+because of the mimic activities caused by the emotions. Angry areas seem to vary a
+little bit more than the happy faces do.
+
+In our experiment 10 participants' faces were recorded. The evaluation of the
+videos revealed that participants did not show any visible facial expressions of
+emotions during the driving situations. Therefore, we could only evaluate the second
+data setting of the artiﬁcial emotions instead of the driving Videos. The graphs in
+ﬁgure 6 show the average of the three area sizes of the participants' neutral, happy,
+and angry facial expressions. The pam'cipants' average area size is displayed on the x-
+axis and the participants number is shown on the y—axis. Observing the size of the
+upper areas 1 and 2 the values were quite similar and our software was not able to
+distinguish between each emotion. Therefore, we could only analyse the mouth area.
+Each emotion's arithmetic mean of area size was neutral facial expressions (5555
+pixel), happy facial expressions (6730 pixel), and angry facial expressions (4704
+pixel). This relatively large gap helped distinguish the emotions happy and angry. The
+non speciﬁc facial expression were classiﬁed with the low variance values as shown
+ﬁgure 7.
+
+ 
+
+uuuuu
+
+Fig. 6. The initialize data average of the area size with (a) neutral, (b) happy, and (c) angry
+facial expression
+
+The graphs in ﬁgure 9 show the average of the three area variances of the
+participants' neutral, happy, and angry facial expressions. The participants' average
+variance size is displayed on the x-axis and the participants number is shown on the y-
+axis. As expected, the data of the non speciﬁc facial expression showed the lowest
+variance. This result helped to easily discriminate the non speciﬁc facial expression
+videos from the other emotions. The variance of happy and angry facial expressions
+did not help to distinguish these emotions.
+
+The remaining 5 artiﬁcial faces' videos were compared to these initialized data sets
+for each emotion (happy, angry and neutral). Figure 8 shows the average of the mouth
+area variance of the test participants' neutral, happy, and angry facial expressions. The
+participants' average variance size is displayed on the x-axis and the participants
+themselves are shown on the y—axis. By comparing the initial videos to the test videos
+happy and angry facial expressions could be discriminated.
+
+Emotional Human-Machine Interaction: Cues from Facial Expressions 647
+
+ 
+
+Illul Illul I Iaru!
+
+m; 4. L. . .'. m. m. ....,;...;... _[c)$ .. g. ,g. 4.
+
+Fig. 7. The initialize data average of the variance with (a) neutral, (b) happy, and (c) angry
+facial expression
+
+ 
+
+ 
+
+ 
+
+ 
+
+AIM! nun! ﬂml3
+Kn! — "oiw — Ham —
+um _ m u m.
+w — H... — M, w — m...
+mu — lull - n!- —
+M — m. — m: —
+(ah m .m w m (b) v m 4- m w mm (c) , .2. .u'... m m w w! m
+
+ 
+
+Fig. 8. The test data average of the area size with (a) neutral, (b) happy, and (c) angry facial
+expression
+
+The graphs in ﬁgure 9 displays the average variance of the mouth area calculated
+from the participants' neutral, happy, and angry facial expressions. The participants'
+average area variance is shown on the x-axis and the participants are displayed on the
+y—axis. Again the data of the non speciﬁc facial expression showed the lowest
+variance. For this reason no facial expression videos could be discriminated from the
+other emotions.
+
+ 
+
+Arm] 3 Ar:- i Area 3
+m: — moo _ mu —
+am — .... — .m —
+us: III»: In; —
+— "J"! _ "m! “u,
+m: _ m. _ m: —
+. no — m. — ~ u —
+
+Fig. 9. The test data average of the variance with (a) neutral, (b) happy, and (c) angry facial
+expression
+
+By analyzing the change of the three areas, the mouth area (area 3) yielded to the
+best results. By observing changes of the mouth areas we enabled our software to
+distinguish between angry and happy faces. Neutral faces could be detected by the
+low variance values of the videos. The other two areas in the upper part of the face
+did not contribute substantially to the classiﬁcation of the emotions.
+
+648 T.-K. Tews et al.
+
+4 Discussion
+
+As reviewed from other literature, the algorithms for facial expressions are normally
+quite complex [11]. In contrast to this approach, we tried to minimize complex
+computations by using a simple feature extraction method. Our software presented in
+this paper calculates the variance of three areas between four dots in the face over
+time as a new dynamic approach for detection of emotions by facial expressions,
+using an autonomous algorithm. By computing the facial expression data of the mouth
+area with the index of emotions and the variance of this areas over time, our software
+can classify ﬁve participant's emotions in happy, angry and neutral if the emotions are
+expressed strong enough. In our experiment n = 10 participants' faces were analyzed.
+5 videos were used to calculate the arithmetic mean and the average variance of each
+emotion. The evaluation of the remaining videos showed that the more obvious the
+motions are and more sources of motion can be found in the image, the more sources
+of discrimination between emotions can be detected. Additionally, participants
+showed little emotion to any of the road situations. Those participants' videos were
+not included in the results of this paper. The main drawbacks during our research
+were the small amounts of comparing and testing data and that our software was very
+sensitive to any variance of head orientations. A possible explanation for the limited
+expression of emotions is that the participants felt very safe inside the driving
+simulator and that they have been blunted by the movies. We evaluated the induction
+of emotions in pre—tests which showed that the induction was successful. However,
+participants showed no visible emotional expressions on the videotaped data as shown
+in other driving simulator studies [4]. The videos were progressed for further analysis
+by independent raters in order to ﬁnd emotions within the participants' facial
+expression. If the people analyzing the videos talk or yawn could inﬂuences the
+analysis of facial expression. However, in further studies the multi—modal approach
+with speech analysis or other methods, e.g., the Mahalanobis-Distance [23], can help
+to distinguish these facial expressions.
+
+Similar to other facial expression studies, we had problems with hair or head
+orientations [24, 25]. Additionally, screen reﬂections temporarily covered the blue
+dots and the software was not able to calculate the area correctly. In order to reduce
+the hair problem, the participants were asked to wear an alice band. The participant’s
+facial expression might also have been inhibited by the blue points. To avoid this, the
+capabilities of the facial feature extraction could be enhanced in the future, making
+the blue points obsolete.
+
+In our experiment the conditions were constructed artiﬁcially by having the setting
+in a laboratory environment. In a real driving situation the variance of lighting
+conditions and reﬂections could inhibit the classiﬁcation the drivers' emotions. Future
+steps could be the detection of emotions with a broader range of non-invasive
+measures, e.g., speech recognition, heart rate, and grip-strength will be pursued. To
+follow our future centered multi-modal approach, simultaneous speech data was
+recorded in our experiment which will be analyzed in the next step. To enhance the
+generalization of the results, the software will be tested on a larger database With a lot
+more subj ects and in real driving situations.
+
+Emotional Human-Machine Interaction: Cues from Facial Expressions 649
+
+Acknowledgments. This research was funded by grant FS-Nr. 2006.63 from the
+‘Arbeitsgruppe Irmovative Projekte’ (AGIP) of the Ministry of Science and Culture,
+Lower Saxony, Germany. Many thanks go to Patricia Brunkow, Johanna von Stebut,
+Raphael Seitz, Christoph Ruth and Marco Wiethof for their help in conducting the
+experiment as well as to Heiko Witthﬁft for his help in analyzing the experiment and
+his support in applied computer science.
+
+References
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+. Crancer, A., Dille, J.M., Delay, J.C., Wallace, J.E., Haykins, M.D.: Comparison of the
+
+effects of marijuana and alcohol on simulated driving performance. Science 164, 851—854
+(1969)
+
+. Weiler J.M., Bloomﬁeld J.R., Woodworth G.G., Grant, A.R., Layton, T.A., Brown, T.L.,
+
+McKenzie, D.R., Baker, T.W., Watson, G.S.: Effects of fexofenadine, diphenhydramine,
+and alcohol on driving performance. A randomized, placebo-controlled trial in the Iowa
+driving simulator. Annals of Internal Medicine 132, 354—363 (2000).
+
+. dpa Deutsche Presse—Agentur: Weniger Verkehrstote auf Europas StraBen. Frankfurter
+
+Rundschau, http : / /www . fr—online . de/auto/weniger—verkehrstote—
+auf—europas—strassen/ -/l472790/3076970/-/index . html (retrieved
+June 23, 2009)
+
+. Mesken, J., Hagenzieker, M.P., Rothengatter, T., De Waard, D.: Frequency, determinants,
+
+and consequences of different drivers’ emotions: An on—the-road study using self-reports
+(observed) behaviour, and physiology. Transportation Research Part F 10, 458—475 (2007)
+
+. Nesbit, S.M., Conger, J.C., Conger, A.J.: A quantitative review of the relationship between
+
+anger and aggressive driving. Aggression and Violent Behavior 12(2), 156—176 (2007)
+
+. Levelt, P.B.M.: Praktijkstudie naar emoties in het verkeer (Emotions in Trafﬁc). SWOV
+
+Report R—2003-08. SWOV, Leidschendam, Netherlands (2003)
+
+. Deffenbaeher, J.L., Getting, E.R., Lynch, R.S.: Development of a driving anger scale.
+
+Psychological Reports 74, 83—91 (1994)
+
+. Oehl, M., Roidl, E., Frehse, B., Suhr, J., Siebert, F.W., Pﬁster, H.-R., Héger, R.: Das
+
+Emotionsspektrum von Autofahrem im StraBenverkehr. In: Petermann, F., Koglin, U.
+(eds) (Hrsg.), 47. Kongress der Deutschen Gesellschaft ﬁir Psychologie, Abstracts, pp.
+371—372. Pabst Science Publishers, Lengerich (2010)
+
+. Wells-Parker, E., Ceminsky, J., Hallberg, V., Snow, R.W., Dunaway, G., Guiling, S.,
+
+Williams, M., Anderson, B.: An exploratory study of the relationship between road rage
+and crash experience in a representative sample of US drivers. Accident Analysis and
+Prevention 34, 271—278 (2002)
+
+Mesken, J., Lajunen, T., Summala, H.: Interpersonal violations, speeding violations and
+their relation to accident involvement in Finland. Ergonomics 45, 469—483 (2002)
+
+Zeng, Z., Pantic, M., Roisman, G.I., Huang, T.S.: A Survey of Affect Recognition
+Methods: Audio, Visual, and Spontaneous Expressions. IEEE Transactions on Pattern
+Analysis and Machine Intelligence 31(1), 39—58 (2009)
+
+Kirby, M., Sirovich, L.: Application of the Karhunen-Loeve procedure for the
+characterization of human faces. IEEE Transactions on Pattern Analysis and Machine
+Intelligence 12, 103—108 (1990)
+
+Sirovich, L., Kirby, M.: Low-dimensional procedure for the characterization of human
+faces. Journal of the Optical Society of America A 4, 519—524 (1987)
+
+Lin, C.-H., Wu, J.—L.: Automatic Facial Feature Extraction by Genetic Algorithms. IEEE
+Transactions on Image Processing 8, 834—845 (1999)
+
+650
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+21.
+
+22.
+
+23.
+
+25.
+
+T.-K. Tews et al.
+
+Rottenberg, J., Ray, R.D., Gross, J.J.z Emotion Elicitation Using Films. In: Coan, J.A.,
+Allen, J.J.B. (eds.) Handbook of Emotion Elicitation and Assessment, pp. 9—28. Oxford
+University Press, Oxford (2007)
+
+Hewig, J., Hagemann, D., Seifert, J., Gollwitzer, M., Naumann, B., Bartussek, D.: A
+revised ﬁlm set for the induction of basic emotions. Cognition & Emotion 19/7, 1095—
+1109 (2005)
+
+Schaefer, A., Nils, F., Sanchez, X., Philippot, P.: Assessing the effectiveness of a large
+database of emotion—eliciting ﬁlms: A new tool for emotion researchers. Cognition &
+Emotion 24/7, 1153—1172 (2010)
+
+Lang, P.J.: Behavioral treatment and bio—behavioral assessment: computer applications. In:
+Sidowski, 13., Johnson, J.H., Williams, T.A. (eds.) Technology in Mental Health Care
+Delivery Systems, pp. 119—137. Ablex, Norwood (1980)
+
+Bradley, M.M., Lang, P.J.: Measuring Emotion: The Self—Assessment Manikin and the
+Semantic Differential. Ther. & Exp. Psychiat. 25/ 1, 49—59 (1994)
+
+Kaiser, S., Wehrle, T.: Automated coding of facial behavior in humancomputer
+interactions with FACS. Journal of Nonverbal Behavior 16, 67—83 (1992)
+
+Bassili, J.N.: Emotion recognition: the role of facial movement and the relative importance
+of upper and lower areas of the face. Journal of Personality and Social Psychology 37,
+2049—2058 (1979)
+
+Cohn, J.F., Elcman, P.: Measuring facial action by manual coding, facial EMG, and
+automatic facial image analysis. In: Harrigan, J.A., Rosenthal, R., Scherer, K. (eds.)
+Handbook of Nonverbal Behavior Research Methods in the Affective Sciences, pp. 9—64.
+Oxford University Press, New York (2005)
+
+Mahalanobis, P.C.: 0n the generalised distance in statistics. Proceedings of the National
+Institute of Science of India 12, 49—55 (1936)
+
+. Lin, C.-H., Wu, J.—L.: Automatic Facial Feature Extraction by Genetic Algorithms. IEEE
+
+Transactions on Image Processing 8, 834—845 (1999)
+
+Agarwal, M., Jain, N., Kumar, M., Agrawal, H.: Face Recognition using Principle
+Component Analysis, Eigenface and Neural Network. In: Jha, M., Long, C., Mastomkis,
+N., Bnlucea, C.A. (eds.) Sensors, Signals, Visualization, Imaging, Simulation And
+Materials, pp. 204—208. The World Scientiﬁc and Engineering Academy and Society,
+Wisconsin (2009)
+

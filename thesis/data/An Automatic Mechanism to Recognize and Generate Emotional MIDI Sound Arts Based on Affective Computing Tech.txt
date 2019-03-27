@@ -1,0 +1,1105 @@
+See	discussions,	stats,	and	author	profiles	for	this	publication	at:
+https://www.researchgate.net/publication/262285252
+
+An	Automatic	Mechanism	to
+Recognize	and	Generate	Emotional
+MIDI	Sound	Arts	Based	on	Affective
+Computing	Techniques
+Article	·	July	2013
+DOI:	10.4018/ijopcd.2013070104
+
+CITATIONS
+
+READS
+
+0
+
+86
+
+4	authors,	including:
+Hao-Chiang	Koong	Lin
+National	University	of	Tainan
+56	PUBLICATIONS			230	CITATIONS			
+SEE	PROFILE
+
+All	content	following	this	page	was	uploaded	by	Hao-Chiang	Koong	Lin	on	07	December	2015.
+
+The	user	has	requested	enhancement	of	the	downloaded	file.
+
+62 International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013
+
+An Automatic Mechanism
+to Recognize and Generate
+Emotional MIDI Sound
+Arts Based on Affective
+Computing Techniques
+Hao-Chiang Koong Lin, National University of Tainan, Tainan, Taiwan
+Cong Jie Sun, National Taiwan Normal University, Taipei, Taiwan
+Bei Ni Su, National University of Tainan, Tainan, Taiwan
+Zu An Lin, National University of Tainan, Tainan, Taiwan
+
+ABSTRACT
+All kinds of arts have the chance to be represented in digital forms, and one of them is the sound art, including
+ballads by word of mouth, classical music, religious music, popular music and emerging computer music.
+Recently, affective computing has drowned a lot of attention in the academic field, and it has two parts:
+physiology and psychology. Through a variety of sensing devices, the authors can get behaviors which are
+represented by feelings and emotions. Therefore, the authors may not only identify but also understand human emotions. This work focuses on exploring and producing the MAX/MSP computer program which can
+generate the emotional music automatically. It can also recognize the emotion identified when users play
+MIDI instruments and create visual effects. The authors hope to achieve two major goals: (1) Producing the
+performance of art combined with dynamic vision and auditory tune. (2) Making computers understand human emotions and interact with music by affective computing. The results of this study are as follows:(1) The
+authors design a corresponding mechanism of music tone and human emotion recognition. (2) The authors
+develop a combination of affective computing and the auto music generator. (3) The authors design a music
+system which can be used with MIDI instrument and also be incorporated with other music effects to add the
+Musicality. (4) The authors Assess and complete the emotion discrimination mechanism of how mood music
+can feedback accurately. The authors make computers simulate (even have) human emotion, and obtain
+relevant basis for more accurate sound feedback. The authors use System Usability Scale to analyze and
+discuss about the usability of the system. Also, the average score of each item is obviously higher than the
+simple score (four points) for the overall response and the performance of music when we use “auto mood
+music generator”. There are average performance which is more than five points in each part of Interaction
+and Satisfaction Scale. Subjects are willing to accept this interactive work, so it proves that the work has the
+usability and the potential which the authors can keep developing on.
+Keywords:	
+
+Affective Computing, Automatic Music Generation, Interactive Art, Performance, Sound Art
+
+DOI: 10.4018/ijopcd.2013070104
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013 63
+
+INTRODUCTION
+Music is a form of sound, which is related to
+our life from ancient periods to nowadays.
+Some melodies may send messages as a media,
+while others may cheer up soldiers in the war,
+still others may express sensibility of human
+beings. It plays a important role on showing
+happy and sorrow purifying emotions. Music
+is combined with pitch, loudness, tone, tempo,
+and harmony, which can be used to express
+sensibility, atmosphere, thoughts and inspirations by users. Each piece of music is unique.
+For instance, some shows pleasant while others
+are weird. Some are inspirational while others
+perform crazy.
+As time went by, listening to music is no
+longer limited by the public stage, CD and MP3.
+Music may influence human’s emotion, and
+human’s emotion may be expressed by playing instruments or singing. There is a strong
+connection between them. Recently, we pay
+more attention on the cognition of emotion, so
+we are curious about the impact on sensibility.
+
+CONCEPTS OF THE ARTWORK
+Human’s emotions are really complicated.
+We hope that there is a better and special
+explanation of affective computing. The type
+of emerging performance makes us to think:
+When users played MIDI instruments, the data
+produced by affective computing may touch
+the automatic music mechanism and then to
+play the corresponding music as the computer
+owed feelings, in order to show human’s inner
+world and strengthen the sense of imagination.
+The random real-time effects produced by
+affective computing are incredible and amazing.
+You can also use the corresponding music to
+release your pressure if there is a need. “The
+meaning of music is the vivid and imaginary
+affection, the mode of tempo and the structure
+of harmony. A simple melody or an exquisite
+
+topic is the model of sensibility, which is formed
+and given features to achieve the goal of art affects. Music is the fusion of affection, reason,
+content, and style.” “Music work is designed to
+convey feelings and emotions” (Fang, 1997).
+
+RESEARCH QUESTIONS
+Music, we want to use as a symbol, is the expression of sensibility. “Sound” is the way that
+user unleashed. It would be good music if we
+combine the sound and the emotion correctly.
+Through the art creation mechanism with random real-time effects, we want the audience
+to join the scene, to feel something, and then
+to own the entirely different exhibition form.
+Music gets along with us in a specific manner;
+we expect to make use of its power and function,
+to echo with audiences as well:
+1. 	 How do we use Max/MSP/Jitter and music
+theory to manufacture the automatic music
+mechanism?
+2. 	 Which parameter does Max/MSP/Jitter
+need, when the sensor receive a variety of
+tunes?
+3. 	 How do the MIDI instrument and Max/
+MSP/Jitter match up? How to get the
+parameter during the play?
+4. 	 How do we express the feelings and make
+sure the interaction between audiences and
+our mechanism?
+5. 	 Can we sum up the melodies in different
+emotion, bring a whole new creative way
+for the emerging computer music as well?
+
+LITERATURE REVIEW
+Affective Computing
+“Affective computing is that using varied sensors, to get the facial and psychological signals
+with emotions then to identify those signals, in
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+64 International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013
+
+order to realize human’s emotions and respond
+correctly.” (Li, 2004; Manovich, 2001) Consequently, a emerging academic area is formed:
+To research how to sense feelings, and to build
+a model of emotions, then to express feelings
+in a variety ways or to transmit on the Internet.
+(MIT Media Lab, 2008) Affective computing
+cares about “Sensibility” and “Emotions”, so
+we have to test both “Physiology” and “Psychology” (Chang, 2008).
+There are four levels of affective computing: (1) Perception: the way to input feelings in
+the system. (2) Modeling: to build the relationship between emotion classification and related
+parameter. (3) Expression: the way to output
+sensibilities. (4) Communication: to describe
+the model of emotions in languages for good
+to transmit. (Li, 2004; Vesterinen, 2001; Wan,
+2007) Picard (2000) pointed out: There are four
+notions of affective computing: (1) Recognizing
+emotions; (2) Expressing emotions; (3) Having emotions; (4) Emotional Intelligence. “We
+are going to fulfill the first two notions in two
+years.” (Chen, 2007)
+In the age of information, how to provide
+the sensation of emotion rapidly to feedback
+the user and then gradually interests scholars.
+Actually, with the environment of digital family,
+there are more digital contents to load; besides,
+multimedia provides the feedback of emotion
+itself. Persons may gain the emotion because
+of a piece of songs or a picture. It also gives us
+the motivation to research. The terminal goal
+has to provide personal emotion and multimedia
+feedback for the real digital life intelligence. It’s
+more important on the emotional sensation as
+the personal needs of technical development.
+Many people spend most of their time surfing
+the Internet playing on-line games and on-line
+socializing platform nowadays. In other words,
+people get along with computers more often than
+before. Consequently, we hope those who usually surf the Internet may use their free time to
+try our mechanism, to acquire human’s feelings
+
+as well as interact with MIDI instruments and
+receive the musical feedback from the system.
+We want to focus on the research of “human”.
+
+Sound Arts
+In today’s digital generation, computer technology may create random real-time effects with
+visual and sound interactions by programming.
+Spectators can move their bodies or change their
+play immediately, to alter the music and image.
+With computers and programs are connected,
+music creators use math formula to produce
+music which broke the traditional rules. Now
+we combined the art of vision, performance and
+technology, to form a multimedia work that is
+more plentiful.
+A Greece musician Xenakis said: With the
+assistant of computer, composers may fly as
+pilots in the space of sound freely, while it’s
+only a glimpse in human’s dream in the past.
+(Xenakis, 1971) As digital technology developed, composers may apply the techniques to
+produce music more conveniently, Therefore,
+the changes and impacts on music creation that
+technology brought could be seen. And we expect sound and music will be gathered gradually
+and create more diversification and creativity.
+Max/MSP/Jitter uses its software such as,
+sensors, MIDI instruments, music player and
+video output to control and connect lots of
+audio-video equipment. Max is responsible for
+the control of MIDI information, while MSP is
+responsible for the control of audio data. There
+is Jitter which focuses on the dynamic or static
+audio. (Toner, 2006) Max is the core of control
+logic, so you have to learn Max first then MSP
+and Jitter. (Li, 2006; Cycling ‘74, 2007; Dean,
+2003; Winkler, 1988)
+Cheng thought (2006): The system has been
+progressed from the main function of sound
+data (MSP part) to MIDI control (Max part),
+so it made composers and computer technology get closer. And now it might also control
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013 65
+
+the immediate images (Jitter part). Computers
+have become an improviser, not just the one
+who edit or simulate instruments.
+
+The Nature of Interaction
+If interaction could be integrated with art, audiences and the work will bring more copious.
+Through the way creators arranged, users could
+interact with the system. After the data has been
+processed, users might watch the result right
+away. (Fang, 2003) New multimedia artist and
+theorist Roy Ascott pointed out: “Connection”
+and “Interaction” are the most colorful qualities of new media art, in order to understand
+the creation of new media art, you need to pass
+through five levels: “Connect”, “Merge”, “Interact”, “Transform”, and “Appear”. You have
+to connect and merge with the system, and the
+system interacts with you, so the work and your
+conscious are transformed, finally, there are new
+images, relationships and experiences appear.
+“Art works have to attract the audience
+internal reflection, besides showing sensibilities
+directly; there should be further thoughts.” “The
+work with creativity should be totally open,
+not pursuing closed, structured or limited.”
+“While the element “Interactive” is put in,
+the relationships become complicated among
+“Author”, “Spectator”, and “Work”. Sometimes
+the author may be the spectator, the other time
+the spectator is a part of work.” “Interaction
+demonstrates the existence and position in the
+art” (Lin & Fang, 2004)
+
+RESEARCH METHOD
+Sound Arts Programming
+Affective computing, the MIDI instruments
+detection, Max/MSP automatic music mechanism, multimedia database, and multimedia
+emotional feedback are used to create music
+artwork. “Recently, the interface of digital art
+has become object-oriented. Miller Puckette
+and other people started to design Max/MSP/
+
+Jitter in Paris IRCAM in1988, is thought to be
+one of the most important techniques by lots
+of related artists.” (Cheng, 2004)
+Max/MSP can be applied in these ways:
+1.DSP handle and control of sound immediately.
+2.As sound source software to produce compounded instruments. 3.By the MIDI data, our
+work is using Cycling ’74 Max/MSP/Jitter 5 and
+MIDI instruments to develop and design a music
+interactive system. When users contact with the
+mechanism, the system will put the sound and
+the data from sensors into the source code and
+then our automatic music mechanism will bring
+emotional music of six feelings to correspond
+the user to achieve the goal of personal music
+art. Let’s see our system structure in Figure 1.
+Our works pick the major, pitch, volume
+and tempo of music to identify different kinds
+of sensibilities, and combine the MIDI instruments to perform melody. Finally, the data will
+be sent back to our mechanism as the judgment
+of feelings, so that we can show you the diversification of emotional music.
+Figure 2 is a program about completing the
+auto music generator with affective computing.
+The program of this auto music generator is
+simply divided into two parts: (1) the initial
+set of emotions. (2) the settings of emotional
+music modules. The setting of emotional music
+modules is even subdivided into three parts,
+including the set of themes, accompaniments
+and drum accompaniments. First, we view the
+files of mood.am and load the javascript files
+of each emotional music module, and then
+broadcast emotional music corresponding to six
+kinds of emotions including joy, anger, sadness,
+fear, surprise and disgust through the program
+of themes and accompaniments.
+Second, we also research affective computing. According to music theory and the audio
+data which are attained when users play the
+MIDI instrument, we judge by what performance can be corresponded to the emotion.
+Figure 3 is a program that users can change
+timbre function and identify related message.
+We simulate and make 12 different timbre of
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+66 International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013
+
+Figure 1. The system structure
+
+Figure 2. The program of auto mood music generator
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013 67
+
+Figure 3. The program of audio identification
+
+music instruments which are easily expressed.
+Then, we transform the far right of white ivory
+to be a switch so that we can start to detect the
+audio for 20 seconds.
+Take Table 1 “Happy mood music” for an
+example: When users play MIDI instruments
+which can be decidable with any “happy” emotional characteristics summarized, it scored by
+adding up points. These 14 emotional characteristics are defined by experiments. The auto mood
+music generator based on values will determine
+what kind of mood it is, and then broadcast this
+kind of mood music allowed users to listen to
+until the audio judgments which are captured
+after 20 seconds.
+
+Music Theory
+Generally speaking, the major shows excited,
+while minor shows sorrow. For instance, a major
+appears “rage”, c major is “joy” and a minor
+is “sad”. Our work choose “Pitch”, “Articulation”, “Loudness”, “Tempo” and “Major” as
+parameters, shown in diagram 1, and we use
+
+eigen value as the level of emotional reactions
+to produce six kinds of emotional music. And
+they are “Joy”, ”Anger”, “Sadness”, ”Fear”,
+”Surprise” and “Disgust”.
+When designing the automatic music
+mechanism, C major with some off and on tempo
+is used to be “Joy”, which makes the melody
+lively. And the volume is moderate and soft;
+“Disgust” is produced with modern electrical
+music and much more off and on tempo, which
+makes you feel out of sorts. Loud and weak
+volumes are interlocked to show “Surprise”
+while “Anger” with drum accompaniment. As
+“Fear” is in a weird atmosphere, we choose
+pipe organ to display. Finally, we use minor
+and slow tempo to present “Sadness”.
+
+System Design Flow
+Our work developed a prototype system, then
+we started to test and modify several times,
+there is our interactive system that gradually
+developed. You can look at Figure 4.
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+68 International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013
+
+Table 1. The data of happy mood music
+Numbers
+
+The Examination Items of Emotion
+
+Joy 1
+Yes
+
+No
+
+1
+
+Dynamics check1 – Volume 90↑ (< = 10%)
+
++1
+
++0
+
+2
+
+Dynamics check2 – Chord proportion (< = 10%)
+
++1
+
++0
+
+3
+
+Dynamics check3 – Chord proportion (> = 50%)
+
+-1
+
++0
+
+4
+
+Dynamics check4 – Volume SD (> 10)
+
+-1
+
++0
+
+5
+
+Dynamics check5 –Note length SD (> 300)
+
++0
+
++0
+
+6
+
+Dynamics check6 –Note length SD (< 200)
+
++1
+
++0
+
+7
+
+Pitch check1 – Black key proportion (> = 40%)
+
+-1
+
++0
+
+8
+
+Pitch check2 – Black key proportion (> 20% && < 40%)
+
++0
+
++0
+
+9
+
+Note proportion check1 – Length level 1 proportion (< = 15%)
+
+-1
+
++0
+
+10
+
+Note proportion check2 – Length level 1+2 proportion (> 70%)
+
++0
+
++0
+
+11
+
+Note proportion check3 – Length level 7+8 proportion (< = 3%)
+
++1
+
+-1
+
+12
+
+Note proportion check4 – Note length proportion SD (< = 15)
+
++1
+
++0
+
+13
+
+Note proportion check5 – Note length proportion SD (> = 24)
+
++0
+
++0
+
+14
+
+Note proportion check6 – Staccato proportion (< = 3%)
+
++0
+
++0
+
+Figure 4. The system design flow
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013 69
+
+Research Stages
+
+EXPERIMENTS AND ANALYSIS
+
+The steps of this study are as follows:
+
+We invite forty subjects to test for the system
+after designing it (see Figures 6-8). Figure 5 is
+the experiment work flow. Subjects fill in the
+questionnaire, and we can correct the system
+step by step through the results after analyzing data.
+Table 2 is the data of subjects. The proportion of male is more than female. The age
+of subjects almost centralizes between 20 to
+29 years old. Most people have experiences
+interacting with the digital music work.
+In systems engineering, the system usability scale (SUS) is a simple, ten-item attitude
+Likert scale giving a global view of subjective
+assessments of usability. It was developed by
+John Brooke at Digital Equipment Corporation
+in the UK in 1986 as a tool to be used in usability engineering of electronic office systems.
+We will use system usability scale to analyze
+and discuss about the usability of the system.
+In Table 2, we can see that we get nearly 70
+points for average scores of the work usability.
+The highest subject sample is 82.5 points. Also,
+
+1. 	 Study music theory and affective computing related to paper;
+2. 	 To create six kinds of emotional melody
+module according to the music theory. Each
+module will be consisted of joy, anger,
+sadness, fear, surprise and disgust mood
+music;
+3. 	 Use Max/MSP to get parameters of music
+tonality, volume, pitch for affective computing research. By the way of program
+design, we create an auto music generator combined with music and affective
+computing;
+4. 	 Through ways of playing MIDI, we make
+Max/MSP to get each music parameters,
+and also enhance the recognition of music.
+Finally, the auto mood music generator
+feedback the melody;
+5. 	 To test the work, and then let subjects fill
+in the questionnaire. We will have a final
+adjustment by the data of questionnaire.
+
+Figure 5. The experiment work flow
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+70 International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013
+
+Figure 6. Subjects interact with the work
+
+Figure 7. Subjects use the MIDI instrument
+
+the Table 3 presents the item 3 “I suppose the
+work is easy to use.” and the item 7 “I would
+imagine that most people may learn to use this
+work very quickly.” both get the higher scores
+(4.19 points). However, we get the worse score
+in the item 10“I need to learn a lot of things
+before I can get used to this work.” After the
+first time of using this work, we think that
+subjects may consider if they understood the
+music theory or the skill of playing MIDI, they
+would have a better interaction with it. In other
+
+words, we can use more tips of playing MIDI
+to perform emotions and get more accurate
+emotion feedback.
+In sum, we can see that subjects easily
+understand how to use the MIDI instrument
+from the data of Table 3 and Table 4. It is easy
+to play it. Subjects are willing to accept this
+interactive work, so it proves that the work has
+the usability and the potential which we can
+keep developing on.
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013 71
+
+Figure 8. Subjects fill in the questionnaire
+
+Table 2. The data of subjects
+Sex
+
+Time of Having Access to
+Digital Music Interactive Work
+
+Age
+
+Male
+
+Female
+
+Under
+the Age
+of 19
+
+27
+
+13
+
+0
+
+20 to 29
+Years Old
+38
+
+30 to 39
+Years Old
+2
+
+None
+
+1
+Time
+
+2
+Times
+
+3
+Times
+
+9
+
+12
+
+4
+
+6
+
+3 Times
+or More
+9
+
+SUS: System Usability Scale
+
+Table 3. The statistics of system usability scale
+N
+40
+
+Mean
+67.8
+
+Median
+67.5
+
+The Questionnaire for User Interaction
+Satisfaction (QUIS) is a tool developed by a
+multi-disciplinary team of researchers in the
+Human-Computer Interaction Lab (HCIL) at
+the University of Maryland at College Park.
+The QUIS was designed to assess users’ subjective satisfaction with specific aspects of the
+human-computer interface. The questionnaire
+is designed to be configured according to the
+needs of each interface analysis by including
+only the sections that are of interest to the user
+(QUIS, 2006).We have two parts of the test
+
+Min
+45
+
+Max
+82.5
+
+SD
+10.4
+
+for our research: The overall response and the
+performance of music when we use “auto mood
+music generator”.
+We can see that subjects response the operation of the system from Table 5, and the average
+score of each item is obviously higher than the
+simple score (four points). It means that subjects
+are satisfied with the response when they use
+the auto mood music generator. However, the
+score of “efficient” item is relatively less than
+the other items. We consider the main reason
+is that we may not tell subjects about the steps
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+72 International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013
+
+Table 4. Each data results of system usability scale
+System Usability Scale
+
+Mean
+
+SD
+
+1.
+
+I think that I would like to interact with this work
+
+3.69
+
+0.70
+
+2.
+
+I find the work unnecessarily complex
+
+2.31
+
+0.95
+
+3.
+
+I suppose the work is easy to use
+
+4.19
+
+0.66
+
+4.
+
+I think that I would need the support of a technician to help me use this work
+
+3.25
+
+0.86
+
+5.
+
+I find the various functions in this work are well integrated
+
+3.75
+
+0.45
+
+6.
+
+I suppose there is too much inconsistency in this work
+
+2.31
+
+0.48
+
+7.
+
+I would imagine that most people may learn to use this work very quickly
+
+4.19
+
+0.54
+
+8.
+
+I find the work not very user-friendly
+
+1.81
+
+0.75
+
+9.
+
+I feel very confident while using the work
+
+4.06
+
+0.77
+
+10.
+
+I need to learn a lot of things before I can get used to this work
+
+3.06
+
+0.93
+
+QUIS: Questionnaire for User Interaction Satisfaction
+
+Table 5. Question 1: The statistics of system response
+Question Items
+
+Mean
+
+SD
+
+Simple to Use
+
+6.25
+
+1.00
+
+Easy to Use
+
+6.25
+
+1.00
+
+Great
+
+6.31
+
+0.95
+
+Multiple
+
+6.06
+
+0.85
+
+Interesting
+
+6.50
+
+0.73
+
+Efficient
+
+5.75
+
+0.77
+
+and details clearly at first. For example, some
+subjects think that 20 seconds is too long for
+them to play the MIDI extemporaneously. They
+don’t know when they can stop it. (In fact, we
+don’t need to play all the 20 seconds. We can
+still get the feedback.) Therefore, it is not correct
+enough when generator simulates the emotion.
+Table 6 presents the score of emotional
+music effects and feedback which subjects
+give to. In conclusion, the average scores are
+all more than the middle scores (four points).
+It means that subjects are agree with the music
+genre (six kinds of emotion) performed from
+the auto mood music generator. In particular,
+we get the highest 6.38 points in the “The music
+effect of works” item so it proves that subjects
+can distinguish the genre and feedback from
+
+joy, anger, sadness, fear, surprise and disgust
+mood music. For example, the joy music is
+the composition of simple chords and partly
+staccatos to present the lively mood. The anger
+music is given a big volume and much more
+chords to present the fierce emotion. The sadness music is the way of slow tempos and has
+much more mono sound to present the lonely
+feelings. The fear music is a strange, horror
+atmosphere which is given a mixed effect just
+like an organ sound. The surprise music is also
+given a strong feeling and obviously has some
+changes with volume and tempo. The disgust
+music is used by a lot of electronic sound mixed
+together, and the tempo is out of order. Subjects
+will feel uncomfortable with the disgust one.
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013 73
+
+Table 6. Question 2: The statistics of music performance
+Question Items
+
+Mean
+
+SD
+
+Sound transformation of music
+
+6.31
+
+0.79
+
+The music effect of works
+
+6.38
+
+0.62
+
+The emotional performance of whole music
+
+5.75
+
+0.86
+
+Interaction and Satisfaction Scale
+
+CONCLUSION
+
+We compile statistics about the feelings which
+subjects fill in the interaction and satisfaction
+scale. We use Likert scale to score by seven order
+which ranged from 1 to 7 points. (one point =
+very unsatisfied, four points = it is ok, seven
+points = very satisfied.) The purpose of this
+rating scale is to quantify the data of qualitative
+analysis as the statistical analysis (Likert, 1932).
+We will further analyze and discuss about the
+overall satisfaction, music feedback, and the
+Satisfaction results of process as follow.
+Table 7 is an explanation of interaction and
+pleasure about this work. There are average
+performance which is more than five points.
+It means that subjects are satisfied with the
+work. In particular, we get the highest score
+in the item of “Music genre can make me feel
+pleasure and fun”. Most subjects play the MIDI
+instrument conservatively in the beginning
+because they don’t know what effects will be.
+When they hear the corresponding feedback
+of emotion music after the detection of audio
+up to 20 seconds, they feel surprised about it
+and hope to experience the whole variation of
+musical display.
+
+The results of this study are as follows:
+1. 	 We design a corresponding mechanism of
+music tone and human emotion recognition;
+2. 	 We develop a combination of affective
+computing and the auto music generator;
+3. 	 We design a music system which can be
+used with MIDI instrument and also be
+incorporated with other music effects to
+add the Musicality;
+4. 	 We Assess and complete the emotion
+discrimination mechanism of how mood
+music can feedback accurately. We make
+computers simulate (even have) human
+emotion, and obtain relevant basis for more
+accurate sound feedback.
+This study achieves the two points: (1) We
+can let music players perform the sound which
+is different from the pure in the past. It can also
+combine computer music to produce a perfect
+interactive art and make computer simulate human emotions at the same time. Let this work
+communicate with players through music. (2)
+
+Table 7. The statistics of interaction and satisfaction scale
+Question Items
+
+Mean
+
+SD
+
+Interactive process can arouse my curiosity and challenging
+
+5.19
+
+0.91
+
+Music feedback can meet the present mood
+
+5.13
+
+0.89
+
+Music genre can make me feel pleasure and fun
+
+5.69
+
+0.79
+
+Can let my soul have inspired and touched in the spiritual level
+
+5.13
+
+0.89
+
+Satisfaction of emotional music Auto generator
+
+5.44
+
+1.03
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+74 International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013
+
+In affective computing, we can experience the
+feelings deeply which players want to express
+and interact with this work both in our spirits.
+This study is a combination of affective
+computing and music. The interaction between
+these two subjects produces a new music performing style. It gives users an unusual way
+of emotional expression with Max/MSP and
+MIDI instrument. Through the corresponding
+to music tone analogies, the art of music itself
+will be added a lot of surprises and uncertainties.
+Because of the auto mood music, it makes us
+feel basic human emotional expression strongly
+about the music art interactive installation style
+of our study. It gives audiences a feeling of art
+and appreciation which are different, also has
+a powerful resonance.
+Because our team recognizes the music
+theory and we use MIDI instrument provided
+from Digital Arts & Interactive Design Lab to
+simulate emotions, also composing music in the
+early stage, we choose sound art as the topic of
+our case study. In the future, we will increase
+selection methods of sound characteristic parameters. Also, emotional adjectives selection
+methods of emotional scales can be tested by
+more experiments. We execute the whole creation not only for the professional academic
+research and the display of sound art, but also
+hoping this installment work can be developed
+more wider in music creation related industry.
+An idea that we can do is combining affective
+computing and MIDI to develop a music learning system mechanism. We try to help people
+who want to learn music can have more fun
+and interest when they use it. Hope that there
+will be more and more “music creators” sharing your story with the art of music which you
+want to interpret.
+
+ACKNOWLEDGMENT
+The authors would like to thank the National Science Council of the Republic of China, Taiwan,
+for financially supporting this research under
+
+Contract No. NSC 100-2511-S-024-006, NSC
+99-2511-S-024-005. The anonymous reviewers
+are appreciated for their valuable comments.
+
+REFERENCES
+Armstrong, N. (2006). An enactive approach to digital
+musical instrument design. Unpublished P.H.D. dissertation, Music Department, Princeton University.
+Chin, J. P., Diehl, V. A., & Norman, K. L. (1988).
+Development of an instrument measuring user
+satisfaction of the human-computer interface. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems, 213-218.
+Dubberly, H., Pangaro, P., & Haque, U. (2009). What
+is interaction? Are there different types? Interaction,
+16(1), 69–75. doi:10.1145/1456202.1456220.
+Friberg, A., & Bresin, R. (2011). Emotion rendering in music: Range and characteristic values of
+seven musical variables. Cortex, 47(9), 1068–1081.
+doi:10.1016/j.cortex.2011.05.009 PMID:21696717.
+Juslin, P. N. (1997). Emotional communication in
+music performance: A functionalist perspective
+and some data. Music Perception, 14, 383–418.
+doi:10.2307/40285731.
+Juslin, P. N. (2000). Cue utilization in communication of emotion in music performance: Relating
+performance to perception. Journal of Experimental
+Psychology. Human Perception and Performance,
+26, 1797–1813. doi:10.1037/0096-1523.26.6.1797
+PMID:11129375.
+Laurier, C., Sordo, M., Serra, J., & Herrera, P. (2009).
+Music mood representation from social tags. In
+Proceedings of the International Society for Music
+Information Conference (pp. 381-386).
+Levin, G. (2009). Flong – interactive art by golan
+levin and collaborators. Retrieved from http://www.
+flong.com/
+Li, C. T., & Lin, H. C. (2008). Employing max/msp/
+jitter and sobel operations to create digital art works
+based on the interaction among images, sounds, and
+midi music. Journal of Scientific and Technological
+Studies, 42(2), 15–28.
+Likert, R. (1932). A technique for the measurement
+of attitudes. Archives de Psychologie, 140, 1–55.
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Online Pedagogy and Course Design, 3(3), 62-75, July-September 2013 75
+
+MacDorman, K. F., Ough, S., & Ho, C. C. (2007).
+Automatic emotion prediction of song excerpts:
+Index construction, algorithm design, and empirical
+comparison. Journal of New Music Research, 36(4),
+281–299. doi:10.1080/09298210801927846.
+
+Turnbull, D., Barrington, L., Torres, D., & Lanckriet,
+G. (2008). Semantic annotation and retrieval of music and sound effects. IEEE Transactions on Audio.
+Speech and Language Processing, 16(2), 467–476.
+doi:10.1109/TASL.2007.913750.
+
+Pelletier, J. M. (2004). A shape-based approach to
+computer vision musical performance systems. International Academy of Media Arts & Sciences, 3-95.
+
+Vuoskoski, J. K., & Eerola, T. (2011). The role of
+mood and personality in the perception of emotions
+represented by music. Cortex, 47(9), 1099–1106.
+doi:10.1016/j.cortex.2011.04.011 PMID:21612773.
+
+Russell, D. V. (2008). Composing digital music for
+dummies. Indianapolis, IN: Wiley Publishing.
+Russell, S. (2009). Markin ’MIDI: mistralXG a USB
+connected, PIC-based MIDI Synthesizer. Nuts and
+Volts, 44-48.
+Tomas, C. P., & Furnham, A. (2007). Persionality
+and music: Can traits explain how people use music
+in everyday life? The British Journal of Psychology,
+98, 175–185. doi:10.1348/000712606X111177.
+
+Winkler, T. (1988). Composing interactive music:
+Techniques and ideas using max. Boston, MA: The
+MIT Press.
+Yang, Y., Liu, C. C., & Chen, H. H. (2006). Music
+emotion classification: A fuzzy approach. In Proceedings of International Multimedia Conference
+(pp. 81-82).
+
+Copyright © 2013, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+View publication stats
+
+

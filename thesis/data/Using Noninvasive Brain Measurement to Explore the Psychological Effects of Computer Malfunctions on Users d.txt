@@ -1,0 +1,1606 @@
+Hindawi Publishing Corporation
+Advances in Human-Computer Interaction
+Volume 2014, Article ID 101038, 13 pages
+http://dx.doi.org/10.1155/2014/101038
+
+Research Article
+Using Noninvasive Brain Measurement to Explore the
+Psychological Effects of Computer Malfunctions on Users
+during Human-Computer Interactions
+Leanne M. Hirshfield,1 Philip Bobko,2 Alex Barelka,3 Stuart H. Hirshfield,4
+Mathew T. Farrington,4 Spencer Gulbronson,4 and Diane Paverman4
+1
+
+M.I.N.D. Lab, Department of Communications, SI Newhouse School, Syracuse University, Syracuse, NY 13244, USA
+Departments of Management and Psychology, Gettysburg College, Gettysburg, PA 17325, USA
+3
+Department of Management and Quantitative Methods, Illinois State University, Normal, IL 61761, USA
+4
+Department of Computer Science, Hamilton College, Clinton, NY 13323, USA
+2
+
+Correspondence should be addressed to Leanne M. Hirshfield; lmhirshf@syr.edu
+Received 20 September 2013; Accepted 17 March 2014; Published 30 April 2014
+Academic Editor: Francesca Morganti
+Copyright © 2014 Leanne M. Hirshfield et al. This is an open access article distributed under the Creative Commons Attribution
+License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly
+cited.
+In today’s technologically driven world, there is a need to better understand the ways that common computer malfunctions affect
+computer users. These malfunctions may have measurable influences on computer user’s cognitive, emotional, and behavioral
+responses. An experiment was conducted where participants conducted a series of web search tasks while wearing functional nearinfrared spectroscopy (f NIRS) and galvanic skin response sensors. Two computer malfunctions were introduced during the sessions
+which had the potential to influence correlates of user trust and suspicion. Surveys were given after each session to measure user’s
+perceived emotional state, cognitive load, and perceived trust. Results suggest that f NIRS can be used to measure the different
+cognitive and emotional responses associated with computer malfunctions. These cognitive and emotional changes were correlated
+with users’ self-report levels of suspicion and trust, and they in turn suggest future work that further explores the capability of
+f NIRS for the measurement of user experience during human-computer interactions.
+
+1. Introduction
+As the lines between humans and computers become blurred,
+research is beginning to measure users’ experiences while
+interacting with a technology or information system. In particular, dealing with computer malfunctions that involve slow
+internet connectivity, or those that involve the introduction
+of malware onto one’s computer system, has unfortunately
+become a somewhat regular part of users’ interactions with
+computers. Computer users’ cognitive load and emotional
+state may change depending on the type and severity of
+the malfunction. Additionally, one’s perceived trust in, or
+suspicion of, the computer system may be correlated with
+these changes in cognitive load and emotional state.
+It is commonplace to use surveys to acquire users’ selfreports of their cognitive load and psychological states during
+
+human-computer interactions. For example, the NASA-TLX
+is one of the most commonly used surveys for assessing
+workload [1]. As another example, when attempting to
+measure self-report emotional states, users often complete
+surveys such as semantic differentials, the Self-Assessment
+Manikin, or the Positive and Negative Affect Schedule [2,
+3]. The vast majority of trust research to date has also
+relied on surveys to assess people’s trust in others [4, 5].
+Although this method of measurement is commonplace and
+valuable for understanding and measuring changes in user
+states, it is limited by many of the well-known drawbacks of
+subjective, self-report measures. For example, subjects may
+have different frames of reference when completing surveys;
+further, survey responses correlate only moderately with
+actual behavior and/or others’ perceptions of the subject’s
+behavior [6]. Also, subjects’ use of rating scales is prone to
+
+2
+distortion due to social desirability [7], and surveys and selfreports are often administered after a task has been completed
+(postdictively). They are thus limited in their capacity to
+accurately collect valuable insight into the users’ changing
+experiences throughout a task.
+To compensate for the shortcomings of subjective, selfreport techniques, in this study we use noninvasive brain
+measurement techniques to measure changes in user states
+objectively and in real time. Such measurement techniques
+have emerged in the literature with fMRI and the electroencephalograph (EEG) being used to measure workload
+and emotional states in human-computer interactions [8–
+14]. Furthermore, some researchers have recently used fMRI
+and associated brain activity to measure aspects of trust and
+distrust [15, 16]. Although fMRI provides valuable information about cognitive functioning in the brain, the device is
+quite constricting. It requires subjects to lie still in a large
+magnet and is extremely expensive [17, 18]. Although fMRI
+results suggest that we can measure trust objectively by
+assessing brain functioning, the tool cannot be used outside
+the research lab, limiting its uses for monitoring trust in more
+operational, real-world situations.
+In order to enable the measurement of cognitive load,
+emotion, and the correlated constructs of trust and suspicion
+in real-world contexts, we employed a new, noninvasive
+brain sensing technique called functional near infrared spectroscopy (f NIRS) to make real-time, objective measurements
+of users’ mental states while they conduct tasks in operational
+working conditions. The f NIRS device (shown in Figure 1)
+is easy to set up, lightweight, comfortable, and portable, and
+it can be implemented wirelessly, allowing for use in many
+settings.
+One overarching goal in this study was to demonstrate
+the feasibility of using f NIRS to objectively measure users’
+states in real time while they work with, and interact with,
+computer systems. Towards these ends, we first provide a
+summary of the literatures on workload, emotional state,
+trust, and suspicion. We also describe specific research that
+guided our experimental goals and hypotheses [19]. We then
+describe our protocol, data analysis techniques, findings,
+and interpretations. We conclude with a discussion of the
+implications of this work for future research.
+
+2. Background and Literature Review
+2.1. Workload and Emotional State. The term cognitive workload is used in literature from various fields. Many describe
+cognitive workload in general terms, for example, as the ratio
+of the cognitive resources needed to complete a task to the
+cognitive resources available from the human operator [20].
+Some view workload as a measure that can be determined
+subjectively, as done with the NASA TLX [1]. Others view
+workload via performance measurements, focusing on the
+operator’s performance on a given task to determine levels of
+cognitive workload [20]. Yet others view cognitive workload
+as a measure of the overall activation measured by various
+brain imaging devices while subjects complete some task
+[8, 21, 22]. Cognitive psychologists note that there is not one
+
+Advances in Human-Computer Interaction
+
+Figure 1: A subject wearing a 52-channel f NIRS device.
+
+area in the brain that activates when a person is experiencing
+mental workload. However, these researchers look at specific
+areas in the brain to see which areas are activated while
+subjects perform simple tasks [23–25]. We have used f NIRS
+to measure spatial and verbal working memory load, as well
+as response inhibition load and visual search load [11, 12].
+Regarding emotional reactions, most researchers agree
+that emotions are affective states that exist in a short period
+of time and are related to a particular event [26, 27]. From a
+psychological point of view, emotions are often mapped to
+points in a two-dimensional space of affective valence and
+arousal. Valence represents overall pleasantness of emotional
+experiences and arousal represents the intensity level of
+emotion, ranging from calm to excited [2, 28, 29]. These 2
+dimensions enable researchers to differentiate among four
+categories of emotions. Some researchers even differentiate
+among nine categories of emotion by including a neutral
+section on both the valence and arousal axis. However, in
+principle, an infinite amount of other arbitrary numbers of
+categories can be defined [30].
+2.2. Trust and Suspicion
+2.2.1. The Agent of Trust and Suspicion. There is substantial
+literature exploring interpersonal trust—often in the management and other social science domains [4, 31–35] As the
+interactions between humans and their computer interfaces
+become increasingly “personal,” research in the information
+technology (IT) realm is broadening this context to explore
+an individual’s trust and distrust based on interactions not
+only with another person, but also with other types of external
+agents (e.g., computers and information systems). Across the
+literature on trust and automation [35–37], we note that the
+concept of trust has been (or can be) applied to trust in
+(i) the operator of another IT system,
+(ii) the programmer/designer of the IT system,
+(iii) the programmer/developer of the algorithms used in
+the software,
+(iv) the software itself (without reference to the programmer), and
+(v) the hardware in the system.
+
+Advances in Human-Computer Interaction
+2.2.2. Trust (and Distrust). Rousseau et al.’s review on the
+topic of trust in the management domain concluded that
+there are many definitions of trust [31]. Mayer et al.’s
+definition of interpersonal trust is most frequently cited
+(including the three trustworthiness components of ability,
+integrity, and benevolence) [32]. Rousseau et al.’s review
+leads to a similar definition of trust; that is, “a psychological
+state comprising the intention to accept vulnerability based
+upon positive expectations of the intentions or behavior of
+another” (page 395). This is consistent with Lyons et al.’s (2011)
+recent definition in IT contexts, and we adopt it here, with
+the modification that “another” can be “another person” or
+“another agent” such as an IT system [19].
+2.2.3. Suspicion. The construct of suspicion seems related
+to trust and distrust, yet there is scant literature available
+on this topic; let alone literature that considers suspicion
+in IT contexts. Thus, we also investigate the concept of
+suspicion, but in an exploratory manner. Based on work
+in social psychology, marketing, communication, human
+factors, and management, Bobko et al. [38] define state
+suspicion as the “simultaneous combination of uncertainty,
+perceived (mal) intent, and cognitive activity (searching
+for alternative explanations or new data).” Note that a key
+component of suspicion is uncertainty—and it occurs with
+a negative frame (“concern”) that is linked to cognitive
+activity regarding the uncertainty. In one of the few empirical
+papers in this area, Lyons et al. preliminarily investigated
+suspicion, trust, distrust, and an operator’s decision confidence [19].They also stated that trust, distrust, and suspicion
+are orthogonal constructs, although their conclusions are
+potentially confounded by the referents used (e.g., suspicion
+was about the subject’s particular computer, whereas trust and
+distrust were about an IT system). As noted above, most, if
+not all, measures of trust and distrust in the literature are
+self-report assessments that ask the trustor to respond using
+Likert scales or behavioral checklists. The scarce literature on
+suspicion uses the same methodology [38].
+2.3. Users’ Cognitive and Emotional Reactions to Computer
+Malfunctions. When users are confronted with unexpected
+stimuli during their human-computer interactions, we expect
+them to have a negative emotional response, and we expect
+a decrease in trust to be correlated with that emotional
+response. In some scenarios, the users may become frustrated
+with the computer (“This computer always freezes on me!”),
+or in other instances they may even become concerned that
+a malevolent agent has gained access to their computer (“I
+think this website stole my credit card information!”). Both
+examples imply that the computer user’s beliefs about the
+cause of an unexpected stimulus will affect his or her physiological response to that stimulus; that is, characteristics of the
+unexpected stimulus moderate the physiological, cognitive,
+and emotional responses.
+Regarding potential emotional responses, Figure 2 shows
+two variants of Russell’s circumplex model of affect, arguably
+the most popular model depicting the arousal and valence
+dimensions and their relation to emotional state [28].
+
+3
+Research states that most people’s neutral (a.k.a baseline) state
+is located near point (0, 0) in Russell’s model [28]. The current
+study focuses primarily on the model to the left in Figure 2.
+We symbolically place our hypotheses on the model in the
+left panel of Figure 2, while the depiction in the right panel of
+Figure 2 contains more detailed semantic descriptors. Indeed,
+note that our first example above (“this computer always
+freezes on me”) was suggested as inducing user frustration.
+In Figure 2, “frustration” is associated with high negative
+valence, but only moderate arousal (see H1a in Figure 2). In
+contrast, our second example above (“I think this website
+stole my credit card information”) was suggested as inducing
+user reactions of concern, alarm, and fear. In Figure 2, these
+terms are associated with high arousal, but only moderate
+negative valence (posited in Figure 2 as H1b).
+With these depictions in mind, we hypothesize the
+following.
+H1a. If unexpected computer-generated stimuli are negative,
+but minor, they will cause reactions similar to being frustrated and/or annoyed. More specifically, when compared to
+a user’s baseline state, unexpected minor negative stimuli will
+be associated with a moderate increase in arousal and a large
+decrease in valence, as indicated by the letter “H1a” in Figure 2.
+H1b. If unexpected computer-generated stimuli are perceived
+as severely negative, or they are attributed to possible malintent by an external agent, they will cause individuals to
+feel afraid and/or alarmed. More specifically, when compared
+to a user’s baseline state, the presence of these unexpected
+and severely negative stimuli will be associated with a large
+increase in arousal and only a moderate decrease in valence, as
+indicated by the letter “H1b” in Figure 2.
+fMRI methods have recently been used to identify
+neural networks in the brain that are associated with different semantic emotional states [39] and with Russell’s
+2-dimensional valence/arousal model [40]. However, this
+research remains in the nascent stage, and more work is
+needed to understand the neural correlates of emotion. In
+particular, the the neural correlates of mental states such
+as fear or alarm (i.e., the regions associated with the “H1b”
+label in Figure 2) remain largely unexplored in the research
+literature. In the limited work that has been done with fMRI,
+the emotional state of “fear” has been found to activate areas
+in the dorsolateral prefrontal cortex (DLPFC), in the preand supplementary motor cortex, and in Broca’s area [13].
+Furthermore, research has found that high levels of stress
+and arousal have a direct effect on Broca’s area [41]. Also,
+activation in the orbitofrontal cortex has been linked to an
+“alarm signal” that is sent by the brain in response to negative
+affect, when there is a need to regulate the negative emotion
+[42]. Lastly, much research has linked DLPFC activation to
+the cognitive load associated with regulating one’s emotions
+such as frustration or fear (i.e., the regions labeled with the
+“H1a” and “H1b,” respectively, in Figure 2) [13, 17].
+Although all of the above brain measurement research
+was done with fMRI, f NIRS sensors, with a depth into
+the brain of up to 3 cm, are capable of reaching Broca’s
+area, the DLPFC, the supplementary motor cortex, and the
+
+4
+
+Advances in Human-Computer Interaction
+Arousal
+
+Distress
+
+H1
+
+Alarmed
+
+b
+
+Excitement
+
+1a
+
+H
+
+Displeasure
+
+Pleasure
+
+Depression
+
+Contentment
+Sleepiness
+
+High arousal
+Excited
+Aroused
+Astonished
+
+Afraid
+Tense
+Angry
+Distressed
+Annoyed
+Frustrated
+
+Delighted
+Glad
+Happy
+Pleased
+Pleasure
+Satisfied
+Content
+Serene
+Calm
+At ease
+Relaxed
+
+Displeasure
+Miserable
+Depressed
+GloomySad
+Bored
+Droopy
+
+Tired
+
+Sleepy
+
+Low arousal
+
+Figure 2: Two schematics of Russell’s circumplex model of affect [28]. As we are less interested in semantic meaning than we are in the
+physiological responses related to our experimental stimuli, we focus on the model to the left.
+
+orbitofrontal cortex. This suggests that the neural correlates
+relating to high arousal and moderately low levels of valence
+can be measured noninvasively. This leads us to an instrumentation corollary to our first set of hypotheses:
+H1 Corollary. The regions identified by H1a and H1b in
+Figure 2 can be distinguished noninvasively, with f NIRS and
+GSR sensors.
+In addition to affective state, we also expect computer
+malfunctions to affect users’ cognitive load (and to reduce
+trust in a computer system). The overall cognitive load
+required to perform a task using a computer is composed
+of a portion attributable to the difficulty of the task itself
+plus a portion attributable to the complexity of operating
+the computer. In this regard, we follow Shneiderman’s theory
+of syntactic and semantic components of a user interface
+[43]. The semantic component involves the workload needed
+to complete the task. The syntactic component includes
+interpreting the computer’s feedback and then formulating
+and inputting commands to the computer. A goal in user
+interface design is to reduce the mental effort devoted to the
+syntactic aspects so that more workload can be devoted to
+the underlying task, or semantic, aspects [11]. People prefer to
+expend as little cognitive effort as possible when working with
+a computer system, and well-designed systems are able to
+minimize syntactic workload in order to meet this important
+user goal.
+Therefore, when a computer malfunctions, we expect to
+see increases in the users’ cognitive load and a potential loss
+of trust, as the user is forced to account for the shortcomings
+of the computer. For example, if the computer is performing
+slowly while a user tries to compose an email, the user may
+need to use more verbal working memory load while she
+keeps her train of thought and waits for the computer to catch
+up. Or if a user is working with a poorly designed software
+program, he may continually have difficulties finding the
+correct menu items and commands to achieve his desired
+outcome. Accompanying his loss of trust in the software will
+be an increase in cognitive load as he tries to navigate the
+interface and complete his target task. Literature has also
+shown that increases in negative affect are directly related
+to increases in cognitive load [17, 44]. While this cognitive
+
+load can take many forms in the brain, one form involves
+activation in the DLPFC brain region, which has been linked
+to the cognitively demanding effort involved in emotion
+regulation [45].
+This leads to our next hypothesis.
+H2. Computer users will experience more cognitive load
+when interacting with a malfunctioning computer than they
+did when working on a properly functioning machine.
+
+2.3.1. MRI Studies Related to Trust and Suspicion. The current
+experiment focuses on the changing cognitive and emotional state changes that result from two common computer
+malfunctions. A secondary experimental goal is to explore
+the way that users’ levels of trust and/or suspicion may
+be related to these measured cognitive and emotional state
+changes. Several brain regions that are of interest in trust
+research relate to a paradigm called “theory of mind” (ToM;
+Premack and Woodruff, 1978 [46]), which is concerned with
+understanding how individuals attribute beliefs, desires, and
+intentions to oneself and others. Researchers conducting
+ToM studies have found that the anterior paracingulate cortex
+is activated when participants are deciding whether or not to
+trust someone else [15, 16]. The anterior paracingulate cortex
+is a subset of the anterior cingulate cortex, which can be
+measured by f NIRS. Krueger et al. used fMRI to measure the
+brain activity of pairs of people playing a classic trust game
+[16]. They found that building a trust relationship was related
+to activation in the paracingulate cortex, which (as shown
+in the ToM research stated above) is involved in the process
+by which we infer another’s intentions. They also found that
+unconditional trust was related to activity in the septal area,
+a region that has been linked to social attachment behavior.
+Dimoka constructed a study that mimics typical interactions
+with e-bay sellers. She asked participants, while in an MRI
+machine, to complete a series of purchasing interactions
+with hypothetical “sellers” [15]. She noted that participant’s
+thoughts when working with “low distrust” sellers were
+associated with brain activation in the anterior paracingulate
+cortex.
+
+Advances in Human-Computer Interaction
+In summary, the fMRI research presented in this section suggests that higher brain activation in the anterior
+paracingulate cortex will be associated with the process by
+which users conduct the cognitively demanding process to
+infer whether or not another person is trustworthy (actively
+trying to infer another’s intentions). Because people tend
+to be cognitive misers, they prefer to adopt truth (or lie)
+biases that enable them to unconditionally trust (or distrust)
+others and thereby reduce their cognitive load [47, 48].
+Thus, we suggest that individuals tax the paracingulate cortex
+when there is a need to place cognitive effort toward the
+determination of an external agent’s intentions. This may also
+indicate suspicion on the part of the user, because cognitive
+activation (generation of alternative possible explanations
+for observed behavior) is an important component of state
+suspicion [38]. This leads to our third hypothesis.
+H3. Increases in paracingulate cortex activity will be associated with increased suspicion in individuals as they conduct
+the cognitively demanding process involved in inferring the
+intentions of others.
+Research has also suggested that if an individual is
+uncertain about the intentions of another (or uncertain about
+any number of other interactions within their environment,
+and that uncertainty is perceived to have potentially negative
+consequences), then anxiety will increase [14, 38]. Because
+uncertainty is a component of state suspicion, and subsequent
+anxiety is associated with increases in arousal (see Figure 2);
+we further hypothesize the following.
+H3a. Suspicion will be accompanied by an increase in
+physiological indices of arousal.
+2.3.2. The Utility of Functional Near-Infrared Spectroscopy.
+Users in the brain imaging studies described above were
+placed in cumbersome, expensive, and constricting fMRI
+scanners during all studies. There is a need to study trust, distrust, and suspicion, as well as their associated affective states,
+while computer users conduct more naturalistic humancomputer interactions. To this end, we use the noninvasive
+f NIRs and GSR sensors in our study.
+The f NIRS device was introduced in the 1990’s to complement, and in some cases overcome, the limitations of the EEG
+and other brain imaging techniques [49]. The f NIRS device
+uses light sources in the wavelength range (690–830 nm) that
+are pulsed into the brain. Deoxygenated hemoglobin (Hb)
+and oxygenated hemoglobin (HbO) are the main absorbers
+of near-infrared light in tissues during hemodynamic and
+metabolic changes associated with neural activity in the
+brain [49]. These changes can be detected by measuring the
+diffusively reflected light that has probed the brain cortex
+[21, 49, 50]. We have used f NIRS to successfully measure a
+range of cognitive states [11, 12, 18, 51, 52] while computer
+users complete tasks under normal working conditions and,
+as noted above, one purpose of the current study is to further
+explicate the utility of f NIRS measurements.
+2.4. Experimental Design. Eleven individuals (4 males) participated in this study (mean age = 20.2 years; SD = 0.603).
+
+5
+Participants were college students representing a range of
+majors. Informed consent was obtained, and participants
+were compensated for their time. All participants filled
+out a preexperimental survey, which included demographic
+information and computer usage queries. All participants
+answered that they frequently used the Internet and had
+previous experience shopping online. Our experimental protocol was designed to begin with the participant at a level of
+normalcy and trust and to end with the participant in a state
+of distrust.
+2.5. Task and Manipulations. Participants were asked to
+use the Google search engine to shop online for the least
+expensive model of a specified bike. We chose this search
+engine task because it involved a task with which most
+subjects had previous experience (i.e., online shopping). During each session, subjects had fifteen minutes to search for
+three specific bicycles online. Participants received financial
+bonuses for finding bicycles priced below a given benchmark
+price. Financial bonuses were calculated as a percentage of the
+subject’s discount on the benchmark price. Thus, participants
+had incentive to continue searching for the lowest possible
+price on all bikes during their entire 15 minute task session.
+The participants were specifically instructed to use only the
+Google search engine while searching for the bikes. The
+participants were told that the objective of the study was to
+measure workload levels as users navigate shopping websites.
+Each participant completed this 15-minute-long task four
+times over the course of four consecutive days. Participants
+were told that there would be five such sessions, but as
+described below, our intervention on day four obviated the
+need for a fifth session. During each session, the participant
+was placed in a small room containing the f NIRS device and
+a standard desktop computer to use while shopping. Placing
+the participant in a room alone was intended to distance
+the subject from the researchers. This distance prevented the
+subject from relying on the researchers when manipulations
+occurred (see below). Also in the participant’s room was a
+“Call Researchers Button” that would alert the researchers
+if assistance was required. Participants were told to use the
+button only if they felt that the experiment needed to be
+stopped or if they required researcher intervention (i.e., if
+they felt uncomfortable with the measurement devices, or if
+they wanted to end the study for some reason).
+2.5.1. Days One and Two: Baseline. During the first two
+days, each participant conducted his/her 15-minute-long task
+without any intervention on the part of the researchers; that
+is, participants searched for the lowest price of three bikes
+that were assigned to them without any other intervention.
+The purposes of these two sessions were to (a) establish
+participant familiarity with both the computer system and
+with the researchers and (b) establish positive, consistent
+interactions during the computer tasks. We felt that these
+two aspects would create a sufficient level of trust that
+could be weakened by subsequent manipulations (and our
+manipulation check confirms this; see next section).
+
+6
+2.5.2. Day Three: Slowed Internet Manipulation. This manipulation was created to target Hypothesis 1a (among others),
+where the unexpected manipulation was negative, but minor.
+During the third 15-minute-long session we let users work
+for several minutes on the search task before introducing
+any changes. Our manipulation followed a set of carefully
+scheduled variations of the speed of the Internet. Levels of
+Internet speed were based upon a previous pilot study. The
+levels were chosen because they were overt enough to cause
+a noticeable delay in the Internet speed, yet subtle enough to
+remain within a speed range that subjects considered to be
+a frustrating, but believable, speed. Thus, the manipulation
+on day three was intended to induce frustration and to lower
+users’ trust in the computer system. The lowered trust was
+expected because the slowdown could create reductions in
+perceived ability/integrity of the system.
+2.5.3. Day Four: Malware Manipulation. This manipulation
+was created to test Hypothesis 1b, where the stimuli are
+perceived as severely negative, or they are attributed to
+malintent. On day four, subjects again had to shop for three
+bicycles online. No manipulations were introduced while
+searching for the first two bikes (which took approximately 10
+minutes out of the day four session). We did this to reestablish
+any trust that may have been lost during the day three Internet
+speed manipulation. However, on this fourth day, the third
+bicycle presented to subjects was fictitious, and it could only
+be found on our custom website, “XtremeBestPrice.com”
+(this website is no longer accessible online as we did not want
+people outside of our study to stumble upon the fake malware
+site). This website was Google-indexed, and we purposely
+made some common web page design flaws (e.g., flashing
+animations, a few misspelled words) on the page in order to
+lower its trustworthiness (cf. Lee and See [35]). There was
+no indication that the researchers were responsible for its
+existence. We also wrote about our website in several web
+forums in order to add legitimacy to the website. When
+participants made their way to our website, they did so
+using the same methods that they had previously used on
+many occasions. As the participant navigated around our
+site, a series of pop-ups and downloads were automatically
+triggered, eventually launching a “Blue Screen of Death”
+to indicate a computer crash (this process is depicted in
+Figure 3). There was no way to exit this blue screen, so
+participants had little option but to call the researchers into
+the room using the “Call Researchers Button”.
+
+Advances in Human-Computer Interaction
+
+Figure 3: Screenshots of the day four manipulations. Figure 3(a)
+shows the homepage of xtremebestprice.com, 3(b) shows the popups that occur on the site, and 3(c) shows the “blue screen of death”.
+
+Participants wore a cap with 52 channels that take measurements two times per second. As f NIRS equipment is
+somewhat sensitive to movement, participants were placed
+at a comfortable distance from the keyboard and mouse
+and were asked to minimize movement throughout the
+experiment. Prior research has shown that this minimal
+movement does not corrupt the f NIRS signal with motion
+artifacts [53]. All f NIRS data were synchronized by placing
+marks in the datasets whenever a task started or ended, or
+whenever a manipulation occurred. We collected GSR data
+using a wireless Affectiva Q-Sensor bracelet. We examined
+the participants’ electrodermal activity (EDA) with the GSR
+sensor.
+
+2.5.4. Debriefing and Suspicion Exit Survey. At the end of the
+fourth day, we debriefed subjects about the true nature of our
+study. After explaining that we had indeed caused the Internet
+to slow down on the third day and that we had created the
+fake xtremebestprice.com website, we asked subjects (via an
+open-ended survey) whether or not they had suspected that
+we, the researchers, rather than the internet connection or the
+website, were the cause of the computer glitches.
+
+2.7. Survey Instruments. At the end of each 15-minute session,
+participants filled out postsession surveys that included
+the NASA Task Load index (TLX) for subjective workload
+assessment, a semantic differential survey [1], and the SelfAssessment Manikin (SAM) for valence and arousal emotional state assessment. Lang’s SAM [2] has been used to
+identify a number of emotional states that fall on the 2dimensional valence-arousal schema developed by Russell.
+Semantic differential surveys measure the connotative meaning of concepts. Participants were asked: “Place a mark on
+each scale to indicate your feelings or your opinions regarding
+the time you spent today working on the computer and
+browsing through the various websites searching for bikes.”
+They then had to indicate how they felt during that day’s
+tasks by placing a mark on a scale defined by two bipolar
+adjectives (for example, “Adequate-Inadequate,” “EnjoyableFrustrating,” or “Difficult to use-Easy to use”). Embedded
+within a list of adjective pairings was the adjective pairing of
+“Trusting-Distrusting”. We included this pairing within the
+longer list to subjectively gauge levels of trust in a way that
+would not cause users to become suspicious of our research
+paradigm.
+
+2.6. Equipment Set-Up. We collected f NIRS data using
+a Hitachi ETG-4000 near-infrared spectroscopy device.
+
+2.7.1. End of Experiment Survey. As described previously,
+after the final experiment session and the subject debriefing,
+
+Advances in Human-Computer Interaction
+we asked the subjects to complete a final postsurvey that
+asked them three questions (did they notice a slow-down on
+day three?; if so, to what did they attribute the slow-down?;
+during day four, what were their thoughts about the causes of
+the computer issues?).
+2.8. Measures of Valence and Arousal. Lang’s Self-Assessment
+Manikin (SAM) survey has been used by many researchers
+to acquire subjects’ self-report valence and arousal. From an
+objective, real-time measurement point of view, the galvanic
+skin response (GSR) sensor is also capable of measuring
+arousal. GSR sensors measure changes in electrical resistance
+across two regions of the skin, and the electrical resistance
+of the skin fluctuates quickly during mental, physical, and
+emotional arousal. This change in the skin’s electrodermal
+activity (EDA) can be used to measure arousal in individuals,
+although not valence. Despite this limitation, GSR has been
+used in controlled experiments to measure arousal while
+participants experienced a variety of emotions such as stress,
+excitement, boredom, and anger [27, 54].
+2.9. Manipulation Checks. We checked our manipulations by
+reviewing participant responses to the postexperiment openended survey and by analyzing the subject results on the postsession surveys. All participants reported that they believed
+the malware they encountered (the malware manipulation)
+was the result of their visit to a malevolent website, which they
+believe that they had stumbled across on their own via their
+Google searches. The slow internet manipulation introduced
+on day three received mixed responses from participants.
+Five participants noted feeling suspicious of the researchers
+during the third experiment session—they suspected that we
+were behind the slow internet manipulation. We examine the
+data from this subset of subjects at the end of this paper.
+
+3. Results
+Survey, GSR, and f NIRS data were recorded for all 11 participants. Figure 4 provides a graph of these trends, averaged
+across subjects, over the course of days two, three, and four.
+We aimed to determine whether or not there were statistically significant differences between the baseline, slowed
+internet manipulation, and malware manipulation sessions.
+We made statistical comparisons of our survey, GSR, and
+f NIRS datasets. All 𝑡-test results are available in Table 1 and
+they are discussed in the analysis section of this paper. Paired
+comparison 𝑡-tests were conducted on our postsession survey
+responses.
+The GSR data were analyzed using paired sample onetailed 𝑡-tests to compare the electrodermal activity (EDA)
+values before and after target manipulations. On day three, we
+compared EDA immediately before the onset of the slowed
+internet manipulation and then 100 seconds after the slowed
+internet manipulation began. GSR data for two subjects were
+discarded due to poor contact with the skin on the third
+measurement day and substantial motion artifacts in the data.
+On day four, we used a paired sample one-tailed 𝑡-test to
+compare the EDA values immediately before the onset of
+
+7
+Self-report survey results
+
+12
+10
+8
+6
+4
+2
+0
+Baseline
+Workload
+Distrust
+
+Slowed Internet
+manipulation
+
+Malware
+manipulation
+
+Valence
+Arousal
+
+Figure 4: Self-report values after the baseline, slowed internet
+manipulation, and malware manipulation.
+
+the faux computer virus manipulation and then immediately
+after the ‘Blue Screen of Death’ appeared for each subject.
+Data for three subjects were discarded due to poor contact
+with the skin on the fourth measurement day and substantial
+motion artifacts in the data. Therefore, results were computed
+for the remaining eight subjects’ data.
+We used the NIRS SPM MATLAB suite of tools to
+analyze the f NIRS data [55]. We first converted our raw
+light intensity data into relative changes of oxygenated (HbO)
+concentrations. We then preprocessed all data using a bandpass filter (between 0.1 and 0.01 Hz) to remove noise and
+motion artifacts. We used a general linear model (GLM)
+to fit our f NIRS data. Because the GLM analysis relies on
+the temporal variational pattern of signals, it is robust to
+differential path length factor variation, optical scattering,
+or poor contact on the head. By incorporating the GLM
+with a 𝑃-value calculation, NIRS-SPM not only enables
+calculation of activation maps of HbO but also allows
+for spatial localization. We used Tsuzuki’s 3D-digitizer-free
+method for the virtual registration of NIRS channels onto the
+stereotactic brain coordinate system. Essentially, this method
+allows us to place a virtual optode holder on the scalp
+by registering optodes and channels onto reference brains.
+Assuming that the f NIRS probe is reproducibly set across
+subjects, the virtual registration can yield as accurate spatial
+estimation as the probabilistic registration method. Please
+refer to the following paper for further information [56].
+Based on Tsuzuki’s virtual anatomical registration findings,
+we identified the functional regions of the brain that were
+activated during the slowed internet manipulation. The top
+of Figure 5 shows that areas with significantly higher HbO
+were the Frontopolar area and the Dorsolateral prefrontal
+cortex (DLPFC). For day four, the bottom of Figure 5 shows
+the area of the brain where HbO significantly increased when
+subjects transitioned from the control time (searching for
+bikes with no manipulations) to the virus manipulation (i.e.,
+high arousal and, presumably, alarm).
+
+8
+
+Advances in Human-Computer Interaction
+Table 1: 𝑃 values for 𝑡-tests comparing the effects of the manipulations on the dependent variables.
+Distrust (↑)
+
+Workload (↑)
+
+Valence (↓)
+
+Arousal (↑)
+
+GSR-EDA (↑)
+
+f NIRS HbO (↑)
+
+Comparison between baseline and
+the slowed Internet manipulation
+sessions
+
+0.095
+
+0.001∗
+
+0.003∗
+
+0.018∗
+
+0.002∗
+
+DLPFC, frontopolar
+region
+
+Comparison between baseline and
+the malware manipulation sessions
+
+0.006∗
+
+0.004∗
+
+0.120
+
+0.003∗
+
+0.49∗
+
+DLPFC, orbitofrontal
+cortex, broca’s area,
+frontopolar region
+
+Distrust (↑)
+
+Workload (↓)
+
+Valence (↑)
+
+Arousal (↑)
+
+GSR-EDA (↑)
+
+f NIRS HbO∗
+
+0.084
+
+0.074
+
+0.105
+
+0.035∗
+
+0.19
+
+N/A
+
+Comparison between slowed
+Internet manipulation and malware
+manipulation sessions
+∗
+
+indicates statistical significance. Note that 𝑛 = 11 for all comparisons, except the GSR data, which is noted above.
+
+The brain regions that showed significant activation
+during the malware manipulation were the frontopolar area,
+DLPFC, orbitofrontal area, and the pars triangularis Broca’s
+area. Figure 5 shows the results of our statistical analysis
+on the f NIRS data transposed onto a standard brain. These
+results are also noted in an abbreviated form in Table 1.
+
+4. Interpretation and Analysis of Hypotheses
+Our first set of hypotheses stated the following.
+H1a. If unexpected computer-generated stimuli are negative,
+but minor, they will cause reactions similar to being frustrated and/or annoyed. More specifically, when compared to
+a user’s baseline state, unexpected minor negative stimuli will
+be associated with a moderate increase in arousal and a large
+decrease in valence, as indicated by the letter “H1a” in Figure 2.
+H1b. If unexpected computer-generated stimuli are perceived
+as severely negative, or they are attributed to possible malintent by an external agent, they will cause individuals to
+feel afraid and/or alarmed. More specifically, when compared
+to a user’s baseline state, the presence of these unexpected
+and severely negative stimuli will be associated with a large
+increase in arousal and only a moderate decrease in valence, as
+indicated by the letter “H1b” in Figure 2.
+H1 Corollary. The regions identified by H1a and H1b in
+Figure 2 can be distinguished noninvasively, with f NIRS
+and/or GSR sensors.
+The survey data shows an increase in frustration and
+arousal and a decrease in valence. Furthermore, the survey
+data suggests that a loss in trust was correlated with these
+emotional changes (although the change was not statistically
+significant; see Table 1). Figure 6 shows the average valence
+and arousal reports for days two, three, and four overlaid onto
+Russell’s circumplex model. The slow Internet and malware
+manipulations had their expected effect on participants, with
+the self-report valence and arousal scores for the slow internet
+manipulation residing in the region of H1a and the malware
+manipulation residing in the region of H1b.
+The GSR data are consistent with the arousal survey data,
+indicating that subjects’ level of arousal increased during the
+
+frustrating, slowed internet manipulation. This increase in
+arousal while frustrated also appears in the previously noted
+research on arousal and emotion. Furthermore, the f NIRS
+data shows that this frustrating manipulation was accompanied by an increase in DLPFC and frontopolar activation. The
+DLPFC is involved in working memory, emotion regulation,
+and self-control [57]. The frontopolar and DLPFC findings
+are consistent with a wealth of neuroscience research that ties
+together negative affect (such as frustration) with a need to
+conduct emotion regulation and with an increase in cognitive
+load.
+The malware manipulation was designed to elicit alarm
+and lower trust. The survey data shows that a significant
+increase in self-report frustration and arousal, and a decrease
+in self-report valence, are associated with the malware manipulation. The GSR data are consistent with the arousal survey
+data, indicating that subjects’ level of arousal increased during
+the alarmful malware manipulation. Additionally, survey
+data suggests that a statistically significant loss in trust was
+reported after the malware manipulation (again, see Table 1),
+indicating that trust was correlated with these emotional state
+changes.
+The f NIRS data shows that the malware manipulation
+was accompanied by an increase in brain activation [45] in
+DLPFC, pars triangulate Broca’s area, and the orbitofrontal
+cortex. Researchers believe that the pars triangulate Broca’s
+area is responsible for helping humans to turn subjective
+experiences into speech. Research has found that high levels
+of arousal (presumably related to alarm if valence is negative)
+have a direct effect on Broca’s area [41]. It is possible that
+the alarm experienced by our users caused an increase in
+activation of Broca’s area while they attempted to find words
+to comprehend what was occurring. All 11 subjects did use
+the “Call Researcher” button after they saw the “Blue Screen
+of Death,” and all 11 subjects reported in their postexperiment
+interview that they truly believed a virus had been placed on
+their computer by the xtremebestprice.com website. Anecdotally, we noted the difficulty in producing speech during
+this condition when one subject simply repeated “What?”
+again and again to himself in a slow manner during the
+virus manipulation. The DLPFC, as mentioned previously,
+plays a role in emotion regulation and has been found to
+be activated during negative affect situations [45]. Lastly, the
+
+Advances in Human-Computer Interaction
+
+9
+Left view
+
+Frontal view
+
+Right view
+
+No significant region of
+activation
+
+(a)
+
+(b)
+
+Figure 5: (a) Significant areas of activation comparing the slow internetΔHbO to before slow internetΔHbO . (𝑛 = 11). (b) Significant areas of
+activation while subjects encountered the computer virus (𝑛 = 11).
+
+Arousal
+
+b
+H1
+
+n 1.6
+atio 1.4
+Distress
+ipul
+n
+a
+em
+1.2
+war
+Mal
+1
+n
+0.8
+atio
+l
+u
+anip
+0.6
+a
+H1ternet m
+0.4
+n
+i
+w
+o
+l
+S
+0.2
+Displeasure
+0
+−1
+−0.5
+0 eline
+−2
+−1.5
+Bas
+
+Depression
+
+Excitement
+
+Pleasure
+
+Contentment
+
+Sleepiness
+
+Figure 6: Valence and arousal reports for each session are overlaid
+on Russell’s circumplex model. We subtracted the baseline (day two)
+arousal and valence measures from days two, three, and four to shift
+the data so that baseline was at point (0, 0) in Russell’s model.
+
+increase in activation in the orbitofrontal cortex makes sense,
+as activation in that region has been linked to high stress
+situations [42, 45, 58].
+We also note that there was an increase in EDA during
+both manipulations (as compared to baseline), but unfortunately the GSR data was not able to significantly differentiate
+between the day four (malware) and day three (slow Internet)
+user states. However, the f NIRS was able to distinguish
+between the user states in these two conditions. The slow
+Internet manipulation was associated with increased DLPFC
+and frontopolar activation, while the malware manipulation
+was associated with increased activation in Broca’s area, the
+DLPFC, the frontopolar region, and the orbitofrontal cortex.
+
+The activation in these specific brain regions was somewhat
+expected, as prior research (described in the literature review
+section) has tied these regions to emotional states such as
+alarm, frustration, and stress.
+Our first set of hypotheses were thus supported by our
+results, affirming the notion that it is feasible to not only (1)
+identify the emotional effects of the computer manipulations,
+but also (2) distinguish between minor and major negative
+stimuli via subjects’ differential emotional reactions. And,
+by using the f NIRS device, this distinction can be made
+relatively noninvasively, while users work on their computer
+system under normal working conditions.
+Our second hypothesis stated that computer users will
+experience more cognitive load when interacting with a
+malfunctioning computer than they did when working on a
+properly functioning machine.
+Our postsurvey results and our f NIRS results support
+this hypothesis. The NASA-TLX self-report workload scores
+showed a significant increase after the slowed internet
+manipulation, which was also associated with a reduction
+in trust (see Table 1). The NASA-TLX scores also increased
+significantly after subjects’ trust was lowered by the malware manipulation. Furthermore, the f NIRS data during
+the slowed Internet manipulation and during the malware
+manipulation showed that the frontopolar region, an area
+associated with cognitive load, was significantly higher during each of these manipulations than compared to baseline
+levels. The frontopolar region is involved in much of the
+higher order cognitive processing that makes us human, such
+as executive processing, memory, and planning. Although
+the elusiveness of this region makes it difficult to determine
+specific functionality, we can safely assume that the increased
+HbO in this region during the slowed internet manipulation
+indicates an overall increase in cognitive load. To repeat, our
+second hypothesis was supported by our surveys and by the
+f NIRS device.
+
+10
+
+Advances in Human-Computer Interaction
+Table 2: 𝑃 values for 𝑡-tests comparing the effects of the day 2 versus day 3 manipulations on the dependent variables in the study.
+
+Self-report measures
+Sensor measures
+Distrust (↑) Workload (↑) Frustration (↑) Valence (↓) Arousal (↑) GSR-EDA (↑)
+f NIRS HbO (↑)
+∗
+∗
+∗
+∗
+Not suspicious 0.038
+0.029
+0.007
+0.026
+0.104
+0.15
+Middle temporal gyrus∗ , DLPFC∗
+∗
+∗
+∗
+∗
+∗
+Suspicious
+no change
+0.003
+0.008
+0.038
+0.035
+0.012
+Paracingulate cortex∗
+Groups
+
+∗
+
+indicates statistical significance.
+
+4.1. Exploratory Analysis of Suspicion. Hypotheses 3 and 3a
+were hypotheses about the concept of suspicion.
+H3. Increases in paracingulate cortex activity will be associated with increased suspicion in individuals as they conduct
+the cognitively demanding process involved in inferring the
+intentions of others.
+H3a. Suspicion will be accompanied by an increase in physiological indices of arousal.
+Given the dearth of research on the construct of suspicion, we conducted some exploratory analyses on this concept. After subjects were debriefed about the true nature of
+the study we asked subjects whether or not they had become
+suspicious that the researchers were actually responsible for
+the manipulations. All subjects reported that they believed
+the malware manipulation on the fourth day, was truly a
+computer virus that they had stumbled across. Interestingly,
+five subjects reported that they felt suspicious of the experimenters during the slowed Internet manipulation on the
+third day. One subject described his/her reaction as: “I felt a
+little suspicious that the experimenters were messing around
+with the computer, but I kept telling myself I was just being
+paranoid.” Thus, we post hoc split our sample into subjects
+who, at the end of day 3, mentioned “suspicion” of the
+experimenters or other agents (𝑛1 = 5) and those who did
+not (𝑛2 = 6). Note that these are small sample sizes; more
+research is needed to further validate these results.
+Regarding Hypothesis 3 (suspicion will be associated with
+increases in paracingulate cortex activity), the participants
+who interacted with the frustrating slowed Internet manipulation and reported no associated suspicion had significant
+activation in their DLPFC and their middle temporal gyrus.
+As noted before, the DLPFC activation suggests an increase in
+emotion regulation and cognitive load during this condition.
+The middle temporal gyrus subserves language and semantic
+memory processing and is connected, through a series of
+networks, to the frontopolar region. This cognitive load is
+likely directly related to the semantic processing needed
+to complete the Internet browsing task. Thus, the f NIRS
+indicates that the nonsuspicious subjects simply became
+frustrated by the manipulation, and their brain activity
+showed this increase in cognitive load and the need for
+emotion regulation that is associated with frustration. In
+contrast, for the suspicious subjects, the area of activation was
+directly above the anterior cingulate cortex (ACC), which
+is the frontal part of the cingulate cortex that resembles a
+“collar” form around the corpus callosum. The paracingulate
+cortex is a subset of the ACC. It is located within the ACC,
+closest to the external brain cortex.
+
+Thus, our f NIRS results lend support to our third hypothesis. We also note that our subject pool was small, and the post
+hoc splitting of groups into suspicious and nonsuspicious was
+based on exit interviews. We thus consider these findings
+tentative, although intriguing.
+We also computed summary data for the suspicious and
+nonsuspicious groups separately (see Table 2). We looked
+at the self-report scores reported after the day two (baseline trust) session and after the day three (slowed Internet
+manipulation) session. We compared the GSR EDA measures
+for each group immediately before the slowed manipulation
+began, and then 100 seconds after the slow internet manipulation began.
+All empirical trends were as expected. That is, the slowed
+internet manipulation increased cognitive load, frustration,
+and arousal and decreased valence for both subgroups.
+However, only the suspicious group showed a statistically
+significant increase in arousal during the slow Internet
+manipulation (both in terms of self-report and GSR measures), thus supporting Hypothesis 3a.
+Lastly, it is worth noting that the construct of trust may
+also be correlated with the emotional and cognitive changes
+described above. As described previously, one item in the
+postsession survey asked subjects to indicate their level of
+trust while working through the experiment that day. High
+trust was listed on the left side of the scale (high trust = 1)
+and high distrust was listed on the far right side of the scale
+(distrust = 7). As we expected, participants lost trust after
+the third and fourth sessions (after day two, three, and four
+Likert survey averages were M = 4.9, 5.5, and 6.6, resp.). We
+computed one-tailed, paired comparison 𝑡-tests by using day
+two data as a baseline for our comparisons. As reported in
+Table 1, participants reported feeling less trusting after the
+malware manipulation (day four) than they reported after
+the control, day-two session (𝑃 < 0.0065). Loss of trust also
+occurred after the slow Internet manipulation (day three)
+when compared to the control, day-two session, but this
+difference was not statistically significant (𝑃 < 0.0950). These
+results suggest a correlation between trust and the dependent
+measures reported in this experiment. Future studies should
+explore this relationship further, by using a more systematic
+manipulation of trust and by employing more robust surveys
+from the trust literature to measure changes in in the different
+facets of trust.
+
+5. Conclusion
+One overarching goal in this study was to demonstrate the
+feasibility of using f NIRS to objectively measure the cognitive
+
+Advances in Human-Computer Interaction
+and emotional correlates of two computer manipulations in
+real time. In particular, when we slowed down participants’
+Internet speeds we caused reactions similar to being frustrated and/or annoyed. In this scenario, we hypothesized
+that, when compared to a user’s baseline state, unexpected
+minor negative stimuli would be associated with a moderate
+increase in arousal and a large decrease in valence. Our
+f NIRS, GSR, and survey data supported this hypothesis.
+When we simulated a computer virus and crash on users’
+systems, we designed the manipulation to be deemed severely
+negative, and to be attributed to possible malintent by an
+external agent. In this scenario, we hypothesized that when
+compared to a user’s baseline state, the presence of these
+unexpected and severely negative stimuli would be associated with a large increase in arousal and only a moderate
+decrease in valence. Again, our f NIRS, GSR, and survey
+data supported this hypothesis. We also looked at suspicion
+in our datasets in a post hoc manner, with a small subject
+pool. While we did find support for the claim that the
+Theory of Mind region of the paracingulate cortex is activated
+during suspicion, we make those claims with caution. Future
+work must take a closer look at the state of suspicion. In
+particular, f NIRS could be used with experimental paradigms
+that specifically manipulate suspicion in order to get a more
+reliable measure of that state. The same can be said for
+the construct of trust. Results from the trust item in our
+postsession surveys suggested that trust is associated with the
+emotional and cognitive state changes that we measured, but
+there is a need to conduct follow-on studies that manipulate
+trust in a more controlled (e.g., counterbalanced) experimental paradigm.
+The results also suggest that f NIRS can measure cognitive
+activity related to users’ changing cognitive and emotional
+states during human-computer interactions. This is quite
+promising, as the noninvasive f NIRS device is easy-to-set
+up and comfortable, and it has been implemented wirelessly,
+showing great promise for future measurements of computer
+users’ experiences while they work with computer systems in
+real time. The results also indicate that trust and suspicion
+are correlated with the cognitive and emotional state changes
+of the computer users. Future research should attempt to
+disentangle these findings and to look more specifically at
+manipulations of trust and suspicion in order to measure
+those constructs during human-computer interactions.
+
+11
+
+[2]
+
+[3]
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+
+[11]
+
+[12]
+
+Conflict of Interests
+The authors declare that there is no conflict of interests
+regarding to the publication of this paper.
+
+Acknowledgment
+The authors would like to thank the Air Force Office of
+Sponsored Research (AFOSR) for support of this research.
+
+References
+[1] S. G. Hart and L. E. Staveland, “Development of NASA-TLX
+(Task Load Index): results of empirical and theorical research,”
+
+[13]
+
+[14]
+
+[15]
+
+[16]
+
+in Human Mental Workload, P. Hancock and N. Meshkati, Eds.,
+pp. 139–1183, 1988.
+M. M. Bradley and P. J. Lang, “Measuring emotion: the selfassessment manikin and the semantic differential,” Journal of
+Behavior Therapy and Experimental Psychiatry, vol. 25, no. 1, pp.
+49–59, 1994.
+E. R. Thompson, “Development and validation of an internationally reliable short-form of the positive and negative affect
+schedule (PANAS),” Journal of Cross-Cultural Psychology, vol.
+38, no. 2, pp. 227–242, 2007.
+R. C. Mayer and J. H. Davis, “The effect of the performance
+appraisal system on trust for management: a field quasiexperiment,” Journal of Applied Psychology, vol. 84, no. 1, pp.
+123–136, 1999.
+B. McEvily and M. Tortotiello, “Measuring trust in organizational research: review and recommendations,” Journal of Trust
+Research, vol. 1, no. 1, pp. 23–63.
+P. Sackett and J. Larson, “Research strategies and tactics in
+industrial and organizational psychology,” in Handbook of
+Industrial and Organizational Psychology, M. D. Dunnette and
+L. M. Hough, Eds., vol. 1, pp. 419–490, Consulting Psychologists
+Press, Palo Alto, Calif, USA, 1990.
+A. L. Edwards, “The relationship between the judged desirability
+of a trait and the probability that the trait will be endorsed,”
+Journal of Applied Psychology, vol. 37, no. 2, pp. 90–93, 1953.
+D. Grimes, D. S. Tan, S. E. Hudson, P. Shenoy, and R. P. N.
+Rao, “Feasibility and pragmatics of classifying working memory
+load with an electroencephalograph,” in Proceedings of the
+26th Annual CHI Conference on Human Factors in Computing
+Systems (CHI ’08), pp. 835–844, Florence, Italy, April 2008.
+A. Gevins and M. Smith, “Neurophysiological measures of
+cognitive workload during human-computer interaction,” Theoretical Issues in Ergonomics Science, vol. 4, no. 1-2, pp. 113–131,
+2003.
+O. Gruber and D. Y. von Cramon, “The functional neuroanatomy of human working memory revisited: evidence from
+3-T fMRI studies using classical domain-specific interference
+tasks,” NeuroImage, vol. 19, no. 3, pp. 797–809, 2003.
+L. M. Hirshfield, E. T. Solovey, A. Girouard et al., “Brain
+measurement for usability testing and adaptive interfaces: an
+example of uncovering syntactic workload in the brain using
+functional near infrared spectroscopy,” in Proceeding of the 27th
+annual SIGCHI Conference on Human Factors in Computing
+Systems, 2009.
+L. M. Hirshfield, R. Gulotta, S. Hirshfield et al., “This is your
+brain on interfaces: enhancing usability testing with functional
+near-infrared spectroscopy,” in Proceedings of the 29th Annual
+CHI Conference on Human Factors in Computing Systems (CHI
+’11), pp. 373–382, ACM Press, Vancouver, Canada, May 2011.
+A. Etkin, T. Egner, and R. Kalisch, “Emotional processing in
+anterior cingulate and medial prefrontal cortex,” Trends in
+Cognitive Sciences, vol. 15, no. 2, pp. 85–93, 2011.
+G. Hajcak, N. McDonald, and R. F. Simons, “Error-related
+psychophysiology and negative affect,” Brain and Cognition, vol.
+56, no. 2, pp. 189–197, 2004.
+A. Dimoka, “What does the brain tell us about trust and
+distrust? Evidence from a functional neuroimaging study,”
+Management Information Systems Quarterly, vol. 34, no. 2, pp.
+373–396, 2010.
+F. Krueger, K. McCabe, J. Moll et al., “Neural correlates of trust,”
+Proceedings of the National Academy of Sciences of the United
+States of America, vol. 104, no. 50, pp. 20084–20089, 2007.
+
+12
+[17] R. Parasuraman and M. Rizzo, Neuroergonomics: The Brain at
+Work, Oxford University Press, 2008.
+[18] L. M. Hirshfield, A. Girouard, E. T. Solovey et al., “Humancomputer interaction and brain measurement using functional
+near-infrared spectroscopy,” in Proceedings of the Symposium on
+User Interface Software and Technology, ACM Press, 2007.
+[19] J. B. Lyons, C. K. Stokes, K. J. Eschleman, G. M. Alarcon, and
+A. J. Barelka, “Trustworthiness and IT suspicion: an evaluation
+of the nomological network,” Human Factors, vol. 53, no. 3, pp.
+219–229, 2011.
+[20] C. Wickens, J. Lee, Y. Liu, and S. Becker, An Introduction to
+Human Factors Engineering, Pearson, 2004.
+[21] I.-Y. Son, M. Guhe, W. D. Gray, B. Yazici, and M. J. Schoelles,
+“Human performance assessment using f NIR,” in Biomonitoring for Physiological and Cognitive Performance during Military
+Operations, vol. 5797 of Proceedings of SPIE, pp. 158–169,
+Orlando, Fla, USA, April 2005.
+[22] D. McBride and D. Schmorrow, Quantifying Human Information Processing, Lexington Books, 2005.
+[23] H.-C. Leung, H. Oh, J. Ferri, and Y. Yi, “Load response functions
+in the human spatial working memory circuit during location
+memory updating,” NeuroImage, vol. 35, no. 1, pp. 368–377, 2007.
+[24] A. Gevins, M. E. Smith, L. McEvoy, and D. Yu, “High-resolution
+EEG mapping of cortical activation related to working memory:
+effects of task difficulty, type of processing, and practice,”
+Cerebral Cortex, vol. 7, no. 4, pp. 374–385, 1997.
+[25] E. E. Smith and J. Jonides, “Storage and executive processes in
+the frontal lobes,” Science, vol. 283, no. 5408, pp. 1657–1661, 1999.
+[26] A. Ortony and T. J. Turner, “What’s basic about basic emotions?”
+Psychological Review, vol. 97, no. 3, pp. 315–331, 1990.
+[27] R. W. Picard, Affective Computing, MIT Press, Cambridge, UK,
+1997.
+[28] J. A. Russell, “A circumplex model of affect,” Journal of Personality and Social Psychology, vol. 39, no. 6, pp. 1161–1178, 1980.
+[29] G. Ball and J. Breese, “Modeling the emotional state of computer
+users,” in Proceedings of the Workshop on Attitude, Personality
+and Emotions in User-Adapted Interaction, Banff, Canada, 1999.
+[30] W. Bosma and E. André, “Exploiting emotions to disambiguate
+dialogue acts,” in Proceedings of the 9th International Conference
+on Intelligent User Interfaces (IUI ’04), pp. 85–92, ACM Press,
+Madeira, Portugal, January 2004.
+[31] D. Rousseau, S. Sitkin, R. Burt, and C. Camerer, “Not so
+different after all: a cross-discipline view of trust,” Academy of
+Management Review, vol. 23, no. 3, pp. 393–404, 1998.
+[32] R. Mayer, J. Davis, and D. Schoorman, “An integrative model of
+organizational trust,” Academy of Management Review, vol. 20,
+no. 3, pp. 709–734, 1995.
+[33] R. J. Lewicki, D. J. McAllister, and R. I. Bies, “Trust and distrust: new relationships and realities,” Academy of Management
+Review, vol. 23, no. 3, pp. 438–458, 1998.
+[34] D. McAllister, “Affect- and cognition-based trust as foundations
+for interpersonal cooperation in organizations,” Academy of
+Management Journal, vol. 38, no. 1, pp. 24–59, 1995.
+[35] J. D. Lee and K. A. See, “Trust in automation: designing for
+appropriate reliance,” Human Factors, vol. 46, no. 1, pp. 50–80,
+2004.
+[36] B. Shneiderman, “Designing trust into online experiences,”
+Communications of the ACM, vol. 43, no. 12, pp. 57–59, 2000.
+[37] R. Parasuraman and D. H. Manzey, “Complacency and bias in
+human use of automation: an attentional integration,” Human
+Factors, vol. 52, no. 3, pp. 381–410, 2010.
+
+Advances in Human-Computer Interaction
+[38] P. Bobko, A. Barelka, and L. M. Hirshfield, “The construct
+of state-level suspicion: a model and research agenda for
+automated and information technology (IT) contexts,” Human
+Factors, vol. 56, no. 3, pp. 489–4508, 2014.
+[39] H. Kober, L. F. Barrett, J. Joseph, E. Bliss-Moreau, K. Lindquist,
+and T. D. Wager, “Functional grouping and cortical-subcortical
+interactions in emotion: a meta-analysis of neuroimaging studies,” NeuroImage, vol. 42, no. 2, pp. 998–1031, 2008.
+[40] T. Colibazzi, J. Posner, Z. Wang et al., “Neural systems subserving valence and arousal during the experience of induced
+emotions,” Emotion, vol. 10, no. 3, pp. 377–389, 2010.
+[41] A. M. Hull, “Neuroimaging findings in post-traumatic stress
+disorder,” British Journal of Psychiatry, vol. 181, pp. 102–110,
+2002.
+[42] C. Hooker and R. Knight, “The role of lateral orbitofrontal
+cortex in the inhibitory control of emotion,” in The Orbitofrontal
+Cortex, D. H. Zald and S. Rauch, Eds., p. 307, 2006.
+[43] B. Shneiderman and C. Plaisant, Designing the User Interface:
+Strategies for Effective Human-Computer Interaction, AddisonWesley, Reading, Mass, USA, 4th edition, 2005.
+[44] R. Parasuraman and D. Caggiano, Neural and Genetic Assays of
+Human Mental Workload, in Quantifying Human Information
+Processing, Lexington Books, 2005.
+[45] A. Golkar, T. B. Lonsdorf, A. Olsson et al., “Distinct contributions of the dorsolateral prefrontal and orbitofrontal cortex
+during emotion regulation,” PLoS ONE, vol. 7, no. 11, Article ID
+e48107, 2012.
+[46] D. Premack and G. Woodruff, “Does the chimpanzee have a
+theory of mind?” Behavioral and Brain Sciences, vol. 1, no. 4,
+pp. 515–526, 1978.
+[47] J. Stiff, K. Hyun, and R. Closepet, “Truth biases and aroused
+suspicion in relational deception,” Communication Research,
+vol. 19, no. 3, pp. 326–345, 1992.
+[48] J. K. Burgoon, J. P. Blair, and R. E. Strom, “Cognitive biases
+and nonverbal cue availability in detecting deception,” Human
+Communication Research, vol. 34, no. 4, pp. 572–599, 2008.
+[49] B. Chance, Z. Zhuang, U. Chu, C. Alter, and L. Lipton, “Cognition activated low frequency modulation of light absorption in
+human brain,” Proceedings of the National Academy of Sciences
+of the United States of America, vol. 90, no. 8, pp. 3770–3774,
+1993.
+[50] K. Izzetoglu, S. Bunce, M. Izzetoglu, B. Onaral, and K. Pourrezaei, “f NIR spectroscopy as a measure of cognitive task load,”
+in Proceedings of the 25th Annual International Conference of
+the IEEE Engineering in Medicine and Biology Society, pp. 3431–
+3434, Cancun, Mexico, September 2003.
+[51] A. Girouard, E. Solovey, L. M. Hirshfield et al., “Distinguishing
+difficulty levels with non-invasive brain activity measurements,”
+in Proceedings of the 12th IFIP TC 13 International Conference on
+Human-Computer Interaction, pp. 440–452, Uppsala, Sweden,
+2009.
+[52] L. M. Hirshfield, K. Chauncey, R. Gulotta et al., “Combining electroencephalograph and near infrared spectroscopy to
+explore users’ mental workload states,” in Proceedings of the 5th
+International Conference on Human-Computer Interaction, pp.
+239–247, Springer, San Diego, Calif, USA, 2009.
+[53] E. T. Solovey, A. Girouard, K. Chauncey et al., “Using f NIRS
+brain sensing in realistic hci settings: experiments and guidelines,” in Proceedings of the 22nd Annual ACM Symposium on
+User Interface Software and Technology (UIST ’09), pp. 157–166,
+ACM Press, Victoria, Canada, October 2009.
+
+Advances in Human-Computer Interaction
+[54] M.-Z. Poh, N. C. Swenson, and R. W. Picard, “A wearable
+sensor for unobtrusive, long-term assessment of electrodermal
+activity,” IEEE Transactions on Biomedical Engineering, vol. 57,
+no. 5, pp. 1243–1252, 2010.
+[55] J. C. Ye, S. Tak, K. E. Jang, J. Jung, and J. Jang, “NIRS-SPM:
+statistical parametric mapping for near-infrared spectroscopy,”
+NeuroImage, vol. 44, no. 2, pp. 428–447, 2009.
+[56] D. Tsuzuki, V. Jurcak, A. K. Singh, M. Okamoto, E. Watanabe,
+and I. Dan, “Virtual spatial registration of stand-alone f NIRS
+data to MNI space,” NeuroImage, vol. 34, no. 4, pp. 1506–1518,
+2007.
+[57] E. Berkman and M. Lieberman, “Using neuroscience to broaden
+emotion regulation: theoretical and methodological considerations,” Social and Personality Psychology Compass, vol. 3, no. 4,
+pp. 475–493, 2009.
+[58] J. L. Hanson, M. K. Chung, B. B. Avants et al., “Early stress
+is associated with alterations in the orbitofrontal cortex: a
+tensor-based morphometry investigation of brain structure and
+behavioral risk,” The Journal of Neuroscience, vol. 30, no. 22, pp.
+7466–7472, 2010.
+
+13
+
+Journal of
+
+Advances in
+
+Industrial Engineering
+
+Multimedia
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+The Scientific
+World Journal
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Applied
+Computational
+Intelligence and Soft
+Computing
+
+International Journal of
+
+Distributed
+Sensor Networks
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Advances in
+
+Fuzzy
+Systems
+Modelling &
+Simulation
+in Engineering
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Volume 2014
+
+Submit your manuscripts at
+http://www.hindawi.com
+
+Journal of
+
+Computer Networks
+and Communications
+
+ Advances in 
+
+Artificial
+Intelligence
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+International Journal of
+
+Biomedical Imaging
+
+Volume 2014
+
+Advances in
+
+Artificial
+Neural Systems
+
+International Journal of
+
+Computer Engineering
+
+Computer Games
+Technology
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Advances in
+
+Volume 2014
+
+Advances in
+
+Software Engineering
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+International Journal of
+
+Reconfigurable
+Computing
+
+Robotics
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Computational
+Intelligence and
+Neuroscience
+
+Advances in
+
+Human-Computer
+Interaction
+
+Journal of
+
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Journal of
+
+Electrical and Computer
+Engineering
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+Hindawi Publishing Corporation
+http://www.hindawi.com
+
+Volume 2014
+
+

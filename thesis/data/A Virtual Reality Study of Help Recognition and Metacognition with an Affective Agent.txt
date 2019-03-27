@@ -1,0 +1,712 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/282670315
+
+A Virtual Reality Study of Help Recognition and Metacognition
+with an Affective Agent
+Article · June 2015
+DOI: 10.4018/IJSE.2015010104
+
+CITATIONS
+
+READS
+
+3
+
+207
+
+1 author:
+Ali Oker
+Université de Reims Champagne-Ardenne
+37 PUBLICATIONS   67 CITATIONS   
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+Embodied virtual agents and virtual reality in psychopathology. View project
+
+La distinctivité dans la mémoire View project
+
+All content following this page was uploaded by Ali Oker on 09 October 2015.
+The user has requested enhancement of the downloaded file.
+
+60 International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015
+
+A Virtual Reality Study of Help
+Recognition and Metacognition
+with an Affective Agent
+Ali Oker, Centre Hospitalier de Versailles; HANDIReSP, UVSQ, Université Paris-Saclay,
+Versailles, France
+Matthieu Courgeon, LabSTICC, Université Bretagne-Sud, Brest, France
+Elise Prigent, LIMSI, CNRS, Univ Paris Sud, Université Paris-Saclay, Orsay, France
+Victoria Eyharabide, STIH, Université Paris-Sorbonne, Paris, France
+Nadine Bazin, Centre Hospitalier de Versailles; HANDIReSP, UVSQ, Université Paris-Saclay,
+Versailles, France
+Mathieu Urbach, Centre Hospitalier de Versailles; HANDIReSP, UVSQ, Université ParisSaclay, Versailles, France
+Christine Passerieux, Centre Hospitalier de Versailles; HANDIReSP, UVSQ, Université
+Paris-Saclay, Versailles, France
+Jean-Claude Martin, LIMSI, CNRS, Univ Paris Sud, Université Paris-Saclay, Orsay, France
+Michel-Ange Amorim, CIAMS, Univ Paris Sud, Université Paris-Saclay, Orsay, France
+Eric Brunet-Gouet, Centre Hospitalier de Versailles; HANDIReSP, UVSQ, Université ParisSaclay, Versailles, France
+
+ABSTRACT
+Advances in the use of virtual affective agents for therapeutic purposes in mental health opened a research
+avenue to improve the way patients interpret other’s behavior as helpful instead of menacing. Here, the authors
+propose an original paradigm based on affective computing and virtual reality technologies requiring the
+assessment of helping intentions as well as self-monitoring metacognition. Sixteen healthy subjects played
+a 38-turns card games with a virtual affective agent (MARC) during which they had to guess between two
+cards the one that would be color-matched with another card. Their guesses could be oriented by the agent’s
+emotional displays. Three subjective ratings on a percentage analog scale were recorded after each trial:
+helpfulness, self- monitoring, and sympathy. Help recognition and self-monitoring metacognitive ratings
+raise the question of the importance to enhance both components in therapeutic situations within psychiatric
+populations. Overall, this study exemplifies the promising use of virtual reality settings for future studies in
+the medical psychology field.
+Keywords:	
+
+Affective Agent, Emotion Recognition, Help, Metacognition, Virtual Reality
+
+DOI: 10.4018/IJSE.2015010104
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015 61
+
+INTRODUCTION
+The outcome of psychiatric conditions may be significantly ameliorated when a patient and
+his/her caregivers and physicians are engaged in a strong therapeutic relationship. Amongst the
+many factors that intervene in the building of a therapeutic relationship, many authors identified
+the construct of clinical empathy as a key component. Increasing the quality of clinical empathy
+may result in better short-term and long-term outcome as theorized by Neumann et al. (2009).
+However, the concept of clinical empathy has multiple facets and covers at least two perspectives:
+first, the professional empathetic skills toward the patients, and, second, the patient’s judgments
+on the caregivers’ empathy. The first perspective may be conceptualized as the primum movens
+of clinical empathy, and is thought to involve an ability to understand the patient’s situation,
+perspective and feelings as well as acting in a helpful way. As stated by Hojat et al., “In terms
+of patient care, empathy is defined as a cognitive attribute that involves an ability to understand
+the patient’s experiences, pain, suffering, and perspective, combined with a capability to communicate this understanding and an intention to help” (pg.1564, 2002). Some authors as Decety
+referred to the social neuroscience framework in an attempt to naturalize the neurocognitive
+components allowing this process, recognizing that empathy in its general sense, as a motivator
+of human’s caregiving behavior such as nurturing (2012).
+Complicating any conceptualization attempt, the empathetic attitudes of the professionals
+are observed and interpreted by the patients from their own perspective. As a specific instance
+of cognitive empathy, this process may be impaired in chronic mental health conditions. Focusing on the patient’s stance within the context of therapeutic relationships, authors proposed
+different tools aiming at measuring clinical empathy in order to identify the determinants of
+improved caregiving. For instance, Mercer and colleagues (2004) published the Consultation
+and relational empathy questionnaire (CARE) that contained items about the “doctor’s interest”
+in the patient’s concern, his/her concern and compassion, and his/her help to take control and to
+make a plan of action. The latter items appear of particular interest for the present work as they
+raise the question of how one might recognize helping intentions in others on the basis of their
+emotions, paroles and actions.
+While physicians are responsible of adopting comprehensive and technically sound attitudes,
+the ability to recognize that specific form of empathy is strongly challenged in psychiatric patients
+suffering reduced emotion recognition and theory of mind skills, or exaggerated interpretation biases. Such a pattern of cognitive impairments is found in conditions such as autism and
+schizophrenia (Eack et al., 2013) and lead to impaired functional outcome and mental handicap
+(Fett et al. 2011). Recognizing a helping intention is required in order to avoid misunderstandings, intrusion and persecutory feelings during interactions with physicians, caregivers or other
+supports. Unfortunately, such abnormal thoughts are not uncommon within the physician’s
+office, all the more since the patient suffers severe delusional symptoms. The development of
+social cognitive remediation therapies aims at reducing social handicap as well as facilitating
+relationships with caregivers.
+
+Affective Agents as a New Means to Explore Helping Behavior
+These different elements forming the overall context of the present research, it appears that innovation in virtual reality techniques and especially in affective agents are promising for achieving
+two goals: 1) the design of ecological but reproducible paradigms focusing on the emergence
+of helping behavior and intentions attribution, 2) the design of therapeutic settings to help the
+patients recognizing such behaviors and intentions. Here, we will focus on the former objective,
+which is a prerequisite of the latter.
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+62 International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015
+
+In the majority of experiments in healthy and pathological populations, the constructs potentially involved in intention recognition (an aspect of theory of mind) are tested with picture
+stimuli, drawings, or videos that place subjects in a passive stance and require them to adopt the
+third person perspective. However, such a reductionist approach was criticized as commented
+by Schilbach and collaborators: “social cognition is fundamentally different when we are emotionally engaged with someone as compared to adopting an attitude of detachment and when
+we are interacting with someone as compared to merely observing her” (2013, pg. 396). In line
+with this claim, we will consider in the following that the phenomena related to interpersonal
+interaction would lose their essence if they were reduced to separated constructs. In addition,
+it seems barely conceivable to investigate specific social judgments such as helpfulness in the
+absence of a pragmatic context in which help could take place. Investigating how ones interpret
+others’ helping behavior requires creating a “relation” and an interactive situation with another
+person in which cooperative actions and communications occur.
+From an epistemological point of view, it is striking that the concepts emerging from social
+neurosciences and psychopathology, as reported above, now meet some counterparts developed
+in researches on affective computing and emotional agents. The issue of the determinants of a
+virtual agent’s believability appears of particular relevance for designing models of trustworthy
+helping relationships. One could consider the obvious flaw that would arise if one were urged
+to trust and feel helped by an unrealistic, non-engaging 3D-model. Ortony states that an agent
+could be more easily believed if he/she adopted a consistent, and coherent attitude, for instance,
+emotions, motivations and actions that fit the actual situation, and potentially other kinds of
+situations (2003). Likewise, Morrison (2009) proposed that users develop more trust towards
+avatars that use both verbal, non-verbal cues and empathy cues that are accurate and appropriate
+for the situation. Simmons et al. describe an attempt to improve the relationships with a virtual
+receptionist by complexifying the models with cultural aspects, ethnicity, and specific actions
+toward the human user such as greetings, initiative, expression of mood, verbal communication
+with speech synthesis, all factors involved in an intentional behavior (2011). Moreover, it is now
+well-acknowledged that synthesized personality factors could intervene to increase a model acceptability (Callejas et al., 2014).
+From this brief overview of a heterogeneous literature, it appears obvious that the observable coherence between intentional and emotional behavior are key aspect to provide credible
+interaction situations. As a consequence, the use of affective agents to study complex subjective
+phenomena such as help, self-monitoring, etc. should rely on a clearly defined situation allowing
+actions, emotions and speech-utterances to take place in an intelligible and natural way. Playing
+cards offer an appropriate situation for a face-to-face interaction, guided by a quite repetitive
+procedure based on alternances between the agents’ actions and the human player actions, during
+which changes of attitudes are likely or even expected. Having selected for their research such a
+situation, Kim and Suzuki showed that playing poker with a mechanical humanoid was able to
+generate a comfortable and enjoyable sense of being in the presence of a living person (2012).
+
+OBJECTIVES
+The primary goal of the present study was to show that an ecological and naturalistic paradigm
+might be considered to investigate complex social interaction phenomenon in which a helping
+behavior takes place and has to be assessed. To address difficulties regarding the control of multiple
+independent variables and reproducibility of experiences in empirical research, Wilms and his
+colleagues came to a conclusion that virtual agents offer an “experimental platform (which) allow
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015 63
+
+real-time, ‘online’ interactions between participants and the social stimuli while also providing
+means for experimental control over changes of the social stimuli” (pg. 99, 2010). While this is
+not, in our knowledge, the first attempt conducted with an affective agent involved in a complex
+pragmatic situation to demonstrate how emotional parameters shape the participants’ subjective
+interpretation (see Castellano et al., 2009; DeMelo, Celsom, Carnevale & Gratch, 2011; Hindriks
+et al., 2012; der Ham, Broekens, & Roelofsma, 2014), this is an inaugural step toward the use
+of this framework to assess psychiatric patient’s social cognition impairements. Indeed, virtual
+reality has been successfully used in psychiatry (for example, virtual reality exposure therapy or
+social skill learning in virtual environments) but not for assessment of patient’s social cognition
+based on communicative intentions of a virtual agent.
+Here we describe a paradigm that consists of a card-guessing game involving a female
+virtual affective agent. The agent simulates an intentional human who expresses joy (suggesting
+agreement to the right card to pick by the user), anger (suggesting disapprobation towards the
+wrong card to pick) or neutral expression according to the cards she randomly receives. Thus,
+she may either modulate her emotional expression to communicate an advice (positive and
+negative valences) on the expected answer or adopt a non-communicative neutral expression.
+Thanks to this procedure, positive and negative expressions are to be pragmatically interpreted
+as a helpful cue in order to achieve the main goal. On the other hand, neutral expressions might
+be interpreted as non-helpful cues allowing to vary the communicative intention on a game-turn
+basis. Subjective experience after each trial was assessed to determine how helpful the subjects
+considered positive, negative and neutral expressions. Helpfulness ratings were systematically
+recorded and were followed by two variables of interest to monitor the subjects’ affective and
+metacognitive status. Certainty ratings of the subjects about the correctness of their own last
+answer were considered to determine if there were potential relationships between helpfulness
+and self-monitoring (defined as metacognitive assessment by Koren et al., 2006). Hypothetically,
+the game design would increase such a correlation because being helped was associated with
+receiving a hint on the correct answer. Lastly, subjective assessments of sympathy were recorded
+to control for the subject’s evaluation of non-intentional affective attitudes. Concerning this
+variable, one could expect that the design would alleviate the correlations as negative emotions
+were to be considered as valid messages and are helpful for succeeding in guessing the card.
+As emphasized before, people with schizophrenia and/or with similar social cognitive
+disorders present an inability to recognize facial expressions and intentions behind them. As
+a consequence, communicative intentions regarding helpfulness and being sympathetic is difficult to be accessed by these patients. In this paper we propose that our card-guessing game
+paradigm and virtual agents can provide a wider assessment of these impairments. In order to
+use this paradigm with psychiatric patients, we aim to validate here our claim by testing whether
+non-psychiatric subjects are able to interpret the virtual avatar’s intentions and modulate virtual
+avatar’s helpfulness and sympathy ratings according the experimental conditions, as well as
+their self-monitoring ratings.
+
+EXPERIMENT
+Subjects
+Sixteen healthy volunteers (three males and thirteen females) participated in the study. All the
+participants were above 18 and under 60 years-old (mean=32). They declared that they had never
+being treated for a mental disorder nor they had followed antipsychotic medication. Participants
+had normal or corrected-to-normal vision.
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+64 International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015
+
+Stimuli
+This study uses the Multimodal Affective and Reactive Characters (MARC) framework (Courgeon, Martin, & Jacquemin, 2008; Courgeon & Martin, 2009) to animate a real-time realistic
+3D character. It is based on computational modeling of emotions (actions unit etc.) inspired
+by the different approaches to emotion in Psychology. This platform has been used in various
+kinds of applications: games, ubiquitous intelligence, virtual reality, therapeutic applications,
+art, etc. The software architecture consists of three modules: the 3D animation software per se,
+an offline editor of facial expressions and, an offline body animation editor. This real-time facial
+animation platform is designed for perceptive evaluations of affective interaction. The validity
+of the system has been established (Courgeon, Buisine & Martin, 2009) by empirical results
+regarding the perception of basic and complex emotions as well as for different levels of these
+expressions’ intensity (low versus full intensity). In this experiment, we used a female 3D-model
+called Marie because this is one of the most frequent female surnames in France. The interaction with the agent during the task did not require a human supervisor to avoid interference on
+the subjects’ answers.
+A state machine was used to manage the interaction with the subjects. After each subject’s
+move, the automaton determined the agent’s behavior for its next move, i.e. the facial expressions to display and the verbal statements, if any. Transitions between states were predetermined.
+Non-prosodic speech synthesis was used and automatically synchronized with head/facial and
+lips movements (Virginie voice, in French, Scansoft Inc.). The rate of the speech was set at the
+default pace for all the participants.
+Prior to the experiment, validation of emotion valence was performed using MARC. Twenty
+healthy subjects had to look at Mary’s different basic and complex expressions (to see those,
+please see Courgeon, Buisine & Martin, 2009) and, then, to classify the expressions as positive
+or negative. Then we chose the most negative and positive rated expressions and asked them to
+label it. This procedure showed that 89.9% of participants found an expression as being the most
+positive and labeled it ‘joy’, while 98% of participants found another expression as being the
+most negative and labeled it ‘anger’. We used these expressions for approbation and disagreement for suggesting the right or wrong card in order the win the game.
+The built-in facial emotion editor was used to render dynamic emotions. The resulting facial
+expressions were modeled as a set of actions units. Facial expressions were based on Facial
+Action Coding System - FACS (Ekman and Friesen, 1978, Ekman, 2002). FACS is one of the
+few models that describes and classifies characteristics of human facial expressions. They are
+characterized by the activation of Action Units (AUs), each of them corresponding to the contraction of one or several facial muscles. Positive expression (see figure 1) recruited three AUs:
+AU6 caused cheek raiser (orbicularis oculi, pars orbitalis contraction), AU11 caused nasolabial
+deepener (zygomaticus minor contraction) and AU12 caused lip corner puller (zygomaticus major
+contraction). Negative expression (see figure 2) recruited two AUs: AU4 caused brow lowerer
+(corrugator supercilii, depressor supercilii contraction) and AU15 caused lip corner depressor
+(depressor anguli contraction).
+
+Procedure and Task
+The experiment was carried out on a HP microcomputer (Intel(R) Core(™) i7-3630QM CPU @
+2.40 GHz with 8.00Go RAM and NVIDIA Quadro K4000M GPU @ 600 MHz with 4.00Go RAM)
+with a 22 screen with 1920*1080 screen resolution displayed with a refresh rate of 60Hz. The
+MARC software was used to create and manage the experiment in fullscreen mode. In addition,
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015 65
+
+Figure 1. Screenshot of the card-game situation and of the virtual agent with positive expression
+
+we stabilized the chair so that the subjects should center their gaze in the middle of the screen
+and the distance between the subjects and the monitor remained constant (55 cm). This setting
+provides a visual angle of 47.1 degrees for width and 27.6 degrees of height for overall screen.
+Regarding the stimuli itself, the face of the 3D character appeared in the center of the screen and
+provides a visual angle of 13.2 degrees for width and 10.8 degrees of height for each subject.
+After the completion of the consent form, each subject was tested individually during a
+session lasting approximately 30 min. It was explained to the subjects that they would be taking
+part in an experiment in which they would play a chance game with a 3D character. It was also
+explained to the subjects that this 3D character would explain itself the rules and the procedure
+of the game.
+The task in which the pragmatic context took place derives from a trust game in which the
+participants have to guess the card to choose on the basis of the agent’s emotional expression.
+First of all, the virtual agent enunciated the instructions to the participants that they were about
+to play a card game with her. Importantly, no explicit instructions or advice about the communicative intentions of the agent were given to the subjects.
+The experimental session consisted of 38 game turns (trials) following first two training
+turns that are excluded from further analyses. Each trial was structured as depicted in Figure
+3. Three cards were placed in front of the agent so that only she could see their black or red
+color. The colors of the cards were randomized so that only one among the right or left cards
+was color-matched with the central card. Having looked at the middle card, the agent looked at
+the other two cards for two seconds, in a counterbalanced random order. The agent displayed
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+66 International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015
+
+Figure 2. Screenshot of the card-game situation and of the virtual agent with negative expression
+
+an emotion to one of these cards (for instance, either joy-approbation for the correct card, or
+anger-disagreement for the wrong card) or did not display any emotion (neutral condition). Two
+experimental factors were varied to determine the expression: “Valence” and “Intensity”. High
+intensity corresponded to the full expression capabilities and low intensity to half expression
+capabilities. In trials, always the same level of intensity was used for the both expressions. The
+order of the trials was randomized and subjects were presented an equal number of emotional
+expressions as well as neutral expressions. Neutral condition was considered as the zero expression level. Thus, experimental conditions allowed defining two independent variables, valence
+(+1, 0 or -1) and intensity (0, .5 or 1), to be used as regressors.
+After she had looked at right and left cards, Mary urged the participant to answer on a twobutton pad in order to select either the left or the right card. The participants had 5 seconds to
+respond accordingly. Otherwise, Mary requested again an answer. Depending on the subject’s
+answer, Mary either congratulated the subject or displayed sadness. After each trial, a pop-up
+window opened to present the metacognition/social judgment questionnaire (see below).
+
+Measures
+Behavioral Measures
+The subjects’ choices were recorded and coded either “correct” or “incorrect”. Their response
+times were also recorded. Trials for which the subjects did not answer within the 5 seconds
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015 67
+
+Figure 3. Description of a single trial during the card game
+
+time-window were excluded from further analyses. This is because the fact that in cognitive
+psychology studies, it is acknowledge that if a subject’s reaction time is longer then the median
+reaction time, the empirical probability of the link between a stimulus and behaviour is lesser.
+
+Metacognition/Social Judgment Questionnaire
+At the end of every trial (i.e. after the feedback of the agent on the correctness of the answer),
+a questionnaire was displayed in order to explore the participant’s subjective experience during
+the last turn:
+•	
+•	
+•	
+
+Helpfulness Degree: “To which extent did Mary help you?”
+Sympathy Judgment: “To which extent did you find Mary sympathetic?”
+Self-Monitoring: “To which extent were you sure of your response?”
+Participants answered using a computer mouse on a slider representing a 0 to 100 scale.
+
+Statistical Analyses
+Considering the weak error rate of user’s answers (14%), and the different influences of success
+versus failure on metacognitive judgments, only trials with correct answers leading to a positive
+feedback from the agent were considered in the analyses.
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+68 International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015
+
+The main analyses focused on subjective ratings to characterize their respective determinants.
+Subjective judgments ratings were transformed using arcsin(sqrt(x)) (Sokal & Rohlf, 1995)
+function, and were normalized within subjects in order to control for rating scale variability.
+Two linear statistical analyses were performed with the subjective ratings as dependent
+variables. First, coefficient of determination (r2) of the three couples of subjective ratings was
+computed to provide an estimate of shared variance. Second, linear regression analyses were
+performed with subjective ratings being predicted by valence, intensity, reaction time (in seconds),
+and epoch (i.e. actual trial number divided by the total number of trials). Moreover, the amount
+of variance explained by each regressor was computed using Feldman’s proportional marginal
+variance decomposition (pmvd; Feldman, 2005) implemented within the software R relaimpo
+package. With a 1000-runs bootstrapping procedure, pmvd values were used to compare the
+relative importance of each regressor.
+
+RESULTS
+Behavioral Results
+Correct answer rates and response times are reported in Table 1.
+
+Dual Relationships between Subjective Ratings
+Correlations between subjective ratings indicate significant (p<.05) positive linear relations
+between the three ratings. Table 2 reports r2 values indicating, in particular, a large effect-size
+for the relation between helpfulness and self-monitoring.
+
+Predictors of Subjective Ratings
+Subjective ratings were entered as dependant variables in linear multiple regressions analyses
+(421 degrees of freedom). Table 3 reports the results of these analyses and additional information
+on the quality of the models. Only regression models concerning helpfulness and self-monitoring
+yielded significant prediction of variance (i.e. above 40%) with a similar pattern of estimated
+coefficients. From the bootstrap analysis one observes that intensity was by far the best predictor
+of these two variables, and valence consistently arrives at a second position. Worthy of note, is
+the negative going coefficient of Response times on self-monitoring.
+
+Table 1. Percentage of correct responses and standard errors in parentheses for each experimental
+condition. 570 samples were considered for calculating Correct answer rates proportion. 426
+samples survived the correct answer selection
+Condition
+(valence, intensity)
+
+Correct answer rates
+
+Response times (ms)
+(only for correct answers)
+
+Negative High
+
+91% (28%)
+
+501 (501)
+
+Negative Low
+
+78% (42%)
+
+626 (495)
+
+Neutral
+
+44% (50%)
+
+973 (808)
+
+Positive Low
+
+96% (21%)
+
+579 (498)
+
+Positive High
+
+98% (14%)
+
+570 (596)
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015 69
+
+Table 2. Coefficients of determination for the three post-trial subjective ratings. N=426 samples
+r2
+
+Helpfulness
+
+Sympathy
+
+Self-monitoring
+
+Helpfulness
+
+1
+
+8%
+
+56%
+
+Sympathy
+
+-
+
+1
+
+5%
+
+Self-monitoring
+
+-
+
+-
+
+1
+
+Table 3. Regression analyses of helpfulness, sympathy and self-monitoring. Estimate column:
+parameter estimates and significance codes for single regressors: ‘***’ p<0.001, ‘**’ p<0.01,
+‘*’ p<0.05, ‘.’ p<0.1. Pmvd columns: proportion of variance explained by the predictor. When
+possible, relative importance analyses determined the possible ranks for a regressor with respect
+to the others, from A (first rank) to D (last rank). N=426 samples
+Helpfulness
+
+Sympathy
+
+Self-monitoring
+
+Estimate
+
+Pmvd
+
+Estimate
+
+Pmvd
+
+Estimate
+
+Pmvd
+
+Experiment
+progress
+
+.005
+
+0% CD
+
+.005 .
+
+0%
+
+.02 ***
+
+3% CD
+
+Valence
+
+.32 ***
+
+8% B
+
+.15 ***
+
+6%
+
+.34 ***
+
+10% B
+
+Intensity
+
+1.56 ***
+
+36% A
+
+.28 ***
+
+3%
+
+1.22 ***
+
+25% A
+
+Response
+times (s)
+
+-.12 *
+
+2% CD
+
+.01
+
+0%
+
+-.17 **
+
+4% CD
+
+Intercept
+
+-.49 ***
+
+-.58 ***
+
+-.42 ***
+
+Adjusted R
+squared
+
+48%
+
+8%
+
+43%
+
+As helpfulness and self-monitoring had a very similar pattern, additional regression models
+were performed by introducing sympathy as a regressor. Although this variable was modelled
+as a significant predictor (parameter estimate=0.19, p<.005), the model was barely improved
+(Adjusted R2=49%) and the associated pmvd importance value was only of 5%. Sympathy did
+not contribute significantly to self-monitoring (parameter estimate=0.05, p=0.36).
+
+DISCUSSION
+The present work exemplifies the relevance of virtual affective agents for studying the factors
+involved in high-level metacognitive and social judgments, and more specifically the feeling
+of being helped by another person. Following a naturalistic approach of social cognition, a new
+paradigm based on a card-guessing game was designed to urge the participants to make their
+choices on the basis of the agent’s emotional displays. Playing the game required emotion recognition with varied intensities and valences, as well as understanding the agent’s cooperative
+behavior and communicative intentions. The subjects had to integrate these different aspects in
+order to evaluate both the agent’s attitudes and their own performances. The variability of the
+subjective evaluations performed after each trial was investigated to determine their respective
+determinants and to delineate the specific properties of others’ help assessment ratings.
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+70 International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015
+
+In line with the objectives, investigation on higher helpfulness ratings allowed to draw the
+panorama of the related variables. To begin with non-significant findings, response times and
+the epoch in the experiment were not predictors of the helpfulness ratings (explained variance
+is estimated under 5%). Concerning epoch, the findings suggest no time-drift in the ratings. The
+subjects were prone to revise their judgment on the basis of the most recent events instead of
+giving an integrative judgment. On the contrary, the best predictors concerned the emotional
+displays of the virtual agent as shown by the substantial amount of variance explained by intensity and valence.
+The intensity factor was introduced in the design to operationalize communicative intention. Some previous research have reported that facial expressions convey information about
+the expresser’s emotional state as well as behavioral intentions or action requests directed at
+an audience such as offensiveness (e.g., “back of or I will attack”) or appeasement, submission
+(Fridlund, 1994, 1997; cited by Horstmann, 2003). According to Parkinson, “facial movements
+can perform many communicative and pragmatic functions” according to an “on-line” appraisal
+process in interpersonal interaction (2005, pg. 306). For example, when a subject observes
+someone else’s facial expression, he/she might raise several hypotheses: for example, a smile
+might reflect another’s inner state such as joy and/or a specific intention such as the agreement
+with an action that is performed at the same moment. In agreement with the naturalistic claim,
+in order to evaluate whether an expression represents an agent’s emotions, intentions or both,
+one should also take into account other social cues (gesture, posture, speech utterance, etc.) and
+the social situation in which the interaction occurs. As advocated by Ochsner, both the perception of social-affective stimuli and mental state inference are related constructs within the social
+cognitive system (2008). The present results concur with these views as they demonstrate that the
+subjects were particularly attentive to the presence of a message conveyed through facial emotions
+when judging the agents helpful behavior. Let’s remind here that the analyses were restricted to
+successful trials and that the subjects could also win with 50% chances in the absence of a cue.
+Although they won a trial, the subjects did integrate the absence of a message into their more
+negative helpfulness ratings. In other words, even in the case of a good performance, feeling the
+help of another person requires detecting a causal action from him/her.
+Another interesting determinant of helpfulness ratings was the valence of the agent’s expression. Although this factor only predicted 8% of the variance, the positive contribution (regression
+coefficient > 0) appears understandable: 1) a positive emotion is obviously more attractive and
+rewarding than a negative emotion; 2) positive emotions were less effortful as negative emotions required an additional inhibition of the choice corresponding to the direction of the agent’s
+emotional-face. These two factors could not be disentangled in the present study, but appear
+indicative of the partial relevance of expressing simple and positive emotional messages to be
+considered as helpful. The additional regression analysis introducing sympathy as a predictor
+did not change the pattern and did not invalidate this conclusion. Here again, the present work
+quantifies to which extent expressing clear messages, as operationalized through various intensities, is more important than relying only on positive emotional expressions.
+A last result from the present study concerns the shared variance reaching 56% observed
+between helpfulness and self-monitoring. This metacognitive judgment exhibits a similar regression pattern among the predictors entered in the model, although the total explained variance
+(43%) was lower than for helpfulness. This relation may be interpreted as the fact that having
+recognized the agent’s helping behavior on the basis of her emotional communication is a prerequisite for being sure of the answer. Conversely, one could raise the hypothesis that reaching
+a high degree of certitude while looking at the agent’s emotional face is highly evocative of
+her helping intention. Whatever the direction of the causal relationship, the results reveal an
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015 71
+
+obvious convergence between the self-centered evaluation of performance and the understanding of another’s helping intention. As stated in the introduction, the pragmatic situation of a
+card-guessing paradigm facilitated such a convergence, as the agent was the unique source of
+information. Further experiments should be conducted with different sources of information (the
+agent vs. another source) and varied reliabilities (i.e. imprecise or misleading sources, etc.) to find
+out the subjects’ capability to propagate each parameter’s variance toward subjective variables.
+
+CONCLUSION AND PERSPECTIVES
+The present work aimed at proposing a new paradigm to investigate high-level subjective assessment related to the sense of being helped by another person and to self-monitoring metacognition. To the best of our knowledge, this is the first time that a naturalistic interaction setting was
+used to achieve measurements of these subjective variables while emotional parameters were
+experimentally varied. Because this paradigm is now under investigation in clinical populations
+(schizophrenia, etc.) for both evaluation and social cognitive remediation, it appeared of special
+interest to provide some inaugural results about its’ relevance for eliciting complex interpretation
+phenomenon. In addition, effect sizes reported here demonstrate that although some effects are
+large, others are of small magnitude, and thus, should be investigated either with larger populations. Further researches might consider the use of virtual affective agents as a mean to analyze
+patients-therapist relationships for that they combine better replicability and control over the
+stimuli during dynamic, non-deterministic stimulation.
+
+ACKNOWLEDGMENT
+This research was funded by a grant from the Agence Nationale de la Recherche: ANR-11EMCO-0007.
+
+REFERENCES
+Bazin, N., Passerieux, C., & Hardy-Baylé, M. C. (2010). ToMRemed: Une technique de remédiation cognitive centrée sur la théorie de l’esprit pour les patients schizophrènes. Journal de Thérapie Comportementale
+et Cognitive, 20(1), 16–21. doi:10.1016/j.jtcc.2010.02.001
+Callejas, Z., Griol, D., & López-Cózar, R. (2014). A framework for the assessment of synthetic personalities according to user perception. International Journal of Human-Computer Studies, 72(7), 567–583.
+doi:10.1016/j.ijhcs.2014.02.002
+Castellano, G., Pereira, A., Leite, I., Paiva, A., & McOwan, P. W. (2009). Detecting User Engagement
+with a Robot Companion Using Task and Social Interaction-Based Features. Proceedings of International
+Conference on Multimodal Interfaces and Workshop on Machine Learning for Multimodal Interaction
+(ICMI-MLMI’09) (pp. 119-126), Cambridge, MA. ACM, New York, NY doi:10.1145/1647314.1647336
+Courgeon, M., & Martin, J.-C. (2009). Impact of Expressive Wrinkles on Perception of a Virtual Character’s
+Facial Expressions of Emotions. IVA.
+Courgeon, M., Martin, J.-C., & Jacquemin, C. (2008). MARC: a Multimodal Affective and Reactive Character. 1st Workshop on Affective Interaction in Natural Environments, 12-16.
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+72 International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015
+
+De Melo, C. M., Carnevale, P., & Gratch, J. (2011, May). The effect of expression of anger and happiness
+in computer agents on negotiations with humans. In The 10th International Conference on Autonomous
+Agents and Multiagent Systems-Volume 3 (pp. 937-944). International Foundation for Autonomous Agents
+and Multiagent Systems.
+Decety, J., Norman, G. J., Berntson, G. G., & Cacioppo, J. T. (2012). A neurobehavioral evolutionary perspective on the mechanisms underlying empathy. Progress in Neurobiology, 98(1), 38–48. doi:10.1016/j.
+pneurobio.2012.05.001 PMID:22580447
+Eack, S. M., Bahorik, A. L., McKnight, S. A., Hogarty, S. S., Greenwald, D. P., Newhill, C. E., & Minshew, N. J. et al. (2013). Commonalities in social and non-social cognitive impairments in adults with
+autism spectrum disorder and schizophrenia. Schizophrenia Research, 148(1-3), 24–28. doi:10.1016/j.
+schres.2013.05.013 PMID:23768814
+Ekman, P. (2002). Facial action coding system. Salt Lake City: A Human Face.
+Ekman, P., & Friesen, W. V. (1978). The facial action coding system. Palo Alto, CA: Consulting Psychologists Press.
+Feldman, B. (2005). Proportional Marginal Decomposition. Chicago: Prism Analytics.
+Fett, A. K., Viechtbauer, W., Dominguez, M. D., Penn, D. L., van Os, J., & Krabbendam, L. (2011). The
+relationship between neurocognition and social cognition with functional outcomes in schizophrenia: A metaanalysis. Neuroscience and Biobehavioral Reviews, 35(3), 573–588. doi:10.1016/j.neubiorev.2010.07.001
+PMID:20620163
+Fridlund, A. J. (1994). Human facial expression: An evolutionary view. San Diego, CA: Academic.
+Gaudelus, B., & Franck, N. (2012). Troubles du traitement des informations faciales: le programme GAÏA.
+In N. Franck (Ed.), La remédiation cognitive (pp. 169–181). Paris: Elsevier Masson.
+Hindriks, K., Neerincx, M. A., & Vink, M. (2012). The icat as a natural interaction partner. In Advanced
+agent technology (pp. 212–231). Springer Berlin Heidelberg. doi:10.1007/978-3-642-27216-5_14
+Hojat, M., Gonnella, J. S., Nasca, T. J., Mangione, S., Vergare, M. J., & Magee, M. (2002). Physician Empathy: Definition, Components, Measurement, and Relationship to Gender and Specialty. The American
+Journal of Psychiatry, 159(9), 1563–1569. doi:10.1176/appi.ajp.159.9.1563 PMID:12202278
+Horstmann, G. (2003). What do facial expressions convey: Feeling states, behavioral intentions, or action
+requests? Emotion (Washington, D.C.), 3(2), 150–166. doi:10.1037/1528-3542.3.2.150 PMID:12899416
+Kim, M. G., & Suzuki, K. (2012). A card-playing humanoid playmate for human behavioral analysis.
+Entertainment Computing, 3(4), 103–109. doi:10.1016/j.entcom.2012.03.002
+Koren, D., Seidman, L. J., Goldsmith, M., & Harvey, P. D. (2006). Real-world cognitive--and metacognitive--dysfunction in schizophrenia: A new approach for measuring (and remediating) more “right stuff”.
+Schizophrenia Bulletin, 32(2), 310–326. doi:10.1093/schbul/sbj035 PMID:16397202
+Mercer, S. W., Maxwell, M., Heaney, D., & Watt, G. C. M. (2004). The consultation and relational empathy
+(CARE) measure: Development and preliminary validation and reliability of an empathy-based consultation process measure. Family Practice, 21(6), 699–705. doi:10.1093/fampra/cmh621 PMID:15528286
+Morrison, R. (2009). Empathy from Avatars: Propositions for improving trust development in pseudo-social
+relationships with avatars. European Journal of Soil Science, 12(2), 298–309.
+Neumann, M., Bensing, J., Mercer, S., Ernstmann, N., Ommen, O., & Pfaff, H. (2009). Analyzing the
+“nature” and “specific effectiveness” of clinical empathy: A theoretical overview and contribution towards a theory-based research agenda. Patient Education and Counseling, 74(3), 339–346. doi:10.1016/j.
+pec.2008.11.013 PMID:19124216
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+International Journal of Synthetic Emotions, 6(1), 60-73, January-June 2015 73
+
+Ochsner, K. N. (2008). The social-emotional processing stream: Five core constructs and their translational potential for schizophrenia and beyond. Biological Psychiatry, 64(1), 48–61. doi:10.1016/j.biopsych.2008.04.024 PMID:18549876
+Ortony, A. (2003). On making believable emotional agents believable. In R. Trappl, P. Petta, & S. Payr
+(Eds.), Emotions in humans and artifacts. Cambridge, MA: MIT Press.
+Parkinson, B. (2005). Do facial movements express emotions or communicate motives? Personality and
+Social Psychology Review, 9(4), 278–311. doi:10.1207/s15327957pspr0904_1 PMID:16223353
+Peyroux, E., & Franck, N. (sous presse). Le programme RC2S: une prise en charge des troubles de la cognition sociale pour les personnes souffrant de schizophrénie ou d’un trouble apparenté. In N. Franck (Ed.),
+Cognition sociale et schizophrénie. Paris: Elsevier Masson. doi:10.1016/B978-2-294-73927-9.00008-2
+Schilbach, L., Timmermans, B., Reddy, V., Costall, A., Bente, G., Schlicht, T., & Vogaley, K. (2013). A
+second-person neuroscience in interaction. Behavioral and Brain Sciences, 36(4), 441–462. doi:10.1017/
+S0140525X12002452 PMID:24049785
+Simmons, R., Makatchev, M., Kirby, R., Lee, M., Fanaswala, I., Browning, B., & Sakr, M. et al. (2011).
+Believable robot characters. AI Magazine, 32(4), 39–52.
+Sokal, R. R., & Rohlf, F. J. (1995). Biometry: The principles and practice of statistics in biological research
+(3rd ed.). New York: W.H. Freeman.
+Van der Ham, W. F., Broekens, J., & Roelofsma, P. H. (2014). The Effect of Dominance Manipulation on
+the Perception and Believability of an Emotional Expression. In Emotion Modeling (pp. 101–114). Springer
+International Publishing. doi:10.1007/978-3-319-12973-0_6
+Wilms, M., Schilbach, L., Pfeiffer, U., Bente, G., Fink, G. R., & Vogeley, K. (2010). It’s in your eyes — using
+gaze-contingent stimuli to create truly interactive paradigms for social cognitive and affective neuroscience.
+Social Cognitive and Affective Neuroscience, 5(1), 98–107. doi:10.1093/scan/nsq024 PMID:20223797
+
+Copyright © 2015, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited.
+
+View publication stats
+
+
